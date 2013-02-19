@@ -17,27 +17,25 @@
 @synthesize current;
 @synthesize max;
 
+- (NSString*) progress
+{
+    if (self.max > 0) {
+        return [NSString stringWithFormat:@"%ld / %ld", self.current, self.max, nil];
+    } else {
+        return [NSString stringWithFormat:@"%ld / -", self.current, nil];
+    }
+}
+
 + (NSArray*) loadItems
 {
-    NSData*  data = [MSCRest curl: @"http://localhost:3000/anime/index.json"];
-    NSError* error;
-    NSArray* json = [NSJSONSerialization
-                          JSONObjectWithData:data
-                          options:kNilOptions
-                          error:&error];
-    
-    if (error) {
-        NSLog(@"ERROR: %@", error);
-    }
-    
+    NSArray* json = [NSArray jsonArrayWithUrl:@"http://localhost:3000/anime/index.json"];
     NSMutableArray* items = [[NSMutableArray alloc] init];
+    
     for (id j in json) {
         [items addObject: [[MSCAnime alloc] initWithDictionary:j]];
     }
     
-    //NSLog(@"%@", json[0]);
-    
-    return json;
+    return items;
 }
 
 - (id) initWithDictionary:(NSDictionary*)data

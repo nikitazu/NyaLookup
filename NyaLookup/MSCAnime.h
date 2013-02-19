@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSArray+JSON.h"
 #import "MSCPreferences.h"
 #import "MSCRest.h"
 
@@ -18,6 +19,8 @@
 @property BOOL airing;
 @property NSInteger current;
 @property NSInteger max;
+
+- (NSString*) progress;
 
 + (NSArray*) loadItems;
 

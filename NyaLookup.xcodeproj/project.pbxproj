@@ -22,6 +22,7 @@
 		F7B4A89516D2A20C009F999D /* MSCPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B4A89416D2A20C009F999D /* MSCPreferences.m */; };
 		F7B4A89716D2ACFE009F999D /* NyaLookup1.iconset in Resources */ = {isa = PBXBuildFile; fileRef = F7B4A89616D2ACFE009F999D /* NyaLookup1.iconset */; };
 		F7E5E06916D3D5EB005F4490 /* MSCRest.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E5E06816D3D5EB005F4490 /* MSCRest.m */; };
+		F7FA59FC16D401C0002A4347 /* NSArray+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = F7FA59FB16D401C0002A4347 /* NSArray+JSON.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		F7B4A89616D2ACFE009F999D /* NyaLookup1.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = NyaLookup1.iconset; sourceTree = "<group>"; };
 		F7E5E06716D3D5EB005F4490 /* MSCRest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCRest.h; sourceTree = "<group>"; };
 		F7E5E06816D3D5EB005F4490 /* MSCRest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCRest.m; sourceTree = "<group>"; };
+		F7FA59FA16D401C0002A4347 /* NSArray+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+JSON.h"; sourceTree = "<group>"; };
+		F7FA59FB16D401C0002A4347 /* NSArray+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JSON.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,7 @@
 		F7B4A85D16D29ED9009F999D /* NyaLookup */ = {
 			isa = PBXGroup;
 			children = (
+				F7FA59F916D40198002A4347 /* JSON */,
 				F7B4A89616D2ACFE009F999D /* NyaLookup1.iconset */,
 				F7B4A88C16D29F3B009F999D /* Torrent */,
 				F7B4A88B16D29F31009F999D /* Anime */,
@@ -190,6 +194,15 @@
 				F7B4A88E16D29F71009F999D /* MSCTorrent.m */,
 			);
 			name = Torrent;
+			sourceTree = "<group>";
+		};
+		F7FA59F916D40198002A4347 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				F7FA59FA16D401C0002A4347 /* NSArray+JSON.h */,
+				F7FA59FB16D401C0002A4347 /* NSArray+JSON.m */,
+			);
+			name = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +321,7 @@
 				F7B4A89216D2A088009F999D /* MSCAnime.m in Sources */,
 				F7B4A89516D2A20C009F999D /* MSCPreferences.m in Sources */,
 				F7E5E06916D3D5EB005F4490 /* MSCRest.m in Sources */,
+				F7FA59FC16D401C0002A4347 /* NSArray+JSON.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
