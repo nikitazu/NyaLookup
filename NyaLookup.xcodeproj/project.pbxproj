@@ -17,6 +17,11 @@
 		F7B4A87716D29ED9009F999D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7B4A85716D29ED9009F999D /* Cocoa.framework */; };
 		F7B4A87F16D29ED9009F999D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7B4A87D16D29ED9009F999D /* InfoPlist.strings */; };
 		F7B4A88216D29ED9009F999D /* NyaLookupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B4A88116D29ED9009F999D /* NyaLookupTests.m */; };
+		F7B4A88F16D29F71009F999D /* MSCTorrent.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B4A88E16D29F71009F999D /* MSCTorrent.m */; };
+		F7B4A89216D2A088009F999D /* MSCAnime.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B4A89116D2A088009F999D /* MSCAnime.m */; };
+		F7B4A89516D2A20C009F999D /* MSCPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B4A89416D2A20C009F999D /* MSCPreferences.m */; };
+		F7B4A89716D2ACFE009F999D /* NyaLookup1.iconset in Resources */ = {isa = PBXBuildFile; fileRef = F7B4A89616D2ACFE009F999D /* NyaLookup1.iconset */; };
+		F7E5E06916D3D5EB005F4490 /* MSCRest.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E5E06816D3D5EB005F4490 /* MSCRest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,15 @@
 		F7B4A87E16D29ED9009F999D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F7B4A88016D29ED9009F999D /* NyaLookupTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NyaLookupTests.h; sourceTree = "<group>"; };
 		F7B4A88116D29ED9009F999D /* NyaLookupTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NyaLookupTests.m; sourceTree = "<group>"; };
+		F7B4A88D16D29F71009F999D /* MSCTorrent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCTorrent.h; sourceTree = "<group>"; };
+		F7B4A88E16D29F71009F999D /* MSCTorrent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCTorrent.m; sourceTree = "<group>"; };
+		F7B4A89016D2A088009F999D /* MSCAnime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCAnime.h; sourceTree = "<group>"; };
+		F7B4A89116D2A088009F999D /* MSCAnime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCAnime.m; sourceTree = "<group>"; };
+		F7B4A89316D2A20C009F999D /* MSCPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCPreferences.h; sourceTree = "<group>"; };
+		F7B4A89416D2A20C009F999D /* MSCPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCPreferences.m; sourceTree = "<group>"; };
+		F7B4A89616D2ACFE009F999D /* NyaLookup1.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = NyaLookup1.iconset; sourceTree = "<group>"; };
+		F7E5E06716D3D5EB005F4490 /* MSCRest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCRest.h; sourceTree = "<group>"; };
+		F7E5E06816D3D5EB005F4490 /* MSCRest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCRest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,10 +128,17 @@
 		F7B4A85D16D29ED9009F999D /* NyaLookup */ = {
 			isa = PBXGroup;
 			children = (
+				F7B4A89616D2ACFE009F999D /* NyaLookup1.iconset */,
+				F7B4A88C16D29F3B009F999D /* Torrent */,
+				F7B4A88B16D29F31009F999D /* Anime */,
 				F7B4A86916D29ED9009F999D /* MSCAppDelegate.h */,
 				F7B4A86A16D29ED9009F999D /* MSCAppDelegate.m */,
 				F7B4A86C16D29ED9009F999D /* MainMenu.xib */,
 				F7B4A85E16D29ED9009F999D /* Supporting Files */,
+				F7B4A89316D2A20C009F999D /* MSCPreferences.h */,
+				F7B4A89416D2A20C009F999D /* MSCPreferences.m */,
+				F7E5E06716D3D5EB005F4490 /* MSCRest.h */,
+				F7E5E06816D3D5EB005F4490 /* MSCRest.m */,
 			);
 			path = NyaLookup;
 			sourceTree = "<group>";
@@ -151,6 +172,24 @@
 				F7B4A87D16D29ED9009F999D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F7B4A88B16D29F31009F999D /* Anime */ = {
+			isa = PBXGroup;
+			children = (
+				F7B4A89016D2A088009F999D /* MSCAnime.h */,
+				F7B4A89116D2A088009F999D /* MSCAnime.m */,
+			);
+			name = Anime;
+			sourceTree = "<group>";
+		};
+		F7B4A88C16D29F3B009F999D /* Torrent */ = {
+			isa = PBXGroup;
+			children = (
+				F7B4A88D16D29F71009F999D /* MSCTorrent.h */,
+				F7B4A88E16D29F71009F999D /* MSCTorrent.m */,
+			);
+			name = Torrent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +267,7 @@
 				F7B4A86216D29ED9009F999D /* InfoPlist.strings in Resources */,
 				F7B4A86816D29ED9009F999D /* Credits.rtf in Resources */,
 				F7B4A86E16D29ED9009F999D /* MainMenu.xib in Resources */,
+				F7B4A89716D2ACFE009F999D /* NyaLookup1.iconset in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +304,10 @@
 			files = (
 				F7B4A86416D29ED9009F999D /* main.m in Sources */,
 				F7B4A86B16D29ED9009F999D /* MSCAppDelegate.m in Sources */,
+				F7B4A88F16D29F71009F999D /* MSCTorrent.m in Sources */,
+				F7B4A89216D2A088009F999D /* MSCAnime.m in Sources */,
+				F7B4A89516D2A20C009F999D /* MSCPreferences.m in Sources */,
+				F7E5E06916D3D5EB005F4490 /* MSCRest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +497,7 @@
 				F7B4A88716D29ED9009F999D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F7B4A88816D29ED9009F999D /* Build configuration list for PBXNativeTarget "NyaLookupTests" */ = {
 			isa = XCConfigurationList;
@@ -461,6 +506,7 @@
 				F7B4A88A16D29ED9009F999D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

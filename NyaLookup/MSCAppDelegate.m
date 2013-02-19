@@ -10,9 +10,12 @@
 
 @implementation MSCAppDelegate
 
+@synthesize animes;
+@synthesize animesController;
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    self.animes = [MSCAnime loadItems];
 }
 
 @end

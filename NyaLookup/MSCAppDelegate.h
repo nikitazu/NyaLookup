@@ -7,9 +7,16 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "MSCAnime.h"
 
 @interface MSCAppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+
+@property (retain) NSArray* animes;
+@property (assign) IBOutlet NSArrayController* animesController;
+
+
+
 
 @end
