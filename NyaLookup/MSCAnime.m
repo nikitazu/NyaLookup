@@ -30,19 +30,28 @@
         NSLog(@"ERROR: %@", error);
     }
     
-    /*NSMutableArray* items = [[NSMutableArray alloc] init];
+    NSMutableArray* items = [[NSMutableArray alloc] init];
     for (id j in json) {
-        
-        MSCAnime* a = [[MSCAnime alloc] init];
-        a.title = [j objectForKey:@"title"];
-        a.type = [j objectForKey:@"type"];
-        
-        [items addObject:a];
-    }*/
+        [items addObject: [[MSCAnime alloc] initWithDictionary:j]];
+    }
     
     //NSLog(@"%@", json[0]);
     
     return json;
+}
+
+- (id) initWithDictionary:(NSDictionary*)data
+{
+    if (self)
+    {
+        self.title = [data objectForKey:@"title"];
+        self.score = [[data objectForKey:@"score"] integerValue];
+        self.type  = [data objectForKey:@"type"];
+        self.airing = [[data objectForKey:@"airing"] integerValue] == 1;
+        self.current = [[data objectForKey:@"current"] integerValue];
+        self.max = [[data objectForKey:@"max"] integerValue];
+    }
+    return self;
 }
 
 - (NSArray*) findTorrents

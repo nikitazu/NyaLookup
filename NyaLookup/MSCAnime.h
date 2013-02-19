@@ -13,13 +13,15 @@
 @interface MSCAnime : NSObject
 
 @property NSString* title;
-@property NSInteger* score;
+@property NSInteger score;
 @property NSString* type;
-@property NSInteger* airing;
-@property NSInteger* current;
-@property NSInteger* max;
+@property BOOL airing;
+@property NSInteger current;
+@property NSInteger max;
 
 + (NSArray*) loadItems;
+
+- (id) initWithDictionary:(NSDictionary*)data;
 
 - (NSArray*) findTorrents;
 

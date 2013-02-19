@@ -16,7 +16,8 @@
 @property (retain) NSArray* animes;
 @property (assign) IBOutlet NSArrayController* animesController;
 
-
+@property (retain) NSArray* torrents;
+@property (assign) IBOutlet NSArrayController* torrentsController;
 
 
 @end
