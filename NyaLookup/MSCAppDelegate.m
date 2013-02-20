@@ -20,22 +20,21 @@
 {
     self.animes = [MSCAnime loadItems];
     
-    id x1 = [self tor:@"foo"];
-    id x2 = [self tor:@"bar"];
-    id x3 = [self tor:@"buz"];
+    //MSCAnime* anime = self.animes[1];
+    //NSArray*  arr   = [anime findTorrents];
     
-    NSArray* arr = @[ x1, x2, x3 ];
-    NSLog(@"%@", arr);
+    //NSLog(@"%@", arr);
     
-    self.torrents = arr;
+    //self.torrents = arr;
 }
 
-- (NSDictionary*) tor: (NSString*)name
+- (IBAction) searchTorrents:(id) sender
 {
-    return @{ @"title": name,
-              @"link": @"http://foo.bar/buz",
-              @"seeds": @"3",
-              @"peers": @"200" };
+    NSLog(@"%@", self.animesController.selectionIndexes);
+    MSCAnime* anime = self.animesController.selectedObjects[0];
+    NSArray* temp = [anime findTorrents];
+    NSLog(@"%@", temp);
+    self.torrents = temp;
 }
 
 @end

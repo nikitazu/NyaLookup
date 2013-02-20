@@ -1696,7 +1696,7 @@
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="1034911288"/>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
@@ -2427,11 +2427,19 @@
 					<int key="connectionID">1001</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">searchTorrents:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="472423513"/>
+					</object>
+					<int key="connectionID">1087</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">content: arrangedObjects</string>
 						<reference key="source" ref="439119674"/>
 						<reference key="destination" ref="881617145"/>
-						<object class="NSNibBindingConnector" key="connector">
+						<object class="NSNibBindingConnector" key="connector" id="1057380597">
 							<reference key="NSSource" ref="439119674"/>
 							<reference key="NSDestination" ref="881617145"/>
 							<string key="NSLabel">content: arrangedObjects</string>
@@ -2441,6 +2449,23 @@
 						</object>
 					</object>
 					<int key="connectionID">1047</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">selectionIndexes: selectionIndexes</string>
+						<reference key="source" ref="439119674"/>
+						<reference key="destination" ref="881617145"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="439119674"/>
+							<reference key="NSDestination" ref="881617145"/>
+							<string key="NSLabel">selectionIndexes: selectionIndexes</string>
+							<string key="NSBinding">selectionIndexes</string>
+							<string key="NSKeyPath">selectionIndexes</string>
+							<reference key="NSPreviousConnector" ref="1057380597"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1091</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -2463,7 +2488,7 @@
 						<string key="label">content: arrangedObjects</string>
 						<reference key="source" ref="472423513"/>
 						<reference key="destination" ref="459059351"/>
-						<object class="NSNibBindingConnector" key="connector">
+						<object class="NSNibBindingConnector" key="connector" id="413602416">
 							<reference key="NSSource" ref="472423513"/>
 							<reference key="NSDestination" ref="459059351"/>
 							<string key="NSLabel">content: arrangedObjects</string>
@@ -2473,6 +2498,23 @@
 						</object>
 					</object>
 					<int key="connectionID">754</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">selectionIndexes: selectionIndexes</string>
+						<reference key="source" ref="472423513"/>
+						<reference key="destination" ref="459059351"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="472423513"/>
+							<reference key="NSDestination" ref="459059351"/>
+							<string key="NSLabel">selectionIndexes: selectionIndexes</string>
+							<string key="NSBinding">selectionIndexes</string>
+							<string key="NSKeyPath">selectionIndexes</string>
+							<reference key="NSPreviousConnector" ref="413602416"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1089</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -2863,35 +2905,35 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: objectValue.peers</string>
+						<string key="label">value: objectValue.leech</string>
 						<reference key="source" ref="287905296"/>
 						<reference key="destination" ref="942711924"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="287905296"/>
 							<reference key="NSDestination" ref="942711924"/>
-							<string key="NSLabel">value: objectValue.peers</string>
+							<string key="NSLabel">value: objectValue.leech</string>
 							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">objectValue.peers</string>
+							<string key="NSKeyPath">objectValue.leech</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">1055</int>
+					<int key="connectionID">1086</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: objectValue.seeds</string>
+						<string key="label">value: objectValue.seed</string>
 						<reference key="source" ref="645018583"/>
 						<reference key="destination" ref="942711924"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="645018583"/>
 							<reference key="NSDestination" ref="942711924"/>
-							<string key="NSLabel">value: objectValue.seeds</string>
+							<string key="NSLabel">value: objectValue.seed</string>
 							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">objectValue.seeds</string>
+							<string key="NSKeyPath">objectValue.seed</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">1053</int>
+					<int key="connectionID">1085</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -5311,13 +5353,24 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1084</int>
+			<int key="maxID">1091</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
 					<string key="className">MSCAppDelegate</string>
 					<string key="superclassName">NSObject</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">searchTorrents:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">searchTorrents:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">searchTorrents:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="animesController">NSArrayController</string>
 						<string key="torrentsController">NSArrayController</string>

@@ -19,5 +19,7 @@
 @property (retain) NSArray* torrents;
 @property (assign) IBOutlet NSArrayController* torrentsController;
 
+- (IBAction) searchTorrents:(id) sender;
+
 
 @end

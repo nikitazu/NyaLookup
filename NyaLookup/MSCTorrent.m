@@ -18,4 +18,19 @@
 @synthesize down;
 @synthesize description;
 
+- (id) initWithDictionary:(NSDictionary*)data
+{
+    if (self)
+    {
+        self.title = [data objectForKey:@"title"];
+        self.category = [data objectForKey:@"category"];
+        self.link = [data objectForKey:@"link"];
+        self.seed = [data objectForKey:@"seed"];
+        self.leech = [data objectForKey:@"leech"];
+        self.down = [data objectForKey:@"down"];
+        self.description = [data objectForKey:@"description"];
+    }
+    return self;
+}
+
 @end

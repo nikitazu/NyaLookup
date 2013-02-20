@@ -26,6 +26,14 @@
     }
 }
 
+- (NSString*) queryTerms
+{
+    return [NSString stringWithFormat:@"http://localhost:3000/torrent/search?terms=%@+%ld",
+            [self.title stringByReplacingOccurrencesOfString:@" " withString:@"+"],
+            self.current + 1,
+            nil];
+}
+
 + (NSArray*) loadItems
 {
     NSArray* json = [NSArray jsonArrayWithUrl:@"http://localhost:3000/anime/index.json"];
@@ -54,8 +62,18 @@
 
 - (NSArray*) findTorrents
 {
-    // todo
-    return nil;
+    NSString* url = [self queryTerms];
+    
+    NSLog(@"findTorrents: %@", url);
+    
+    NSArray* json = [NSArray jsonArrayWithUrl:url];
+    NSMutableArray* items = [[NSMutableArray alloc] init];
+    
+    for (id j in json) {
+        [items addObject: [[MSCTorrent alloc] initWithDictionary:j]];
+    }
+    
+    return items;
 }
 
 @end

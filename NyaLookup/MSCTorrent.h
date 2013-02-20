@@ -18,4 +18,6 @@
 @property NSString* down;
 @property NSString* description;
 
+- (id) initWithDictionary:(NSDictionary*)data;
+
 @end

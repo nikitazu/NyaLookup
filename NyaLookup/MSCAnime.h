@@ -10,6 +10,7 @@
 #import "NSArray+JSON.h"
 #import "MSCPreferences.h"
 #import "MSCRest.h"
+#import "MSCTorrent.h"
 
 @interface MSCAnime : NSObject
 
