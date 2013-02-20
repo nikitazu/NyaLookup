@@ -18,6 +18,11 @@
 @synthesize down;
 @synthesize description;
 
+- (NSString*) peers
+{
+    return [NSString stringWithFormat:@"%@ / %@", self.seed, self.leech, nil];
+}
+
 - (id) initWithDictionary:(NSDictionary*)data
 {
     if (self)
@@ -36,7 +41,7 @@
 + (NSArray*) query:(NSString*)terms
 {
     NSString* url = [NSString stringWithFormat:@"http://localhost:3000/torrent/search?terms=%@",
-                     [MSCRest quote:terms],
+                     [terms quote],
                      nil];
     
     //NSLog(@"query torrents: %@", url);

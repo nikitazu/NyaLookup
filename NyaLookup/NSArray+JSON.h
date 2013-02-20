@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MSCRest.h"
+#import "NSString+Rest.h"
 
 @interface NSArray (JSON)
 

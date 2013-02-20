@@ -12,7 +12,7 @@
 
 + (NSArray*) jsonArrayWithUrl: (NSString*)url
 {
-    NSData* data = [MSCRest curl:url];
+    NSData* data = [url curl];
     
     __autoreleasing NSError* error = nil;
     

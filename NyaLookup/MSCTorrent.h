@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "NSArray+JSON.h"
+#import "NSString+Rest.h"
 
 @interface MSCTorrent : NSObject
 
@@ -18,6 +19,8 @@
 @property NSString* leech;
 @property NSString* down;
 @property NSString* description;
+
+- (NSString*) peers;
 
 - (id) initWithDictionary:(NSDictionary*)data;
 
