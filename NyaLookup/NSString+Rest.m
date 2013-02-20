@@ -27,4 +27,15 @@
     return [self stringByReplacingOccurrencesOfString:@" " withString:@"+"];
 }
 
+
+- (NSString*) get: (NSString*)method
+{
+    return [NSString stringWithFormat: @"http://%@/%@", self, method];
+}
+
+- (NSString*) get: (NSString*)method withData:(NSString*)data
+{
+    return [NSString stringWithFormat: @"http://%@/%@?%@", self, method, [data quote]];
+}
+
 @end

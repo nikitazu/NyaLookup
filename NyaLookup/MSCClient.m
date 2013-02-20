@@ -23,16 +23,13 @@
 
 - (NSArray*) searchTorrents:(NSString*)terms
 {
-    NSString*       query = [@"terms=" stringByAppendingString: terms];
-    NSString*         url = [self get:@"torrent/search" withData: query];
-    NSArray*         json = [url curlJson];
-    NSMutableArray* items = [[NSMutableArray alloc] init];
+    NSString* query = [@"terms=" stringByAppendingString: terms];
+    NSArray* json = [[self.preferences.server get:@"torrent/search"
+                                         withData: query] curlJson];
     
-    for (id j in json) {
-        [items addObject: [[MSCTorrent alloc] initWithDictionary:j]];
-    }
-    
-    return items;
+    return [json map: ^(id j) {
+        return [[MSCTorrent alloc] initWithDictionary:j];
+    }];
 }
 
 - (NSArray*) searchTorrentsForAnime:(MSCAnime*)anime
@@ -42,30 +39,11 @@
 
 - (NSArray*) indexAnime
 {
-    NSString*         url = [self get: @"anime/index.json"];
-    NSArray*         json = [url curlJson];
-    NSMutableArray* items = [[NSMutableArray alloc] init];
+    NSArray* json = [[self.preferences.server get: @"anime/index.json"] curlJson];
     
-    for (id j in json) {
-        [items addObject: [[MSCAnime alloc] initWithDictionary:j]];
-    }
-    
-    return items;
-}
-
-- (NSString*) get: (NSString*)method
-{
-    return [NSString stringWithFormat: @"http://%@/%@",
-            self.preferences.server,
-            method];
-}
-
-- (NSString*) get: (NSString*)method withData: (NSString*)data
-{
-    return [NSString stringWithFormat: @"http://%@/%@?%@",
-            self.preferences.server,
-            method,
-            [data quote]];
+    return [json map: ^(id j) {
+        return [[MSCAnime alloc] initWithDictionary:j];
+    }];
 }
 
 @end

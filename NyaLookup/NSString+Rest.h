@@ -14,5 +14,7 @@
 - (NSData*) curl;
 - (id) curlJson;
 - (NSString*) quote;
+- (NSString*) get: (NSString*)method;
+- (NSString*) get: (NSString*)method withData:(NSString*)data;
 
 @end
