@@ -34,7 +34,15 @@
 
 - (NSArray*) searchTorrentsForAnime:(MSCAnime*)anime
 {
-    return [self searchTorrents: [anime queryTorrents]];
+    NSString* method = [NSString stringWithFormat:@"torrent/search/%ld/%@",
+                        anime.next,
+                        [anime queryTorrents]];
+    
+    NSArray* json = [[self.preferences.server get:method] curlJson];
+    
+    return [json map: ^(id j) {
+        return [[MSCTorrent alloc] initWithDictionary:j];
+    }];
 }
 
 - (NSArray*) indexAnime

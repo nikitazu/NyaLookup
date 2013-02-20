@@ -30,12 +30,18 @@
 
 - (NSString*) get: (NSString*)method
 {
-    return [NSString stringWithFormat: @"http://%@/%@", self, method];
+    NSString* temp = [NSString stringWithFormat: @"http://%@/%@", self, [method quote]];
+    NSLog(@"get: %@", temp);
+    return temp;
 }
 
 - (NSString*) get: (NSString*)method withData:(NSString*)data
 {
-    return [NSString stringWithFormat: @"http://%@/%@?%@", self, method, [data quote]];
+    NSString* temp = [NSString stringWithFormat:
+                      @"http://%@/%@?%@", self, [method quote], [data quote]];
+    
+    NSLog(@"getWithData: %@", temp);
+    return temp;
 }
 
 @end

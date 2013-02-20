@@ -15,6 +15,7 @@
 @synthesize type;
 @synthesize airing;
 @synthesize current;
+@synthesize next;
 @synthesize max;
 
 - (NSString*) progress
@@ -28,19 +29,20 @@
 
 - (NSString*) queryTorrents
 {
-    return [NSString stringWithFormat: @"%@+%ld", self.title, self.current + 1];
+    return [NSString stringWithFormat: @"%@+%ld", self.title, self.next];
 }
 
 - (id) initWithDictionary:(NSDictionary*)data
 {
     if (self)
     {
-        self.title = [data objectForKey:@"title"];
-        self.score = [[data objectForKey:@"score"] integerValue];
-        self.type  = [data objectForKey:@"type"];
-        self.airing = [[data objectForKey:@"airing"] integerValue] == 1;
+        self.title   = [data objectForKey:@"title"];
+        self.score   = [[data objectForKey:@"score"] integerValue];
+        self.type    = [data objectForKey:@"type"];
+        self.airing  = [[data objectForKey:@"airing"] integerValue] == 1;
         self.current = [[data objectForKey:@"current"] integerValue];
-        self.max = [[data objectForKey:@"max"] integerValue];
+        self.next    = self.current + 1;
+        self.max     = [[data objectForKey:@"max"] integerValue];
     }
     return self;
 }

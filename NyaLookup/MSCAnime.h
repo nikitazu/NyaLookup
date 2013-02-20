@@ -15,6 +15,7 @@
 @property NSString* type;
 @property BOOL airing;
 @property NSInteger current;
+@property NSInteger next;
 @property NSInteger max;
 
 - (NSString*) progress;
