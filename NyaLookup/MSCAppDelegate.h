@@ -8,8 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 #import "MSCAnime.h"
+#import "MSCClient.h"
 
 @interface MSCAppDelegate : NSObject <NSApplicationDelegate>
+{
+    MSCClient* _client;
+}
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSTextField *torrentQuery;
@@ -19,6 +23,8 @@
 
 @property (retain) NSArray* torrents;
 @property (assign) IBOutlet NSArrayController* torrentsController;
+
+@property (retain) MSCPreferences* preferences;
 
 - (IBAction) searchTorrents:(id)sender;
 - (IBAction) getTorrent:(id)sender;

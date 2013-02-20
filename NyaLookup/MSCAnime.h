@@ -7,9 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NSArray+JSON.h"
-#import "MSCPreferences.h"
-#import "MSCTorrent.h"
 
 @interface MSCAnime : NSObject
 
@@ -21,11 +18,8 @@
 @property NSInteger max;
 
 - (NSString*) progress;
-
-+ (NSArray*) loadItems;
+- (NSString*) queryTorrents;
 
 - (id) initWithDictionary:(NSDictionary*)data;
-
-- (NSArray*) findTorrents;
 
 @end

@@ -22,7 +22,7 @@ NSString *const MSC_PREFERENCES_PATH =
     if (self) {
         NSMutableDictionary* defaults = [NSMutableDictionary new];
         
-        [defaults setObject:@"unknown" forKey:@"login"];
+        [defaults setObject:@"localhost:3000" forKey:@"server"];
         
         _prefs = [NSUserDefaults standardUserDefaults];
         [_prefs registerDefaults:defaults];
@@ -31,13 +31,13 @@ NSString *const MSC_PREFERENCES_PATH =
 }
 
 
-// Login to access anime usage data on the web
-- (NSString*) login {
-    return [_prefs valueForKey:@"login"];
+// Server to access anime usage data on the web
+- (NSString*) server {
+    return [_prefs valueForKey:@"server"];
 }
 
 - (void) reset {
-    [_prefs setObject:@"unknown" forKey:@"login"];
+    [_prefs setObject:@"localhost:3000" forKey:@"server"];
 }
 
 @end

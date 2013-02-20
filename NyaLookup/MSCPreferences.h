@@ -21,8 +21,8 @@ FOUNDATION_EXPORT NSString *const MSC_PREFERENCES_PATH;
 /// Nice static @constructor
 + (id)preferences;
 
-/// @Login to access anime usage data on the web
-- (NSString*) login;
+/// @Server to access anime usage data on the web
+- (NSString*) server;
 
 /// @Reset all settings to their default values
 - (void) reset;

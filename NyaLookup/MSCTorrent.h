@@ -7,8 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NSArray+JSON.h"
-#import "NSString+Rest.h"
 
 @interface MSCTorrent : NSObject
 
@@ -23,7 +21,5 @@
 - (NSString*) peers;
 
 - (id) initWithDictionary:(NSDictionary*)data;
-
-+ (NSArray*) query:(NSString*)terms;
 
 @end

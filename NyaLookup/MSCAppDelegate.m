@@ -18,25 +18,24 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    self.animes = [MSCAnime loadItems];
+    self.preferences = [MSCPreferences preferences];
+    _client          = [MSCClient client: self.preferences];
+    self.animes      = [_client indexAnime];
 }
 
 - (IBAction) searchTorrents:(id)sender
 {
-    self.torrents = [[self anime] findTorrents];
+    self.torrents = [_client searchTorrentsForAnime: [self anime]];
 }
 
 - (IBAction) getTorrent:(id)sender
 {
-//    NSLog(@"getTorrent: %@", [[self torrent] title]);
-    if ([self writeToPasteBoard:[[self torrent] link]] == YES) {
-        NSLog(@"link copied to clipboard");
-    }
+    [self writeToPasteBoard:[[self torrent] link]];
 }
 
 - (IBAction) queryTorrent:(id)sender
 {
-    self.torrents = [MSCTorrent query: self.torrentQuery.stringValue];
+    self.torrents = [_client searchTorrents: self.torrentQuery.stringValue];
 }
 
 - (MSCAnime*) anime

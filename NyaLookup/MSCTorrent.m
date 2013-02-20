@@ -20,40 +20,22 @@
 
 - (NSString*) peers
 {
-    return [NSString stringWithFormat:@"%@ / %@", self.seed, self.leech, nil];
+    return [NSString stringWithFormat:@"%@ / %@", self.seed, self.leech];
 }
 
 - (id) initWithDictionary:(NSDictionary*)data
 {
     if (self)
     {
-        self.title = [data objectForKey:@"title"];
-        self.category = [data objectForKey:@"category"];
-        self.link = [data objectForKey:@"link"];
-        self.seed = [data objectForKey:@"seed"];
-        self.leech = [data objectForKey:@"leech"];
-        self.down = [data objectForKey:@"down"];
+        self.title       = [data objectForKey:@"title"];
+        self.category    = [data objectForKey:@"category"];
+        self.link        = [data objectForKey:@"link"];
+        self.seed        = [data objectForKey:@"seed"];
+        self.leech       = [data objectForKey:@"leech"];
+        self.down        = [data objectForKey:@"down"];
         self.description = [data objectForKey:@"description"];
     }
     return self;
-}
-
-+ (NSArray*) query:(NSString*)terms
-{
-    NSString* url = [NSString stringWithFormat:@"http://localhost:3000/torrent/search?terms=%@",
-                     [terms quote],
-                     nil];
-    
-    //NSLog(@"query torrents: %@", url);
-    
-    NSArray* json = [NSArray jsonArrayWithUrl:url];
-    NSMutableArray* items = [[NSMutableArray alloc] init];
-    
-    for (id j in json) {
-        [items addObject: [[MSCTorrent alloc] initWithDictionary:j]];
-    }
-    
-    return items;
 }
 
 @end

@@ -20,30 +20,15 @@
 - (NSString*) progress
 {
     if (self.max > 0) {
-        return [NSString stringWithFormat:@"%ld / %ld", self.current, self.max, nil];
+        return [NSString stringWithFormat:@"%ld / %ld", self.current, self.max];
     } else {
-        return [NSString stringWithFormat:@"%ld / -", self.current, nil];
+        return [NSString stringWithFormat:@"%ld / -", self.current];
     }
 }
 
-- (NSString*) queryTerms
+- (NSString*) queryTorrents
 {
-    return [NSString stringWithFormat:@"%@+%ld",
-            self.title,
-            self.current + 1,
-            nil];
-}
-
-+ (NSArray*) loadItems
-{
-    NSArray* json = [NSArray jsonArrayWithUrl:@"http://localhost:3000/anime/index.json"];
-    NSMutableArray* items = [[NSMutableArray alloc] init];
-    
-    for (id j in json) {
-        [items addObject: [[MSCAnime alloc] initWithDictionary:j]];
-    }
-    
-    return items;
+    return [NSString stringWithFormat: @"%@+%ld", self.title, self.current + 1];
 }
 
 - (id) initWithDictionary:(NSDictionary*)data
@@ -58,11 +43,6 @@
         self.max = [[data objectForKey:@"max"] integerValue];
     }
     return self;
-}
-
-- (NSArray*) findTorrents
-{
-    return [MSCTorrent query:[self queryTerms]];
 }
 
 @end
