@@ -17,4 +17,9 @@
     return data;
 }
 
++ (NSString*) quote: (NSString*)term
+{
+    return [term stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+}
+
 @end

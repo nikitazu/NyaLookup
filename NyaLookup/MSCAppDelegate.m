@@ -19,22 +19,41 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     self.animes = [MSCAnime loadItems];
-    
-    //MSCAnime* anime = self.animes[1];
-    //NSArray*  arr   = [anime findTorrents];
-    
-    //NSLog(@"%@", arr);
-    
-    //self.torrents = arr;
 }
 
-- (IBAction) searchTorrents:(id) sender
+- (IBAction) searchTorrents:(id)sender
 {
-    NSLog(@"%@", self.animesController.selectionIndexes);
-    MSCAnime* anime = self.animesController.selectedObjects[0];
-    NSArray* temp = [anime findTorrents];
-    NSLog(@"%@", temp);
-    self.torrents = temp;
+    self.torrents = [[self anime] findTorrents];
+}
+
+- (IBAction) getTorrent:(id)sender
+{
+//    NSLog(@"getTorrent: %@", [[self torrent] title]);
+    if ([self writeToPasteBoard:[[self torrent] link]] == YES) {
+        NSLog(@"link copied to clipboard");
+    }
+}
+
+- (IBAction) queryTorrent:(id)sender
+{
+    self.torrents = [MSCTorrent query: self.torrentQuery.stringValue];
+}
+
+- (MSCAnime*) anime
+{
+    return self.animesController.selectedObjects[0];
+}
+
+- (MSCTorrent*) torrent
+{
+    return self.torrentsController.selectedObjects[0];
+}
+
+- (BOOL) writeToPasteBoard:(NSString *)stringToWrite
+{
+    NSPasteboard *pasteBoard = [NSPasteboard generalPasteboard];
+    [pasteBoard clearContents];
+    return [pasteBoard writeObjects:[NSArray arrayWithObject:stringToWrite]];
 }
 
 @end

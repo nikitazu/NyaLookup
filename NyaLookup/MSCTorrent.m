@@ -33,4 +33,22 @@
     return self;
 }
 
++ (NSArray*) query:(NSString*)terms
+{
+    NSString* url = [NSString stringWithFormat:@"http://localhost:3000/torrent/search?terms=%@",
+                     [MSCRest quote:terms],
+                     nil];
+    
+    //NSLog(@"query torrents: %@", url);
+    
+    NSArray* json = [NSArray jsonArrayWithUrl:url];
+    NSMutableArray* items = [[NSMutableArray alloc] init];
+    
+    for (id j in json) {
+        [items addObject: [[MSCTorrent alloc] initWithDictionary:j]];
+    }
+    
+    return items;
+}
+
 @end

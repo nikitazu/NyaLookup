@@ -12,6 +12,7 @@
 @interface MSCAppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet NSTextField *torrentQuery;
 
 @property (retain) NSArray* animes;
 @property (assign) IBOutlet NSArrayController* animesController;
@@ -19,7 +20,9 @@
 @property (retain) NSArray* torrents;
 @property (assign) IBOutlet NSArrayController* torrentsController;
 
-- (IBAction) searchTorrents:(id) sender;
+- (IBAction) searchTorrents:(id)sender;
+- (IBAction) getTorrent:(id)sender;
+- (IBAction) queryTorrent:(id)sender;
 
 
 @end

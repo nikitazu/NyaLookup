@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSArray+JSON.h"
 
 @interface MSCTorrent : NSObject
 
@@ -19,5 +20,7 @@
 @property NSString* description;
 
 - (id) initWithDictionary:(NSDictionary*)data;
+
++ (NSArray*) query:(NSString*)terms;
 
 @end

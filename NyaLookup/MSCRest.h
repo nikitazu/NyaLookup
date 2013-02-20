@@ -11,5 +11,6 @@
 @interface MSCRest : NSObject
 
 + (NSData*) curl: (NSString*)url;
++ (NSString*) quote: (NSString*)term;
 
 @end
