@@ -1,5 +1,5 @@
 //
-//  NSString+Rest.h
+//  NSData+JSON.h
 //  NyaLookup
 //
 //  Created by Никита Б. Зуев on 20.02.13.
@@ -7,12 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NSData+JSON.h"
 
-@interface NSString (Rest)
+@interface NSData (JSON)
 
-- (NSData*) curl;
-- (id) curlJson;
-- (NSString*) quote;
+- (id) json;
 
 @end

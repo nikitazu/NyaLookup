@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "NSArray+JSON.h"
 #import "NSString+Rest.h"
+#import "NSData+JSON.h"
 #import "MSCPreferences.h"
 #import "MSCAnime.h"
 #import "MSCTorrent.h"

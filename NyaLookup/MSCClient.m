@@ -23,9 +23,9 @@
 
 - (NSArray*) searchTorrents:(NSString*)terms
 {
-    NSString* query = [@"terms=" stringByAppendingString: terms];
-    NSString*   url = [self get:@"torrent/search" withData: query];
-    NSArray*   json = [NSArray jsonArrayWithUrl:url];
+    NSString*       query = [@"terms=" stringByAppendingString: terms];
+    NSString*         url = [self get:@"torrent/search" withData: query];
+    NSArray*         json = [url curlJson];
     NSMutableArray* items = [[NSMutableArray alloc] init];
     
     for (id j in json) {
@@ -43,7 +43,7 @@
 - (NSArray*) indexAnime
 {
     NSString*         url = [self get: @"anime/index.json"];
-    NSArray*         json = [NSArray jsonArrayWithUrl: url];
+    NSArray*         json = [url curlJson];
     NSMutableArray* items = [[NSMutableArray alloc] init];
     
     for (id j in json) {

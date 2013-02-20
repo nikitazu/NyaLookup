@@ -17,6 +17,11 @@
     return data;
 }
 
+- (id) curlJson
+{
+    return [[self curl] json];
+}
+
 - (NSString*) quote
 {
     return [self stringByReplacingOccurrencesOfString:@" " withString:@"+"];

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F76F9EE416D5168900548C4D /* MSCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F76F9EE316D5168900548C4D /* MSCClient.m */; };
+		F76F9EE716D5324500548C4D /* NSData+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = F76F9EE616D5324500548C4D /* NSData+JSON.m */; };
 		F7B4A85816D29ED9009F999D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7B4A85716D29ED9009F999D /* Cocoa.framework */; };
 		F7B4A86216D29ED9009F999D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7B4A86016D29ED9009F999D /* InfoPlist.strings */; };
 		F7B4A86416D29ED9009F999D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B4A86316D29ED9009F999D /* main.m */; };
@@ -39,6 +40,8 @@
 /* Begin PBXFileReference section */
 		F76F9EE216D5168800548C4D /* MSCClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCClient.h; sourceTree = "<group>"; };
 		F76F9EE316D5168900548C4D /* MSCClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCClient.m; sourceTree = "<group>"; };
+		F76F9EE516D5324500548C4D /* NSData+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+JSON.h"; sourceTree = "<group>"; };
+		F76F9EE616D5324500548C4D /* NSData+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+JSON.m"; sourceTree = "<group>"; };
 		F7B4A85416D29ED9009F999D /* NyaLookup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NyaLookup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7B4A85716D29ED9009F999D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		F7B4A85A16D29ED9009F999D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -206,6 +209,8 @@
 				F7E0199716D4F245002CAD08 /* NSString+Rest.m */,
 				F76F9EE216D5168800548C4D /* MSCClient.h */,
 				F76F9EE316D5168900548C4D /* MSCClient.m */,
+				F76F9EE516D5324500548C4D /* NSData+JSON.h */,
+				F76F9EE616D5324500548C4D /* NSData+JSON.m */,
 			);
 			name = WEB;
 			sourceTree = "<group>";
@@ -328,6 +333,7 @@
 				F7FA59FC16D401C0002A4347 /* NSArray+JSON.m in Sources */,
 				F7E0199816D4F245002CAD08 /* NSString+Rest.m in Sources */,
 				F76F9EE416D5168900548C4D /* MSCClient.m in Sources */,
+				F76F9EE716D5324500548C4D /* NSData+JSON.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
