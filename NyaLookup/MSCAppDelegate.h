@@ -9,10 +9,12 @@
 #import <Cocoa/Cocoa.h>
 #import "MSCAnime.h"
 #import "MSCClient.h"
+#import "MSCRuby.h"
 
 @interface MSCAppDelegate : NSObject <NSApplicationDelegate>
 {
-    MSCClient* _client;
+    //MSCClient* _client;
+    MSCRuby* _ruby;
 }
 
 @property (assign) IBOutlet NSWindow *window;

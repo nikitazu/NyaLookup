@@ -24,6 +24,7 @@
 		F7B4A89216D2A088009F999D /* MSCAnime.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B4A89116D2A088009F999D /* MSCAnime.m */; };
 		F7B4A89516D2A20C009F999D /* MSCPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B4A89416D2A20C009F999D /* MSCPreferences.m */; };
 		F7B4A89716D2ACFE009F999D /* NyaLookup1.iconset in Resources */ = {isa = PBXBuildFile; fileRef = F7B4A89616D2ACFE009F999D /* NyaLookup1.iconset */; };
+		F7D35A3F16E1D94200872FE2 /* MSCRuby.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D35A3E16E1D94200872FE2 /* MSCRuby.m */; };
 		F7E0199816D4F245002CAD08 /* NSString+Rest.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E0199716D4F245002CAD08 /* NSString+Rest.m */; };
 		F7FA59FC16D401C0002A4347 /* NSArray+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = F7FA59FB16D401C0002A4347 /* NSArray+JSON.m */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,8 @@
 		F7B4A89316D2A20C009F999D /* MSCPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCPreferences.h; sourceTree = "<group>"; };
 		F7B4A89416D2A20C009F999D /* MSCPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCPreferences.m; sourceTree = "<group>"; };
 		F7B4A89616D2ACFE009F999D /* NyaLookup1.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = NyaLookup1.iconset; sourceTree = "<group>"; };
+		F7D35A3D16E1D94200872FE2 /* MSCRuby.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCRuby.h; sourceTree = "<group>"; };
+		F7D35A3E16E1D94200872FE2 /* MSCRuby.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCRuby.m; sourceTree = "<group>"; };
 		F7E0199616D4F245002CAD08 /* NSString+Rest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Rest.h"; sourceTree = "<group>"; };
 		F7E0199716D4F245002CAD08 /* NSString+Rest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Rest.m"; sourceTree = "<group>"; };
 		F7FA59FA16D401C0002A4347 /* NSArray+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+JSON.h"; sourceTree = "<group>"; };
@@ -216,6 +219,8 @@
 				F76F9EE316D5168900548C4D /* MSCClient.m */,
 				F76F9EE516D5324500548C4D /* NSData+JSON.h */,
 				F76F9EE616D5324500548C4D /* NSData+JSON.m */,
+				F7D35A3D16E1D94200872FE2 /* MSCRuby.h */,
+				F7D35A3E16E1D94200872FE2 /* MSCRuby.m */,
 			);
 			name = WEB;
 			sourceTree = "<group>";
@@ -340,6 +345,7 @@
 				F76F9EE416D5168900548C4D /* MSCClient.m in Sources */,
 				F76F9EE716D5324500548C4D /* NSData+JSON.m in Sources */,
 				F76F9EEA16D536CD00548C4D /* NSArray+FP.m in Sources */,
+				F7D35A3F16E1D94200872FE2 /* MSCRuby.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

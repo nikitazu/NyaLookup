@@ -22,7 +22,16 @@ NSString *const MSC_PREFERENCES_PATH =
     if (self) {
         NSMutableDictionary* defaults = [NSMutableDictionary new];
         
-        [defaults setObject:@"localhost:3000" forKey:@"server"];
+        [defaults setObject:@"localhost:3000"
+                     forKey:@"server"];
+        [defaults setObject:@"/Users/nikitazu/.rvm/bin/ruby"
+                     forKey:@"ruby"];
+        [defaults setObject:@"/Users/nikitazu/prj/oss/nyafind/nyafind.rb"
+                     forKey:@"nyafind"];
+        [defaults setObject:@"/Users/nikitazu/prj/oss/nyafind/nyasearch.rb"
+                     forKey:@"nyasearch"];
+        [defaults setObject:@"/Users/nikitazu/prj/oss/nyafind/nyalist.rb"
+                     forKey:@"nyalist"];
         
         _prefs = [NSUserDefaults standardUserDefaults];
         [_prefs registerDefaults:defaults];
@@ -36,8 +45,33 @@ NSString *const MSC_PREFERENCES_PATH =
     return [_prefs valueForKey:@"server"];
 }
 
+- (NSString*) ruby {
+    return [_prefs valueForKey:@"ruby"];
+}
+
+- (NSString*) nyafind {
+    return [_prefs valueForKey:@"nyafind"];
+}
+
+- (NSString*) nyasearch {
+    return [_prefs valueForKey:@"nyasearch"];
+}
+
+- (NSString*) nyalist {
+    return [_prefs valueForKey:@"nyalist"];
+}
+
 - (void) reset {
-    [_prefs setObject:@"localhost:3000" forKey:@"server"];
+    [_prefs setObject:@"localhost:3000"
+               forKey:@"server"];
+    [_prefs setObject:@"/Users/nikitazu/.rvm/bin/ruby"
+               forKey:@"ruby"];
+    [_prefs setObject:@"/Users/nikitazu/prj/oss/nyafind/nyafind.rb"
+               forKey:@"nyafind"];
+    [_prefs setObject:@"/Users/nikitazu/prj/oss/nyafind/nyasearch.rb"
+               forKey:@"nyasearch"];
+    [_prefs setObject:@"/Users/nikitazu/prj/oss/nyafind/nyalist.rb"
+               forKey:@"nyalist"];
 }
 
 @end

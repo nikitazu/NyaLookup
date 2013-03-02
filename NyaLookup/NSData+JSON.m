@@ -13,7 +13,6 @@
 - (id) json
 {
     __autoreleasing NSError* error = nil;
-    
     id result = [NSJSONSerialization JSONObjectWithData:self
                                                 options:kNilOptions error:&error];
     if (error != nil) { return nil; }

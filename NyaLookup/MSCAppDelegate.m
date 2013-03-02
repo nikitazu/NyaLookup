@@ -19,13 +19,14 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     self.preferences = [MSCPreferences preferences];
-    _client          = [MSCClient client: self.preferences];
-    self.animes      = [_client indexAnime];
+    _ruby            = [MSCRuby client:self.preferences];
+    //_client          = [MSCClient client: self.preferences];
+    self.animes      = [_ruby indexAnime];
 }
 
 - (IBAction) searchTorrents:(id)sender
 {
-    self.torrents = [_client searchTorrentsForAnime: [self anime]];
+    self.torrents = [_ruby searchTorrentsForAnime:[self anime]];
 }
 
 - (IBAction) getTorrent:(id)sender
@@ -35,7 +36,7 @@
 
 - (IBAction) queryTorrent:(id)sender
 {
-    self.torrents = [_client searchTorrents: self.torrentQuery.stringValue];
+    self.torrents = [_ruby searchTorrents: self.torrentQuery.stringValue];
 }
 
 - (MSCAnime*) anime
