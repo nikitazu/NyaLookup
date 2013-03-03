@@ -33,9 +33,21 @@
 }
 
 - (void) updateStatusWithTimer: (NSTimer*)timer {
+    NSInteger hits = 0;
+    
     for (MSCAnime* anime in self.animes) {
         NSArray* aTorrents = [_ruby searchTorrentsForAnime:anime];
         [anime updateStatus: aTorrents];
+        
+        if (aTorrents.count > 0) { hits += 1; }
+    }
+    
+    NSDockTile *tile = [[NSApplication sharedApplication] dockTile];
+    
+    if (hits > 0) {
+        [tile setBadgeLabel:[NSString stringWithFormat:@"%ld", hits]];
+    } else {
+        [tile setBadgeLabel:nil];
     }
 }
 
