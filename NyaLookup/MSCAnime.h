@@ -17,10 +17,11 @@
 @property NSInteger current;
 @property NSInteger next;
 @property NSInteger max;
+@property NSString* status;
+@property NSColor* statusColor;
 
 - (NSString*) progress;
-- (NSString*) queryTorrents;
-
 - (id) initWithDictionary:(NSDictionary*)data;
+- (void) updateStatus: (NSArray*)torrents;
 
 @end

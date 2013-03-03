@@ -13,8 +13,9 @@
 
 @interface MSCAppDelegate : NSObject <NSApplicationDelegate>
 {
-    MSCRuby* _ruby;
+    MSCRuby*               _ruby;
     MSCTransmissionClient* _transmission;
+    NSTimer*               _statusTimer;
 }
 
 @property (assign) IBOutlet NSWindow *window;

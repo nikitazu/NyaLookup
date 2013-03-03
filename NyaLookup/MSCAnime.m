@@ -17,6 +17,8 @@
 @synthesize current;
 @synthesize next;
 @synthesize max;
+@synthesize status;
+@synthesize statusColor;
 
 - (NSString*) progress
 {
@@ -27,24 +29,33 @@
     }
 }
 
-- (NSString*) queryTorrents
-{
-    return [NSString stringWithFormat: @"%@+%ld", self.title, self.next];
-}
-
 - (id) initWithDictionary:(NSDictionary*)data
 {
     if (self)
     {
-        self.title   = [data objectForKey:@"title"];
-        self.score   = [[data objectForKey:@"score"] integerValue];
-        self.type    = [data objectForKey:@"type"];
-        self.airing  = [[data objectForKey:@"airing"] integerValue] == 1;
-        self.current = [[data objectForKey:@"current"] integerValue];
-        self.next    = self.current + 1;
-        self.max     = [[data objectForKey:@"max"] integerValue];
+        self.title       = [data objectForKey:@"title"];
+        self.score       = [[data objectForKey:@"score"] integerValue];
+        self.type        = [data objectForKey:@"type"];
+        self.airing      = [[data objectForKey:@"airing"] integerValue] == 1;
+        self.current     = [[data objectForKey:@"current"] integerValue];
+        self.next        = self.current + 1;
+        self.max         = [[data objectForKey:@"max"] integerValue];
+        self.status      = @"unchecked";
+        self.statusColor = [NSColor lightGrayColor];
     }
     return self;
+}
+
+- (void) updateStatus: (NSArray*)torrents
+{
+    if (torrents.count > 0) {
+        self.statusColor = [NSColor blueColor];
+        self.status = [NSString stringWithFormat:
+                       @"torrent(s) found: %ld", torrents.count];
+    } else {
+        self.statusColor = [NSColor lightGrayColor];
+        self.status = @"no torrents found";
+    }
 }
 
 @end

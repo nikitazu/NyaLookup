@@ -22,6 +22,21 @@
     _ruby            = [MSCRuby client:self.preferences];
     _transmission    = [MSCTransmissionClient client:self.preferences];
     self.animes      = [_ruby indexAnime];
+    
+    
+    [self updateStatusWithTimer: nil];
+    _statusTimer = [NSTimer scheduledTimerWithTimeInterval:60
+                                                    target:self
+                                                  selector:@selector(updateStatusWithTimer:)
+                                                  userInfo:nil
+                                                   repeats:YES];
+}
+
+- (void) updateStatusWithTimer: (NSTimer*)timer {
+    for (MSCAnime* anime in self.animes) {
+        NSArray* aTorrents = [_ruby searchTorrentsForAnime:anime];
+        [anime updateStatus: aTorrents];
+    }
 }
 
 - (IBAction) searchTorrents:(id)sender
@@ -34,19 +49,6 @@
     [self writeToPasteBoard:[[self torrent] link]];
     [_transmission torrentAdd:[[self torrent] link]];
 }
-
-- (NSString *)urlEncodeValue:(NSString *)str
-{
-    NSString *result = (NSString *)CFBridgingRelease(
-        CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
-        (CFStringRef)str,
-        NULL,
-        CFSTR("?=&+"),
-        kCFStringEncodingUTF8));
-    
-    return result;
-}
-
 
 - (IBAction) queryTorrent:(id)sender
 {
