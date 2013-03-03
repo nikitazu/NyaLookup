@@ -21,13 +21,12 @@ FOUNDATION_EXPORT NSString *const MSC_PREFERENCES_PATH;
 /// Nice static @constructor
 + (id)preferences;
 
-/// @Server to access anime usage data on the web
-- (NSString*) server;
-
 - (NSString*) ruby;
 - (NSString*) nyafind;
 - (NSString*) nyasearch;
 - (NSString*) nyalist;
+
+- (NSString*) transmissionServer;
 
 /// @Reset all settings to their default values
 - (void) reset;

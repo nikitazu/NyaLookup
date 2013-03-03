@@ -17,7 +17,8 @@
     __autoreleasing NSError* error = nil;
     
     id result = [NSJSONSerialization JSONObjectWithData:data
-                                                options:kNilOptions error:&error];
+                                                options:kNilOptions
+                                                  error:&error];
     if (error != nil) { return nil; }
     return result;
 }
@@ -26,7 +27,8 @@
 {
     NSError* error = nil;
     id result = [NSJSONSerialization dataWithJSONObject:self
-                                                options:kNilOptions error:&error];
+                                                options:kNilOptions
+                                                  error:&error];
     if (error != nil) return nil;
     return result;    
 }

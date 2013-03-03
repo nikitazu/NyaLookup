@@ -20,7 +20,7 @@
 {
     self.preferences = [MSCPreferences preferences];
     _ruby            = [MSCRuby client:self.preferences];
-    //_client          = [MSCClient client: self.preferences];
+    _transmission    = [MSCTransmissionClient client:self.preferences];
     self.animes      = [_ruby indexAnime];
 }
 
@@ -32,7 +32,21 @@
 - (IBAction) getTorrent:(id)sender
 {
     [self writeToPasteBoard:[[self torrent] link]];
+    [_transmission torrentAdd:[[self torrent] link]];
 }
+
+- (NSString *)urlEncodeValue:(NSString *)str
+{
+    NSString *result = (NSString *)CFBridgingRelease(
+        CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
+        (CFStringRef)str,
+        NULL,
+        CFSTR("?=&+"),
+        kCFStringEncodingUTF8));
+    
+    return result;
+}
+
 
 - (IBAction) queryTorrent:(id)sender
 {

@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F76F9EE416D5168900548C4D /* MSCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F76F9EE316D5168900548C4D /* MSCClient.m */; };
 		F76F9EE716D5324500548C4D /* NSData+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = F76F9EE616D5324500548C4D /* NSData+JSON.m */; };
 		F76F9EEA16D536CD00548C4D /* NSArray+FP.m in Sources */ = {isa = PBXBuildFile; fileRef = F76F9EE916D536CD00548C4D /* NSArray+FP.m */; };
+		F78B009916E330ED0071CA4A /* NSDictionary+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = F78B009816E330ED0071CA4A /* NSDictionary+JSON.m */; };
+		F78B009C16E334A70071CA4A /* MSCTransmissionClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F78B009B16E334A70071CA4A /* MSCTransmissionClient.m */; };
 		F7B4A85816D29ED9009F999D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7B4A85716D29ED9009F999D /* Cocoa.framework */; };
 		F7B4A86216D29ED9009F999D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7B4A86016D29ED9009F999D /* InfoPlist.strings */; };
 		F7B4A86416D29ED9009F999D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B4A86316D29ED9009F999D /* main.m */; };
@@ -40,12 +41,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F76F9EE216D5168800548C4D /* MSCClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCClient.h; sourceTree = "<group>"; };
-		F76F9EE316D5168900548C4D /* MSCClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCClient.m; sourceTree = "<group>"; };
 		F76F9EE516D5324500548C4D /* NSData+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+JSON.h"; sourceTree = "<group>"; };
 		F76F9EE616D5324500548C4D /* NSData+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+JSON.m"; sourceTree = "<group>"; };
 		F76F9EE816D536CD00548C4D /* NSArray+FP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+FP.h"; sourceTree = "<group>"; };
 		F76F9EE916D536CD00548C4D /* NSArray+FP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+FP.m"; sourceTree = "<group>"; };
+		F78B009716E330ED0071CA4A /* NSDictionary+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JSON.h"; sourceTree = "<group>"; };
+		F78B009816E330ED0071CA4A /* NSDictionary+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JSON.m"; sourceTree = "<group>"; };
+		F78B009A16E334A70071CA4A /* MSCTransmissionClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCTransmissionClient.h; sourceTree = "<group>"; };
+		F78B009B16E334A70071CA4A /* MSCTransmissionClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCTransmissionClient.m; sourceTree = "<group>"; };
 		F7B4A85416D29ED9009F999D /* NyaLookup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NyaLookup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7B4A85716D29ED9009F999D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		F7B4A85A16D29ED9009F999D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -215,12 +218,14 @@
 				F7FA59FB16D401C0002A4347 /* NSArray+JSON.m */,
 				F7E0199616D4F245002CAD08 /* NSString+Rest.h */,
 				F7E0199716D4F245002CAD08 /* NSString+Rest.m */,
-				F76F9EE216D5168800548C4D /* MSCClient.h */,
-				F76F9EE316D5168900548C4D /* MSCClient.m */,
 				F76F9EE516D5324500548C4D /* NSData+JSON.h */,
 				F76F9EE616D5324500548C4D /* NSData+JSON.m */,
 				F7D35A3D16E1D94200872FE2 /* MSCRuby.h */,
 				F7D35A3E16E1D94200872FE2 /* MSCRuby.m */,
+				F78B009716E330ED0071CA4A /* NSDictionary+JSON.h */,
+				F78B009816E330ED0071CA4A /* NSDictionary+JSON.m */,
+				F78B009A16E334A70071CA4A /* MSCTransmissionClient.h */,
+				F78B009B16E334A70071CA4A /* MSCTransmissionClient.m */,
 			);
 			name = WEB;
 			sourceTree = "<group>";
@@ -342,10 +347,11 @@
 				F7B4A89516D2A20C009F999D /* MSCPreferences.m in Sources */,
 				F7FA59FC16D401C0002A4347 /* NSArray+JSON.m in Sources */,
 				F7E0199816D4F245002CAD08 /* NSString+Rest.m in Sources */,
-				F76F9EE416D5168900548C4D /* MSCClient.m in Sources */,
 				F76F9EE716D5324500548C4D /* NSData+JSON.m in Sources */,
 				F76F9EEA16D536CD00548C4D /* NSArray+FP.m in Sources */,
 				F7D35A3F16E1D94200872FE2 /* MSCRuby.m in Sources */,
+				F78B009916E330ED0071CA4A /* NSDictionary+JSON.m in Sources */,
+				F78B009C16E334A70071CA4A /* MSCTransmissionClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

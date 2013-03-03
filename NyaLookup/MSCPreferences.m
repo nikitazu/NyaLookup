@@ -21,9 +21,7 @@ NSString *const MSC_PREFERENCES_PATH =
     self = [super init];
     if (self) {
         NSMutableDictionary* defaults = [NSMutableDictionary new];
-        
-        [defaults setObject:@"localhost:3000"
-                     forKey:@"server"];
+
         [defaults setObject:@"/Users/nikitazu/.rvm/bin/ruby"
                      forKey:@"ruby"];
         [defaults setObject:@"/Users/nikitazu/prj/oss/nyafind/nyafind.rb"
@@ -32,17 +30,13 @@ NSString *const MSC_PREFERENCES_PATH =
                      forKey:@"nyasearch"];
         [defaults setObject:@"/Users/nikitazu/prj/oss/nyafind/nyalist.rb"
                      forKey:@"nyalist"];
+        [defaults setObject:@"http://zeus:9091/transmission/rpc"
+                     forKey:@"transmissionServer"];
         
         _prefs = [NSUserDefaults standardUserDefaults];
         [_prefs registerDefaults:defaults];
     }
     return self;
-}
-
-
-// Server to access anime usage data on the web
-- (NSString*) server {
-    return [_prefs valueForKey:@"server"];
 }
 
 - (NSString*) ruby {
@@ -61,9 +55,11 @@ NSString *const MSC_PREFERENCES_PATH =
     return [_prefs valueForKey:@"nyalist"];
 }
 
+- (NSString*) transmissionServer {
+    return [_prefs valueForKey:@"transmissionServer"];
+}
+
 - (void) reset {
-    [_prefs setObject:@"localhost:3000"
-               forKey:@"server"];
     [_prefs setObject:@"/Users/nikitazu/.rvm/bin/ruby"
                forKey:@"ruby"];
     [_prefs setObject:@"/Users/nikitazu/prj/oss/nyafind/nyafind.rb"
@@ -72,6 +68,8 @@ NSString *const MSC_PREFERENCES_PATH =
                forKey:@"nyasearch"];
     [_prefs setObject:@"/Users/nikitazu/prj/oss/nyafind/nyalist.rb"
                forKey:@"nyalist"];
+    [_prefs setObject:@"http://zeus:9091/transmission/rpc"
+               forKey:@"transmissionServer"];
 }
 
 @end

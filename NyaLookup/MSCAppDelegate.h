@@ -8,13 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 #import "MSCAnime.h"
-#import "MSCClient.h"
 #import "MSCRuby.h"
+#import "MSCTransmissionClient.h"
 
 @interface MSCAppDelegate : NSObject <NSApplicationDelegate>
 {
-    //MSCClient* _client;
     MSCRuby* _ruby;
+    MSCTransmissionClient* _transmission;
 }
 
 @property (assign) IBOutlet NSWindow *window;
