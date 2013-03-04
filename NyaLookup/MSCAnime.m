@@ -17,8 +17,10 @@
 @synthesize current;
 @synthesize next;
 @synthesize max;
+@synthesize link;
 @synthesize status;
 @synthesize statusColor;
+@synthesize imageUrl;
 
 - (NSString*) progress
 {
@@ -40,8 +42,10 @@
         self.current     = [[data objectForKey:@"current"] integerValue];
         self.next        = self.current + 1;
         self.max         = [[data objectForKey:@"max"] integerValue];
+        self.link        = [data objectForKey:@"link"];
         self.status      = @"unchecked";
         self.statusColor = [NSColor lightGrayColor];
+        self.imageUrl    = nil;
     }
     return self;
 }

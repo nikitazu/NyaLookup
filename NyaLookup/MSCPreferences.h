@@ -8,9 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-/// Path to save preferences of this application
-FOUNDATION_EXPORT NSString *const MSC_PREFERENCES_PATH;
-
 /// Preferences of client software
 ///
 @interface MSCPreferences : NSObject
@@ -25,8 +22,12 @@ FOUNDATION_EXPORT NSString *const MSC_PREFERENCES_PATH;
 - (NSString*) nyafind;
 - (NSString*) nyasearch;
 - (NSString*) nyalist;
+- (NSString*) nyaimage;
 
 - (NSString*) transmissionServer;
+
+- (NSString*) retreiveImageForLink:(NSString*)link;
+- (void) cacheImage:(NSString*)imageUrl forLink:(NSString*)link;
 
 /// @Reset all settings to their default values
 - (void) reset;

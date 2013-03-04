@@ -40,6 +40,8 @@
 
 - (NSArray*) searchTorrentsForAnime:(MSCAnime*)anime
 {
+    NSLog(@"ruby searchTorrentsForAnime: %@", anime.title);
+    
     NSMutableArray* args = [NSMutableArray arrayWithObject:self.preferences.nyasearch];
     for (id item in [anime.title componentsSeparatedByString:@" "]) {
         [args addObject:item];
@@ -59,6 +61,29 @@
     return [json map: ^(id j) {
         return [[MSCAnime alloc] initWithDictionary:j];
     }];
+}
+
+- (NSURL*) imageUrl: (MSCAnime*)anime
+{
+    NSLog(@"ruby imageUrl: %@", anime.link);
+    
+    NSString* cachedUrl = [self.preferences retreiveImageForLink:anime.link];
+    if (cachedUrl != nil) {
+        return [NSURL URLWithString:cachedUrl];
+    }
+    
+    NSData* data = [self run:@[self.preferences.nyaimage, anime.link]];
+    NSString* string = [[NSString alloc] initWithData:data
+                                             encoding:NSUTF8StringEncoding];
+    
+    NSString* trimmed = [string stringByTrimmingCharactersInSet:
+                         [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    NSLog(@"ruby imageUrl returns: %@", trimmed);
+    
+    [self.preferences cacheImage:trimmed forLink:anime.link];
+    
+    return [NSURL URLWithString:trimmed];
 }
 
 - (NSData*)run:(NSArray*)args

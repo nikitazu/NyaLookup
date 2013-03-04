@@ -17,8 +17,11 @@
 @property NSInteger current;
 @property NSInteger next;
 @property NSInteger max;
+@property NSString* link;
+
 @property NSString* status;
 @property NSColor* statusColor;
+@property NSURL* imageUrl;
 
 - (NSString*) progress;
 - (id) initWithDictionary:(NSDictionary*)data;

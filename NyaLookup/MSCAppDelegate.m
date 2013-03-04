@@ -16,6 +16,8 @@
 @synthesize torrents;
 @synthesize torrentsController;
 
+@synthesize currentAnime;
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     self.preferences = [MSCPreferences preferences];
@@ -29,6 +31,7 @@
         if (animeArray != nil) {
             dispatch_sync(dispatch_get_main_queue(), ^{
                 self.animes = animeArray;
+                self.currentAnime = [self anime];
                 [self testConnectionSuccess];
             });
         } else {
@@ -64,6 +67,7 @@
                                                   selector:@selector(updateStatusWithTimer:)
                                                   userInfo:nil
                                                    repeats:YES];
+    [self updateAnimeImagesInBackground];
 }
 
 - (void) testConnectionFail {
@@ -87,7 +91,6 @@
             if (aTorrents.count > 0) { hits += 1; }
         }
         
-        
         dispatch_sync(dispatch_get_main_queue(), ^{
             NSDockTile *tile = [[NSApplication sharedApplication] dockTile];
             
@@ -100,12 +103,28 @@
     });
 }
 
+- (void) updateAnimeImagesInBackground
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        for (MSCAnime* anime in self.animes) {
+            
+            if (anime.imageUrl == nil) {
+                NSURL* url = [_ruby imageUrl:anime];
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    anime.imageUrl = url;
+                });
+            }
+        }
+    });
+}
+
 - (IBAction) searchTorrents:(id)sender
 {
+    self.currentAnime = [self anime];
     [self progressStart];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSArray* torrentsArray = [_ruby searchTorrentsForAnime:[self anime]];
-        
+        NSArray* torrentsArray = [_ruby searchTorrentsForAnime:self.currentAnime];
         dispatch_sync(dispatch_get_main_queue(), ^{
             self.torrents = torrentsArray;
             [self progressStop];

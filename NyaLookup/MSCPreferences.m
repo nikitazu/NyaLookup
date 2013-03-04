@@ -8,9 +8,6 @@
 
 #import "MSCPreferences.h"
 
-NSString *const MSC_PREFERENCES_PATH =
-    @"~/Library/Preferences/ru.massoc.NyaLookup.plist";
-
 @implementation MSCPreferences
 
 + (id)preferences {
@@ -30,8 +27,12 @@ NSString *const MSC_PREFERENCES_PATH =
                      forKey:@"nyasearch"];
         [defaults setObject:@"/Users/nikitazu/prj/oss/nyafind/nyalist.rb"
                      forKey:@"nyalist"];
+        [defaults setObject:@"/Users/nikitazu/prj/oss/nyafind/nyaimage.rb"
+                     forKey:@"nyaimage"];
         [defaults setObject:@"http://zeus:9091/transmission/rpc"
                      forKey:@"transmissionServer"];
+        [defaults setObject:@{}
+                     forKey:@"imageUrlCache"];
         
         _prefs = [NSUserDefaults standardUserDefaults];
         [_prefs registerDefaults:defaults];
@@ -55,6 +56,10 @@ NSString *const MSC_PREFERENCES_PATH =
     return [_prefs valueForKey:@"nyalist"];
 }
 
+- (NSString*) nyaimage {
+    return [_prefs valueForKey:@"nyaimage"];
+}
+
 - (NSString*) transmissionServer {
     return [_prefs valueForKey:@"transmissionServer"];
 }
@@ -68,8 +73,28 @@ NSString *const MSC_PREFERENCES_PATH =
                forKey:@"nyasearch"];
     [_prefs setObject:@"/Users/nikitazu/prj/oss/nyafind/nyalist.rb"
                forKey:@"nyalist"];
+    [_prefs setObject:@"/Users/nikitazu/prj/oss/nyafind/nyaimage.rb"
+               forKey:@"nyaimage"];
     [_prefs setObject:@"http://zeus:9091/transmission/rpc"
                forKey:@"transmissionServer"];
+    [_prefs setObject:@{}
+               forKey:@"imageUrlCache"];
+}
+
+- (NSString*) retreiveImageForLink:(NSString*)link
+{
+    NSLog(@"preferences retreiveImageForLink: %@", link);
+    return [[_prefs objectForKey:@"imageUrlCache"] objectForKey:link];
+}
+
+- (void) cacheImage:(NSString*)imageUrl forLink:(NSString*)link
+{
+    NSLog(@"preferences cacheImage: %@ forLink: %@", imageUrl, link);
+
+    id cache = [_prefs valueForKey:@"imageUrlCache"];
+    NSMutableDictionary* kv = [NSMutableDictionary dictionaryWithDictionary:cache];
+    [kv setObject:imageUrl forKey:link];
+    [_prefs setObject:kv forKey:@"imageUrlCache"];
 }
 
 @end

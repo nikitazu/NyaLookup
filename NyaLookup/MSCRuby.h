@@ -21,5 +21,6 @@
 - (NSArray*) searchTorrents:(NSString*)terms;
 - (NSArray*) searchTorrentsForAnime:(MSCAnime*)anime;
 - (NSArray*) indexAnime;
+- (NSURL*) imageUrl: (MSCAnime*)anime;
 
 @end
