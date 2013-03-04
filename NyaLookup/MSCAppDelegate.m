@@ -21,34 +21,83 @@
     self.preferences = [MSCPreferences preferences];
     _ruby            = [MSCRuby client:self.preferences];
     _transmission    = [MSCTransmissionClient client:self.preferences];
-    self.animes      = [_ruby indexAnime];
     
-    
+    [self progressStart];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSArray* animeArray = [_ruby indexAnime];
+        
+        if (animeArray != nil) {
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                self.animes = animeArray;
+                [self testConnectionSuccess];
+            });
+        } else {
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [self testConnectionFail];
+            });
+        }
+    });
+}
+
+- (void) progressStart {
+    [_progress setHidden:NO];
+    [_progress startAnimation:self];
+}
+
+- (void) progressStop {
+    [_progress stopAnimation:self];
+    [_progress setHidden:YES];
+}
+
+
+- (BOOL) testConnectionDo {
+    [_ruby indexAnime];
+    return YES;
+}
+
+- (void) testConnectionSuccess {
+    NSLog(@"connection ok");
     [self updateStatusWithTimer: nil];
-    _statusTimer = [NSTimer scheduledTimerWithTimeInterval:60
+    [self progressStop];
+    _statusTimer = [NSTimer scheduledTimerWithTimeInterval:60*5
                                                     target:self
                                                   selector:@selector(updateStatusWithTimer:)
                                                   userInfo:nil
                                                    repeats:YES];
 }
 
+- (void) testConnectionFail {
+    NSLog(@"no connection");
+    [self progressStop];
+}
+
+
 - (void) updateStatusWithTimer: (NSTimer*)timer {
-    NSInteger hits = 0;
-    
-    for (MSCAnime* anime in self.animes) {
-        NSArray* aTorrents = [_ruby searchTorrentsForAnime:anime];
-        [anime updateStatus: aTorrents];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
-        if (aTorrents.count > 0) { hits += 1; }
-    }
-    
-    NSDockTile *tile = [[NSApplication sharedApplication] dockTile];
-    
-    if (hits > 0) {
-        [tile setBadgeLabel:[NSString stringWithFormat:@"%ld", hits]];
-    } else {
-        [tile setBadgeLabel:nil];
-    }
+        NSInteger hits = 0;
+        
+        for (MSCAnime* anime in self.animes) {
+            NSArray* aTorrents = [_ruby searchTorrentsForAnime:anime];
+            
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [anime updateStatus: aTorrents];
+            });
+            
+            if (aTorrents.count > 0) { hits += 1; }
+        }
+        
+        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            NSDockTile *tile = [[NSApplication sharedApplication] dockTile];
+            
+            if (hits > 0) {
+                [tile setBadgeLabel:[NSString stringWithFormat:@"%ld", hits]];
+            } else {
+                [tile setBadgeLabel:nil];
+            }
+        });
+    });
 }
 
 - (IBAction) searchTorrents:(id)sender

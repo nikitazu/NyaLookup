@@ -16,6 +16,8 @@
     MSCRuby*               _ruby;
     MSCTransmissionClient* _transmission;
     NSTimer*               _statusTimer;
+    
+    IBOutlet NSProgressIndicator* _progress;
 }
 
 @property (assign) IBOutlet NSWindow *window;
