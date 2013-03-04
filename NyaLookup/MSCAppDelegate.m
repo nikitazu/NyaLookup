@@ -79,7 +79,7 @@
 - (void) updateStatusWithTimer: (NSTimer*)timer {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
-        NSInteger hits = 0;
+        NSUInteger hits = 0;
         
         for (MSCAnime* anime in self.animes) {
             NSArray* aTorrents = [_ruby searchTorrentsForAnime:anime];
@@ -88,19 +88,29 @@
                 [anime updateStatus: aTorrents];
             });
             
-            if (aTorrents.count > 0) { hits += 1; }
+            if (aTorrents.count > 0)
+            {
+                hits += 1;
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [self notifyDockWithHits:hits];
+                });
+            }
         }
         
         dispatch_sync(dispatch_get_main_queue(), ^{
-            NSDockTile *tile = [[NSApplication sharedApplication] dockTile];
-            
-            if (hits > 0) {
-                [tile setBadgeLabel:[NSString stringWithFormat:@"%ld", hits]];
-            } else {
-                [tile setBadgeLabel:nil];
-            }
+            [self notifyDockWithHits:hits];
         });
     });
+}
+
+- (void) notifyDockWithHits:(NSUInteger)hits
+{
+    NSDockTile *tile = [[NSApplication sharedApplication] dockTile];
+    if (hits > 0) {
+        [tile setBadgeLabel:[NSString stringWithFormat:@"%ld", hits]];
+    } else {
+        [tile setBadgeLabel:nil];
+    }
 }
 
 - (void) updateAnimeImagesInBackground
