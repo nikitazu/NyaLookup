@@ -102,7 +102,15 @@
 
 - (IBAction) searchTorrents:(id)sender
 {
-    self.torrents = [_ruby searchTorrentsForAnime:[self anime]];
+    [self progressStart];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSArray* torrentsArray = [_ruby searchTorrentsForAnime:[self anime]];
+        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            self.torrents = torrentsArray;
+            [self progressStop];
+        });
+    });
 }
 
 - (IBAction) getTorrent:(id)sender
