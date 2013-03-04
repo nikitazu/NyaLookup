@@ -115,8 +115,15 @@
 
 - (IBAction) getTorrent:(id)sender
 {
+    [self progressStart];
     [self writeToPasteBoard:[[self torrent] link]];
-    [_transmission torrentAdd:[[self torrent] link]];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [_transmission torrentAdd:[[self torrent] link]];
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [self progressStop];
+        });
+    });
 }
 
 - (IBAction) queryTorrent:(id)sender

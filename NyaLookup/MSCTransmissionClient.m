@@ -38,9 +38,16 @@
 
 - (id) send: (NSDictionary*) data
 {
+    NSLog(@"transmission send");
     if (self.sessionID == nil) {
+        NSLog(@"session id is nil, need to get session header");
         NSURLRequest* request = [self request:@{ @"method": @"torrent-get" }];
         self.sessionID = [self getSessionID: request];
+    }
+    
+    if (self.sessionID == nil) {
+        NSLog(@"session id is still nil, unable send message");
+        return nil;
     }
     
     NSURLRequest* request = [self request:data];
@@ -81,7 +88,12 @@
     NSDictionary* respdic = [response allHeaderFields];
     NSString* sid = [respdic valueForKey:@"X-Transmission-Session-Id"];
     
-    NSLog(@"X-Transmission-Session-Id: %@", sid);
+    if (sid != nil) {
+        NSLog(@"X-Transmission-Session-Id: %@", sid);
+    } else {
+        NSLog(@"X-Transmission-Session-Id is nil, "
+              @"looks like transmission daemon is not available");
+    }
     return sid;
 }
 
