@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F76F9EE716D5324500548C4D /* NSData+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = F76F9EE616D5324500548C4D /* NSData+JSON.m */; };
 		F76F9EEA16D536CD00548C4D /* NSArray+FP.m in Sources */ = {isa = PBXBuildFile; fileRef = F76F9EE916D536CD00548C4D /* NSArray+FP.m */; };
+		F77DF9FB16E60AA900176598 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F77DF9FD16E60AA900176598 /* Localizable.strings */; };
 		F78B009916E330ED0071CA4A /* NSDictionary+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = F78B009816E330ED0071CA4A /* NSDictionary+JSON.m */; };
 		F78B009C16E334A70071CA4A /* MSCTransmissionClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F78B009B16E334A70071CA4A /* MSCTransmissionClient.m */; };
 		F7B4A85816D29ED9009F999D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7B4A85716D29ED9009F999D /* Cocoa.framework */; };
@@ -49,6 +50,8 @@
 		F76F9EE616D5324500548C4D /* NSData+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+JSON.m"; sourceTree = "<group>"; };
 		F76F9EE816D536CD00548C4D /* NSArray+FP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+FP.h"; sourceTree = "<group>"; };
 		F76F9EE916D536CD00548C4D /* NSArray+FP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+FP.m"; sourceTree = "<group>"; };
+		F77DF9FC16E60AA900176598 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F77DF9FE16E60AAF00176598 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F78B009716E330ED0071CA4A /* NSDictionary+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JSON.h"; sourceTree = "<group>"; };
 		F78B009816E330ED0071CA4A /* NSDictionary+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JSON.m"; sourceTree = "<group>"; };
 		F78B009A16E334A70071CA4A /* MSCTransmissionClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCTransmissionClient.h; sourceTree = "<group>"; };
@@ -174,6 +177,7 @@
 				F7B4A86316D29ED9009F999D /* main.m */,
 				F7B4A86516D29ED9009F999D /* NyaLookup-Prefix.pch */,
 				F7B4A86616D29ED9009F999D /* Credits.rtf */,
+				F77DF9FD16E60AA900176598 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -311,6 +315,7 @@
 				F7B4A86816D29ED9009F999D /* Credits.rtf in Resources */,
 				F7B4A86E16D29ED9009F999D /* MainMenu.xib in Resources */,
 				F7B4A89716D2ACFE009F999D /* NyaLookup1.iconset in Resources */,
+				F77DF9FB16E60AA900176598 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +384,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		F77DF9FD16E60AA900176598 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F77DF9FC16E60AA900176598 /* en */,
+				F77DF9FE16E60AAF00176598 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		F7B4A86016D29ED9009F999D /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

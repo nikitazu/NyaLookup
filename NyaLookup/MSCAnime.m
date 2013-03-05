@@ -43,7 +43,7 @@
         self.next        = self.current + 1;
         self.max         = [[data objectForKey:@"max"] integerValue];
         self.link        = [data objectForKey:@"link"];
-        self.status      = @"unchecked";
+        self.status      = NSLocalizedStringFromTable(@"Unchecked", nil, nil);
         self.statusColor = [NSColor lightGrayColor];
         self.imageUrl    = nil;
     }
@@ -52,13 +52,20 @@
 
 - (void) updateStatus: (NSArray*)torrents
 {
-    if (torrents.count > 0) {
+    if (torrents.count == 1)
+    {
+        self.statusColor = [NSColor blueColor];
+        self.status = NSLocalizedStringFromTable(@"OneTorrent", nil, nil);
+    }
+    else if (torrents.count > 1)
+    {
         self.statusColor = [NSColor blueColor];
         self.status = [NSString stringWithFormat:
-                       @"torrent(s) found: %ld", torrents.count];
+                       NSLocalizedStringFromTable(@"TorrentsFound", nil, nil),
+                       torrents.count];
     } else {
         self.statusColor = [NSColor lightGrayColor];
-        self.status = @"no torrents found";
+        self.status = NSLocalizedStringFromTable(@"NoTorrents", nil, nil);
     }
 }
 

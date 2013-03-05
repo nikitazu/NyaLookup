@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  NyaLookup
+
+  Created by Никита Б. Зуев on 05.03.13.
+  Copyright (c) 2013 Никита Б. Зуев. All rights reserved.
+*/
+
+"Unchecked" = "непроверено";
+
+"NoTorrents" = "раздач не найдено";
+
+"OneTorrent" = "найдена одна раздача";
+
+"TorrentsFound" = "раздач найдено: %ld";
