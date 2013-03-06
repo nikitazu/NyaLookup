@@ -43,7 +43,9 @@
     NSLog(@"ruby searchTorrentsForAnime: %@", anime.title);
     
     NSMutableArray* args = [NSMutableArray arrayWithObject:self.preferences.nyasearch];
-    for (id item in [anime.title componentsSeparatedByString:@" "]) {
+    NSString* animeTitle = [self removeCrazyCharacters:anime.title];
+    
+    for (id item in [animeTitle componentsSeparatedByString:@" "]) {
         [args addObject:item];
     }
     [args addObject:[NSString stringWithFormat:@"%ld", anime.next]];
@@ -67,12 +69,14 @@
 {
     NSLog(@"ruby imageUrl: %@", anime.link);
     
-    NSString* cachedUrl = [self.preferences retreiveImageForLink:anime.link];
+    NSString* animeLink = [self encodeCrazyCharacters: anime.link];
+    
+    NSString* cachedUrl = [self.preferences retreiveImageForLink:animeLink];
     if (cachedUrl != nil) {
         return [NSURL URLWithString:cachedUrl];
     }
     
-    NSData* data = [self run:@[self.preferences.nyaimage, anime.link]];
+    NSData* data = [self run:@[self.preferences.nyaimage, animeLink]];
     NSString* string = [[NSString alloc] initWithData:data
                                              encoding:NSUTF8StringEncoding];
     
@@ -81,7 +85,7 @@
     
     NSLog(@"ruby imageUrl returns: %@", trimmed);
     
-    [self.preferences cacheImage:trimmed forLink:anime.link];
+    [self.preferences cacheImage:trimmed forLink:animeLink];
     
     return [NSURL URLWithString:trimmed];
 }
@@ -101,6 +105,18 @@
     NSData* data = [[tout fileHandleForReading] readDataToEndOfFile];
     [task waitUntilExit];
     return data;
+}
+
+- (NSString*) encodeCrazyCharacters: (NSString*)string
+{
+    return [string stringByReplacingOccurrencesOfString:@"☆"
+                                             withString:@"%E2%98%86"];
+}
+
+- (NSString*) removeCrazyCharacters: (NSString*)string
+{
+    return [string stringByReplacingOccurrencesOfString:@"☆"
+                                             withString:@" "];
 }
 
 
