@@ -49,6 +49,7 @@
         [args addObject:item];
     }
     
+    // todo: write more generic algorithm (001/100, 010/100 etc..)
     if (anime.max > 9 && anime.next < 10) {
         [args addObject:[NSString stringWithFormat:@"0%ld", anime.next]];
     }
