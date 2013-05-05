@@ -48,7 +48,13 @@
     for (id item in [animeTitle componentsSeparatedByString:@" "]) {
         [args addObject:item];
     }
-    [args addObject:[NSString stringWithFormat:@"%ld", anime.next]];
+    
+    if (anime.max > 9 && anime.next < 10) {
+        [args addObject:[NSString stringWithFormat:@"0%ld", anime.next]];
+    }
+    else {
+        [args addObject:[NSString stringWithFormat:@"%ld", anime.next]];
+    }
     
     NSArray* json = [[self run:args] json];
     
