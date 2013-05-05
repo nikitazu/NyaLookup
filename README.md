@@ -14,18 +14,16 @@ Features
 Requirements
 ============
 
-MacOS X Lion
-Ruby
-Nokogiri (ruby gem)
+* MacOS X Lion
+* Ruby
+* Nokogiri (ruby gem)
 
 TODO
 ====
 
-* Enhance background status update, so it will not hand gui
 * Add ability to increment series
 * Embed ruby and gems with application to make it easy installable
 * Or implement features, provided by ruby scripts in objective c
-* Make images of animes somehow different and useful
 
 Ideas
 =====
@@ -33,3 +31,4 @@ Ideas
 * Support different torrent searches
 * Local storage of anime db so app wont break if 
   myanimelist.net stops working or smth
+
