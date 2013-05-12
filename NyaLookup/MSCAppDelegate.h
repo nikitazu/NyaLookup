@@ -17,6 +17,7 @@
 // core data
 #import "Root.h"
 #import "Anime.h"
+#import "Root+AnimeFilters.h"
 
 // my
 #import "MSCAnime.h"
