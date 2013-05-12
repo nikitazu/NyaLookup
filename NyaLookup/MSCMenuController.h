@@ -10,6 +10,7 @@
 #import "MSCShared.h"
 #import "MSCAnime.h"
 #import "Anime.h"
+#import "Anime+Compatibility.h"
 
 @interface MSCMenuController : NSObject
 

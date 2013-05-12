@@ -1,25 +1,14 @@
 //
-//  Anime.m
+//  Anime+Compatibility.m
 //  NyaLookup
 //
 //  Created by Никита Б. Зуев on 12.05.13.
 //  Copyright (c) 2013 Никита Б. Зуев. All rights reserved.
 //
 
-#import "Anime.h"
-#import "Root.h"
+#import "Anime+Compatibility.h"
 
-
-@implementation Anime
-
-@dynamic title;
-@dynamic score;
-@dynamic type;
-@dynamic airing;
-@dynamic series;
-@dynamic link;
-@dynamic imageUrl;
-@dynamic root;
+@implementation Anime (Compatibility)
 
 - (void) initWithAnime: (MSCAnime*)anime {
     self.title = anime.title;
@@ -32,16 +21,6 @@
     self.imageNSURL = nil;
 }
 
-// msc compatibility
-
-@synthesize status;
-@synthesize statusColor;
-@synthesize imageNSURL;
-
-- (NSInteger) max {
-    NSLog(@"MMMMMMAAAAAAAXXXXXXXX: %@", self.title);
-    return [self.series intValue];
-}
 
 - (NSInteger) next {
     return 1;
@@ -78,5 +57,33 @@
         self.status = NSLocalizedStringFromTable(@"NoTorrents", nil, nil);
     }
 }
+
+
+- (bool)isPending {
+    return self.watches.count == 0;
+}
+
+- (bool)isWatching {
+    return self.lastWatch != nil &&
+        self.lastWatch.progress < self.series &&
+        self.lastWatch.onHold == [NSNumber numberWithBool:NO] &&
+        self.lastWatch.dropped == [NSNumber numberWithBool:NO];
+}
+
+- (bool)isCompleted {
+    return self.lastWatch != nil &&
+        self.lastWatch.progress == self.series &&
+        self.lastWatch.onHold == [NSNumber numberWithBool:NO] &&
+        self.lastWatch.dropped == [NSNumber numberWithBool:NO];
+}
+
+- (bool)isOnHold {
+    return self.lastWatch != nil && self.lastWatch.onHold == [NSNumber numberWithBool:NO];
+}
+
+- (bool)isDropped {
+    return self.lastWatch != nil && self.lastWatch.dropped == [NSNumber numberWithBool:NO];
+}
+
 
 @end

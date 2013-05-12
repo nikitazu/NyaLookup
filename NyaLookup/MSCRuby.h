@@ -12,6 +12,7 @@
 #import "NSData+JSON.h"
 #import "NSArray+FP.h"
 #import "Anime.h"
+#import "Anime+Compatibility.h"
 
 @interface MSCRuby : NSObject
 
