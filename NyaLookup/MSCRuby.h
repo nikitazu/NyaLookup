@@ -22,6 +22,7 @@
 - (NSArray*) searchTorrents:(NSString*)terms;
 - (NSArray*) searchTorrentsForAnime2:(Anime*)anime;
 - (NSArray*) indexAnime;
+- (NSArray*) indexAnimeWithStatus: (NSString*)status;
 - (NSString*) imageUrl2: (Anime*)anime;
 
 @end

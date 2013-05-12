@@ -13,20 +13,41 @@
 @synthesize shared;
 
 - (IBAction)importPending:(id)sender {
-    NSLog(@"importing stage pending");
+    [self importWithStatus:@"pending"];
 }
 
 - (IBAction)importWatching:(id)sender {
-    NSLog(@"importing stage watching");
+    [self importWithStatus:@"watching"];
+}
+
+- (IBAction)importCompleted:(id)sender {
+    [self importWithStatus:@"completed"];
+}
+
+- (IBAction)importOnHold:(id)sender {
+    [self importWithStatus:@"onhold"];
+}
+
+- (IBAction)importDropped:(id)sender {
+    [self importWithStatus:@"dropped"];
+}
+
+
+- (void) importWithStatus:(NSString*)status {
+    NSLog(@"importing stage %@", status);
     
-    NSArray* animes = [shared.ruby indexAnime];
+    NSArray* animes = [shared.ruby indexAnimeWithStatus:status];
     
     for (MSCAnime* anime in animes) {
         NSLog(@"importing %@", anime.title);
         Anime* newAnime = [shared insertEntity:@"Anime"];
         [newAnime initWithAnime:anime];
+        [shared.root addAnimesObject:newAnime];
         
-        // set watching
+        if ([status isEqualToString:@"pending"]) {
+            continue;
+        }
+        
         Watch* watch = [shared insertEntity:@"Watch"];
         watch.created = [NSDate date];
         watch.updated = [NSDate date];
@@ -36,29 +57,31 @@
         [newAnime addWatchesObject:watch];
         newAnime.lastWatch = watch;
         
-        [shared.root addAnimesObject:newAnime];
+        if ([status isEqual: @"completed"])
+        {
+            watch.progress = [NSNumber numberWithInt:anime.max];
+        }
+        else if ([status isEqualToString:@"onhold"])
+        {
+            watch.onHold = [NSNumber numberWithBool:YES];
+        }
+        else if([status isEqualToString:@"dropped"])
+        {
+            watch.dropped = [NSNumber numberWithBool:YES];
+        }
+        
     }
     
     NSError* error;
     if ([shared.context save:&error] != YES) {
-        [self logError:error inMethod:@"importWatching/save"];
+        [self logError:error inMethod:@"importWithStatus:/save"];
         return;
     }
     
-    NSLog(@"exporting animes completed");
-}
-
-- (IBAction)importCompleted:(id)sender {
     NSLog(@"importing stage completed");
 }
 
-- (IBAction)importOnHold:(id)sender {
-    NSLog(@"importing stage on hold");
-}
 
-- (IBAction)importDropped:(id)sender {
-    NSLog(@"importing stage dropped");
-}
 
 - (IBAction)clearAll:(id)sender {
     NSLog(@"clearing all data");

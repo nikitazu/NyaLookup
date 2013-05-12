@@ -72,6 +72,14 @@
     }];
 }
 
+- (NSArray*) indexAnimeWithStatus: (NSString*)status
+{
+    NSArray* json = [[self run:@[self.preferences.nyalist, @"nikitazu", status]] json];
+    return [json map: ^(id j) {
+        return [[MSCAnime alloc] initWithDictionary:j];
+    }];
+}
+
 - (NSString*) imageUrl2: (Anime*)anime
 {
     NSLog(@"ruby imageUrl2: %@", anime.link);
