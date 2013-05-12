@@ -13,6 +13,7 @@
 // controllers
 #import "MSCMenuController.h"
 #import "MSCFiltersController.h"
+#import "MSCAnimeEditController.h"
 
 // core data
 #import "Root.h"
@@ -37,6 +38,7 @@
 // controllers
 @property (retain) IBOutlet MSCMenuController* menuController;
 @property (retain) IBOutlet MSCFiltersController* filtersController;
+@property (retain) IBOutlet MSCAnimeEditController* animeEditController;
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSTextField *torrentQuery;

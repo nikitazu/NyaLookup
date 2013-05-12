@@ -20,6 +20,8 @@
 
 // controllers
 @synthesize menuController;
+@synthesize filtersController;
+@synthesize animeEditController;
 
 // core data access
 @synthesize shared;
@@ -36,6 +38,7 @@
     
     self.menuController.shared = shared;
     self.filtersController.shared = shared;
+    self.animeEditController.shared = shared;
     
     [self progressStart];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{

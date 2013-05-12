@@ -30,6 +30,8 @@
 		F7B4A89716D2ACFE009F999D /* NyaLookup1.iconset in Resources */ = {isa = PBXBuildFile; fileRef = F7B4A89616D2ACFE009F999D /* NyaLookup1.iconset */; };
 		F7D35A3F16E1D94200872FE2 /* MSCRuby.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D35A3E16E1D94200872FE2 /* MSCRuby.m */; };
 		F7E0199816D4F245002CAD08 /* NSString+Rest.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E0199716D4F245002CAD08 /* NSString+Rest.m */; };
+		F7E96FC517402320001D2015 /* MSCAnimeEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E96FC417402320001D2015 /* MSCAnimeEditController.m */; };
+		F7E96FCA17402BF9001D2015 /* AnimeEditWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7E96FC917402BF9001D2015 /* AnimeEditWindow.xib */; };
 		F7EC072C173FBDBD00E11472 /* MSCMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EC072B173FBDBD00E11472 /* MSCMenuController.m */; };
 		F7EC072F173FC4D200E11472 /* MSCShared.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EC072E173FC4D200E11472 /* MSCShared.m */; };
 		F7EC0732173FDFBC00E11472 /* MSCFiltersController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EC0731173FDFBC00E11472 /* MSCFiltersController.m */; };
@@ -98,6 +100,9 @@
 		F7D35A3E16E1D94200872FE2 /* MSCRuby.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCRuby.m; sourceTree = "<group>"; };
 		F7E0199616D4F245002CAD08 /* NSString+Rest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Rest.h"; sourceTree = "<group>"; };
 		F7E0199716D4F245002CAD08 /* NSString+Rest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Rest.m"; sourceTree = "<group>"; };
+		F7E96FC317402320001D2015 /* MSCAnimeEditController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCAnimeEditController.h; sourceTree = "<group>"; };
+		F7E96FC417402320001D2015 /* MSCAnimeEditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCAnimeEditController.m; sourceTree = "<group>"; };
+		F7E96FC917402BF9001D2015 /* AnimeEditWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnimeEditWindow.xib; sourceTree = "<group>"; };
 		F7EC072A173FBDBD00E11472 /* MSCMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCMenuController.h; sourceTree = "<group>"; };
 		F7EC072B173FBDBD00E11472 /* MSCMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCMenuController.m; sourceTree = "<group>"; };
 		F7EC072D173FC4D200E11472 /* MSCShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCShared.h; sourceTree = "<group>"; };
@@ -197,22 +202,20 @@
 		F7B4A85D16D29ED9009F999D /* NyaLookup */ = {
 			isa = PBXGroup;
 			children = (
+				F7B4A85E16D29ED9009F999D /* Supporting Files */,
 				F7EC0747173FEC8800E11472 /* ThirdParty */,
 				F7934CDC173F78FD008328B7 /* Nyaitems */,
 				F7FA59F916D40198002A4347 /* WEB */,
 				F7B4A89616D2ACFE009F999D /* NyaLookup1.iconset */,
-				F7B4A88C16D29F3B009F999D /* Torrent */,
 				F7B4A88B16D29F31009F999D /* Anime */,
+				F7B4A88C16D29F3B009F999D /* Torrent */,
+				F7E96FC617402347001D2015 /* Controllers */,
 				F7B4A86916D29ED9009F999D /* MSCAppDelegate.h */,
 				F7B4A86A16D29ED9009F999D /* MSCAppDelegate.m */,
 				F7B4A86C16D29ED9009F999D /* MainMenu.xib */,
-				F7EC0730173FDFBC00E11472 /* MSCFiltersController.h */,
-				F7EC0731173FDFBC00E11472 /* MSCFiltersController.m */,
-				F7EC072A173FBDBD00E11472 /* MSCMenuController.h */,
-				F7EC072B173FBDBD00E11472 /* MSCMenuController.m */,
+				F7E96FC917402BF9001D2015 /* AnimeEditWindow.xib */,
 				F7EC072D173FC4D200E11472 /* MSCShared.h */,
 				F7EC072E173FC4D200E11472 /* MSCShared.m */,
-				F7B4A85E16D29ED9009F999D /* Supporting Files */,
 				F7B4A89316D2A20C009F999D /* MSCPreferences.h */,
 				F7B4A89416D2A20C009F999D /* MSCPreferences.m */,
 				F76F9EE816D536CD00548C4D /* NSArray+FP.h */,
@@ -270,6 +273,19 @@
 				F7B4A88E16D29F71009F999D /* MSCTorrent.m */,
 			);
 			name = Torrent;
+			sourceTree = "<group>";
+		};
+		F7E96FC617402347001D2015 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F7EC0730173FDFBC00E11472 /* MSCFiltersController.h */,
+				F7EC0731173FDFBC00E11472 /* MSCFiltersController.m */,
+				F7EC072A173FBDBD00E11472 /* MSCMenuController.h */,
+				F7EC072B173FBDBD00E11472 /* MSCMenuController.m */,
+				F7E96FC317402320001D2015 /* MSCAnimeEditController.h */,
+				F7E96FC417402320001D2015 /* MSCAnimeEditController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		F7EC0747173FEC8800E11472 /* ThirdParty */ = {
@@ -377,6 +393,7 @@
 				F7B4A86E16D29ED9009F999D /* MainMenu.xib in Resources */,
 				F7B4A89716D2ACFE009F999D /* NyaLookup1.iconset in Resources */,
 				F77DF9FB16E60AA900176598 /* Localizable.strings in Resources */,
+				F7E96FCA17402BF9001D2015 /* AnimeEditWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +449,7 @@
 				F7EC0740173FE5C700E11472 /* Anime+Compatibility.m in Sources */,
 				F7EC074B173FF1BA00E11472 /* Anime.m in Sources */,
 				F7EC074E173FFC6F00E11472 /* Root+AnimeFilters.m in Sources */,
+				F7E96FC517402320001D2015 /* MSCAnimeEditController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
