@@ -44,6 +44,8 @@
         [newAnime initWithAnime:anime];
         [shared.root addAnimesObject:newAnime];
         
+//        newAnime.imageUrl = [shared.ruby imageUrl2:newAnime];
+        
         if ([status isEqualToString:@"pending"]) {
             continue;
         }

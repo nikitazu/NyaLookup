@@ -237,6 +237,21 @@
             [self progressStop];
         });
     });
+    
+    Anime* anime = self.currentAnime;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        if (anime.imageUrl == nil) {
+            NSString* url = [shared.ruby imageUrl2:anime];
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                anime.imageUrl = url;
+                
+                NSError* error;
+                if ([shared.context save:&error] == NO) {
+                    [self logError:error inMethod:@"searchTorrents/imageUrl/save"];
+                }
+            });
+        }
+    });
 }
 
 - (IBAction) getTorrent:(id)sender
