@@ -8,9 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "MSCShared.h"
-#import "Anime.h"
 #import "Root.h"
-#import "Watch.h"
+#import "Root+AnimeFilters.h"
 
 @interface MSCFiltersController : NSObject
 

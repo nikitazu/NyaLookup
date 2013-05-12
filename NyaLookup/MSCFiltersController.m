@@ -14,72 +14,27 @@
 
 - (IBAction)pending:(id)sender {
     NSLog(@"filter pending");
-    
-    NSMutableArray* result = [NSMutableArray array];
-    for (Anime* anime in shared.root.animes) {
-        if (anime.watches.count == 0) {
-            //NSLog(@"anime: %@", anime.title);
-            [result addObject:anime];
-        }
-    }
-    
-    [self updateAnimes:result];
+    [self updateAnimes:[shared.root filterPending]];
 }
 
 - (IBAction)watching:(id)sender {
     NSLog(@"filter watching");
-    
-    NSMutableArray* result = [NSMutableArray array];
-    for (Anime* anime in shared.root.animes) {
-        if (anime.isWatching) {
-            //NSLog(@"anime: %@", anime.title);
-            [result addObject:anime];
-        }
-    }
-    
-    [self updateAnimes:result];
+    [self updateAnimes:[shared.root filterWatching]];
 }
 
 - (IBAction)complteted:(id)sender {
     NSLog(@"filter completed");
-    
-    NSMutableArray* result = [NSMutableArray array];
-    for (Anime* anime in shared.root.animes) {
-        if (anime.isCompleted) {
-            //NSLog(@"anime: %@", anime.title);
-            [result addObject:anime];
-        }
-    }
-    
-    [self updateAnimes:result];
+    [self updateAnimes:[shared.root filterCompleted]];
 }
 
 - (IBAction)onHold:(id)sender {
     NSLog(@"filter onHold");
-    
-    NSMutableArray* result = [NSMutableArray array];
-    for (Anime* anime in shared.root.animes) {
-        if (anime.isOnHold) {
-            //NSLog(@"anime: %@", anime.title);
-            [result addObject:anime];
-        }
-    }
-    
-    [self updateAnimes:result];
+    [self updateAnimes:[shared.root filterOnHold]];
 }
 
 - (IBAction)dropped:(id)sender {
     NSLog(@"filter dropped");
-    
-    NSMutableArray* result = [NSMutableArray array];
-    for (Anime* anime in shared.root.animes) {
-        if (anime.isDropped) {
-            //NSLog(@"anime: %@", anime.title);
-            [result addObject:anime];
-        }
-    }
-    
-    [self updateAnimes:result];
+    [self updateAnimes:[shared.root filterDropped]];
 }
 
 // TODO: fix this mess

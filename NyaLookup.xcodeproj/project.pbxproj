@@ -36,6 +36,7 @@
 		F7EC073B173FE47800E11472 /* Watch.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EC073A173FE47800E11472 /* Watch.m */; };
 		F7EC0740173FE5C700E11472 /* Anime+Compatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EC073F173FE5C600E11472 /* Anime+Compatibility.m */; };
 		F7EC074B173FF1BA00E11472 /* Anime.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EC074A173FF1B900E11472 /* Anime.m */; };
+		F7EC074E173FFC6F00E11472 /* Root+AnimeFilters.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EC074D173FFC6F00E11472 /* Root+AnimeFilters.m */; };
 		F7FA59FC16D401C0002A4347 /* NSArray+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = F7FA59FB16D401C0002A4347 /* NSArray+JSON.m */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +111,8 @@
 		F7EC0748173FECB100E11472 /* CWLSynthesizeSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWLSynthesizeSingleton.h; sourceTree = "<group>"; };
 		F7EC0749173FF1B900E11472 /* Anime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Anime.h; path = ../Anime.h; sourceTree = "<group>"; };
 		F7EC074A173FF1B900E11472 /* Anime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Anime.m; path = ../Anime.m; sourceTree = "<group>"; };
+		F7EC074C173FFC6F00E11472 /* Root+AnimeFilters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Root+AnimeFilters.h"; sourceTree = "<group>"; };
+		F7EC074D173FFC6F00E11472 /* Root+AnimeFilters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Root+AnimeFilters.m"; sourceTree = "<group>"; };
 		F7FA59FA16D401C0002A4347 /* NSArray+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+JSON.h"; sourceTree = "<group>"; };
 		F7FA59FB16D401C0002A4347 /* NSArray+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JSON.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,6 +149,8 @@
 				F7934CEA173F7BB2008328B7 /* Root.m */,
 				F7EC073E173FE5C600E11472 /* Anime+Compatibility.h */,
 				F7EC073F173FE5C600E11472 /* Anime+Compatibility.m */,
+				F7EC074C173FFC6F00E11472 /* Root+AnimeFilters.h */,
+				F7EC074D173FFC6F00E11472 /* Root+AnimeFilters.m */,
 			);
 			name = Nyaitems;
 			sourceTree = "<group>";
@@ -426,6 +431,7 @@
 				F7EC073B173FE47800E11472 /* Watch.m in Sources */,
 				F7EC0740173FE5C700E11472 /* Anime+Compatibility.m in Sources */,
 				F7EC074B173FF1BA00E11472 /* Anime.m in Sources */,
+				F7EC074E173FFC6F00E11472 /* Root+AnimeFilters.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
