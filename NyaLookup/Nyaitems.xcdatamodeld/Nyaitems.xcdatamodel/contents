@@ -9,13 +9,23 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="root" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Root" inverseName="animes" inverseEntity="Root" syncable="YES"/>
+        <relationship name="watches" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Watch" inverseName="anime" inverseEntity="Watch" syncable="YES"/>
     </entity>
     <entity name="Root" representedClassName="Root" syncable="YES">
         <attribute name="v" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="animes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Anime" inverseName="root" inverseEntity="Anime" syncable="YES"/>
     </entity>
+    <entity name="Watch" syncable="YES">
+        <attribute name="created" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dropped" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="onHold" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="progress" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="updated" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="anime" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Anime" inverseName="watches" inverseEntity="Anime" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Anime" positionX="196" positionY="107" width="128" height="163"/>
+        <element name="Anime" positionX="196" positionY="107" width="128" height="178"/>
         <element name="Root" positionX="-65" positionY="287" width="128" height="73"/>
+        <element name="Watch" positionX="-144" positionY="135" width="128" height="133"/>
     </elements>
 </model>
