@@ -35,6 +35,7 @@
     shared.transmission =   [MSCTransmissionClient client:self.preferences];
     
     self.menuController.shared = shared;
+    self.filtersController.shared = shared;
     
     [self progressStart];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -256,7 +257,7 @@
     self.torrents = [shared.ruby searchTorrents: self.torrentQuery.stringValue];
 }
 
-- (MSCAnime*) anime
+- (Anime*) anime
 {
     return self.animesController.selectedObjects[0];
 }
