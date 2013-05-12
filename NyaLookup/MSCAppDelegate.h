@@ -6,19 +6,34 @@
 //  Copyright (c) 2013 Никита Б. Зуев. All rights reserved.
 //
 
+// system
 #import <Cocoa/Cocoa.h>
+#import <CoreData/CoreData.h>
+
+// controllers
+#import "MSCMenuController.h"
+
+// core data
+#import "Root.h"
+#import "Anime.h"
+
+// my
 #import "MSCAnime.h"
 #import "MSCRuby.h"
 #import "MSCTransmissionClient.h"
+#import "MSCShared.h"
 
 @interface MSCAppDelegate : NSObject <NSApplicationDelegate>
-{
-    MSCRuby*               _ruby;
-    MSCTransmissionClient* _transmission;
+{    
     NSTimer*               _statusTimer;
     
     IBOutlet NSProgressIndicator* _progress;
+    
+    Root* _root;
 }
+
+// controllers
+@property (retain) IBOutlet MSCMenuController* menuController;
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSTextField *torrentQuery;
@@ -37,5 +52,7 @@
 - (IBAction) getTorrent:(id)sender;
 - (IBAction) queryTorrent:(id)sender;
 
+// core data access
+@property MSCShared* shared;
 
 @end

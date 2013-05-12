@@ -12,6 +12,7 @@
 #import "MSCTorrent.h"
 #import "NSData+JSON.h"
 #import "NSArray+FP.h"
+#import "Anime.h"
 
 @interface MSCRuby : NSObject
 
@@ -22,5 +23,6 @@
 - (NSArray*) searchTorrentsForAnime:(MSCAnime*)anime;
 - (NSArray*) indexAnime;
 - (NSURL*) imageUrl: (MSCAnime*)anime;
+- (NSString*) imageUrl2: (Anime*)anime;
 
 @end

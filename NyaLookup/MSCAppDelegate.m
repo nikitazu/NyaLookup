@@ -18,28 +18,122 @@
 
 @synthesize currentAnime;
 
+// controllers
+@synthesize menuController;
+
+// core data access
+@synthesize shared;
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     self.preferences = [MSCPreferences preferences];
-    _ruby            = [MSCRuby client:self.preferences];
-    _transmission    = [MSCTransmissionClient client:self.preferences];
+    
+    [self initCoreData];
+    [self initRoot];
+    
+    shared.ruby =           [MSCRuby client:self.preferences];
+    shared.transmission =   [MSCTransmissionClient client:self.preferences];
+    
+    self.menuController.shared = shared;
     
     [self progressStart];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSArray* animeArray = [_ruby indexAnime];
+        NSArray* animeArray = _root.animes.allObjects;
         
-        if (animeArray != nil) {
+        if (animeArray != nil && animeArray.count > 0) {
             dispatch_sync(dispatch_get_main_queue(), ^{
+                NSLog(@"syncronizing initial interface - data");
                 self.animes = animeArray;
                 self.currentAnime = [self anime];
                 [self testConnectionSuccess];
+                NSLog(@"syncronizing initial interface - done");
             });
         } else {
             dispatch_sync(dispatch_get_main_queue(), ^{
+                NSLog(@"syncronizing initial interface - empty");
                 [self testConnectionFail];
             });
         }
     });
+}
+
+
+- (void)initCoreData {
+    NSLog(@"initializing core data");
+    
+    NSManagedObjectContext*         context;
+    NSManagedObjectModel*           model;
+    NSPersistentStoreCoordinator*   store;
+    
+    model = [NSManagedObjectModel mergedModelFromBundles:nil];
+    store = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];
+    
+    NSURL* url = [NSURL fileURLWithPath:@"/Users/nikitazu/NyaLookup.sqlite"];
+    NSError* error;
+    if (![store addPersistentStoreWithType:NSSQLiteStoreType
+                             configuration:nil
+                                       URL:url
+                                   options:nil
+                                     error:&error]) {
+        [self logError:error inMethod:@"initCoreData"];
+        abort();
+    }
+    
+    NSLog(@"initializing managed object context");
+    context = [[NSManagedObjectContext alloc] init];
+    [context setPersistentStoreCoordinator:store];
+    
+    shared = [[MSCShared alloc] initWithContext:context
+                                       andModel:model
+                                       andStore:store];
+    
+    NSLog(@"initializing core data completed");
+}
+
+- (void) initRoot {
+    NSLog(@"initializing root");
+    
+    NSError* error;
+    NSFetchRequest* request = [[NSFetchRequest alloc] init];
+    NSEntityDescription* desc = [shared entityDescription:@"Root"];
+    
+    [request setEntity:desc];
+    
+    NSArray* results = [shared.context executeFetchRequest:request error:&error];
+    if (results == nil) {
+        [self logError:error inMethod:@"initRoot/fetch"];
+    }
+    
+    NSLog(@"object storage contains %ld root objects", results.count);
+    
+    if (results.count == 0) {
+        NSLog(@"initializing root object");
+        
+        _root = [shared insertEntity:@"Root"];
+        _root.v = @1;
+        
+        NSLog(@"root object initialized: %@", _root);
+        
+        if ([shared.context save:&error] == YES) {
+            NSLog(@"root object persisted");
+        } else {
+            [self logError:error inMethod:@"initRoot/save"];
+        }
+    } else {
+        for(Root* root in results) {
+            _root = root;
+            break;
+        }
+    }
+    
+    shared.root = _root;
+    
+    NSLog(@"root object found: %@, %@", _root, _root.v);
+    NSLog(@"initializing root completed");
+}
+
+- (Anime*) insertAnime {
+    return [shared insertEntity:@"Anime"];
 }
 
 - (void) progressStart {
@@ -54,7 +148,7 @@
 
 
 - (BOOL) testConnectionDo {
-    [_ruby indexAnime];
+    [shared.ruby indexAnime];
     return YES;
 }
 
@@ -82,7 +176,7 @@
         NSUInteger hits = 0;
         
         for (MSCAnime* anime in self.animes) {
-            NSArray* aTorrents = [_ruby searchTorrentsForAnime:anime];
+            NSArray* aTorrents = [shared.ruby searchTorrentsForAnime:anime];
             
             dispatch_sync(dispatch_get_main_queue(), ^{
                 [anime updateStatus: aTorrents];
@@ -117,13 +211,15 @@
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
-        for (MSCAnime* anime in self.animes) {
+        for (Anime* anime in self.animes) {
             
             if (anime.imageUrl == nil) {
-                NSURL* url = [_ruby imageUrl:anime];
+                NSString* url = [shared.ruby imageUrl2:anime];
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     anime.imageUrl = url;
                 });
+            } else {
+                NSLog(@"anime image url: %@", anime.imageUrl);
             }
         }
     });
@@ -134,7 +230,7 @@
     self.currentAnime = [self anime];
     [self progressStart];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSArray* torrentsArray = [_ruby searchTorrentsForAnime:self.currentAnime];
+        NSArray* torrentsArray = [shared.ruby searchTorrentsForAnime:self.currentAnime];
         dispatch_sync(dispatch_get_main_queue(), ^{
             self.torrents = torrentsArray;
             [self progressStop];
@@ -148,7 +244,7 @@
     [self writeToPasteBoard:[[self torrent] link]];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [_transmission torrentAdd:[[self torrent] link]];
+        [shared.transmission torrentAdd:[[self torrent] link]];
         dispatch_sync(dispatch_get_main_queue(), ^{
             [self progressStop];
         });
@@ -157,7 +253,7 @@
 
 - (IBAction) queryTorrent:(id)sender
 {
-    self.torrents = [_ruby searchTorrents: self.torrentQuery.stringValue];
+    self.torrents = [shared.ruby searchTorrents: self.torrentQuery.stringValue];
 }
 
 - (MSCAnime*) anime
@@ -175,6 +271,10 @@
     NSPasteboard *pasteBoard = [NSPasteboard generalPasteboard];
     [pasteBoard clearContents];
     return [pasteBoard writeObjects:[NSArray arrayWithObject:stringToWrite]];
+}
+
+- (void) logError: (NSError*)error inMethod:(NSString*)method {
+    NSLog(@"ERROR: %@ - %@, %@", method, error, error.userInfo);
 }
 
 @end

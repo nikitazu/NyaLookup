@@ -12,6 +12,9 @@
 		F77DF9FB16E60AA900176598 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F77DF9FD16E60AA900176598 /* Localizable.strings */; };
 		F78B009916E330ED0071CA4A /* NSDictionary+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = F78B009816E330ED0071CA4A /* NSDictionary+JSON.m */; };
 		F78B009C16E334A70071CA4A /* MSCTransmissionClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F78B009B16E334A70071CA4A /* MSCTransmissionClient.m */; };
+		F7934CD2173F7283008328B7 /* Nyaitems.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F7934CD0173F7283008328B7 /* Nyaitems.xcdatamodeld */; };
+		F7934CEB173F7BB2008328B7 /* Root.m in Sources */ = {isa = PBXBuildFile; fileRef = F7934CEA173F7BB2008328B7 /* Root.m */; };
+		F7934CEE173F7BB9008328B7 /* Anime.m in Sources */ = {isa = PBXBuildFile; fileRef = F7934CED173F7BB9008328B7 /* Anime.m */; };
 		F7B4A85816D29ED9009F999D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7B4A85716D29ED9009F999D /* Cocoa.framework */; };
 		F7B4A86216D29ED9009F999D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7B4A86016D29ED9009F999D /* InfoPlist.strings */; };
 		F7B4A86416D29ED9009F999D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B4A86316D29ED9009F999D /* main.m */; };
@@ -28,6 +31,8 @@
 		F7B4A89716D2ACFE009F999D /* NyaLookup1.iconset in Resources */ = {isa = PBXBuildFile; fileRef = F7B4A89616D2ACFE009F999D /* NyaLookup1.iconset */; };
 		F7D35A3F16E1D94200872FE2 /* MSCRuby.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D35A3E16E1D94200872FE2 /* MSCRuby.m */; };
 		F7E0199816D4F245002CAD08 /* NSString+Rest.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E0199716D4F245002CAD08 /* NSString+Rest.m */; };
+		F7EC072C173FBDBD00E11472 /* MSCMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EC072B173FBDBD00E11472 /* MSCMenuController.m */; };
+		F7EC072F173FC4D200E11472 /* MSCShared.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EC072E173FC4D200E11472 /* MSCShared.m */; };
 		F7FA59FC16D401C0002A4347 /* NSArray+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = F7FA59FB16D401C0002A4347 /* NSArray+JSON.m */; };
 /* End PBXBuildFile section */
 
@@ -50,12 +55,17 @@
 		F76F9EE616D5324500548C4D /* NSData+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+JSON.m"; sourceTree = "<group>"; };
 		F76F9EE816D536CD00548C4D /* NSArray+FP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+FP.h"; sourceTree = "<group>"; };
 		F76F9EE916D536CD00548C4D /* NSArray+FP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+FP.m"; sourceTree = "<group>"; };
-		F77DF9FC16E60AA900176598 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		F77DF9FE16E60AAF00176598 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F77DF9FC16E60AA900176598 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F77DF9FE16E60AAF00176598 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F78B009716E330ED0071CA4A /* NSDictionary+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JSON.h"; sourceTree = "<group>"; };
 		F78B009816E330ED0071CA4A /* NSDictionary+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JSON.m"; sourceTree = "<group>"; };
 		F78B009A16E334A70071CA4A /* MSCTransmissionClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCTransmissionClient.h; sourceTree = "<group>"; };
 		F78B009B16E334A70071CA4A /* MSCTransmissionClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCTransmissionClient.m; sourceTree = "<group>"; };
+		F7934CD1173F7283008328B7 /* Nyaitems.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Nyaitems.xcdatamodel; sourceTree = "<group>"; };
+		F7934CE9173F7BB2008328B7 /* Root.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Root.h; sourceTree = "<group>"; };
+		F7934CEA173F7BB2008328B7 /* Root.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Root.m; sourceTree = "<group>"; };
+		F7934CEC173F7BB9008328B7 /* Anime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Anime.h; sourceTree = "<group>"; };
+		F7934CED173F7BB9008328B7 /* Anime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Anime.m; sourceTree = "<group>"; };
 		F7B4A85416D29ED9009F999D /* NyaLookup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NyaLookup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7B4A85716D29ED9009F999D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		F7B4A85A16D29ED9009F999D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -86,6 +96,10 @@
 		F7D35A3E16E1D94200872FE2 /* MSCRuby.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCRuby.m; sourceTree = "<group>"; };
 		F7E0199616D4F245002CAD08 /* NSString+Rest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Rest.h"; sourceTree = "<group>"; };
 		F7E0199716D4F245002CAD08 /* NSString+Rest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Rest.m"; sourceTree = "<group>"; };
+		F7EC072A173FBDBD00E11472 /* MSCMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCMenuController.h; sourceTree = "<group>"; };
+		F7EC072B173FBDBD00E11472 /* MSCMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCMenuController.m; sourceTree = "<group>"; };
+		F7EC072D173FC4D200E11472 /* MSCShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCShared.h; sourceTree = "<group>"; };
+		F7EC072E173FC4D200E11472 /* MSCShared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCShared.m; sourceTree = "<group>"; };
 		F7FA59FA16D401C0002A4347 /* NSArray+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+JSON.h"; sourceTree = "<group>"; };
 		F7FA59FB16D401C0002A4347 /* NSArray+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JSON.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +125,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F7934CDC173F78FD008328B7 /* Nyaitems */ = {
+			isa = PBXGroup;
+			children = (
+				F7934CE9173F7BB2008328B7 /* Root.h */,
+				F7934CEA173F7BB2008328B7 /* Root.m */,
+				F7934CEC173F7BB9008328B7 /* Anime.h */,
+				F7934CED173F7BB9008328B7 /* Anime.m */,
+			);
+			name = Nyaitems;
+			sourceTree = "<group>";
+		};
 		F7B4A84B16D29ED8009F999D = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +178,7 @@
 		F7B4A85D16D29ED9009F999D /* NyaLookup */ = {
 			isa = PBXGroup;
 			children = (
+				F7934CDC173F78FD008328B7 /* Nyaitems */,
 				F7FA59F916D40198002A4347 /* WEB */,
 				F7B4A89616D2ACFE009F999D /* NyaLookup1.iconset */,
 				F7B4A88C16D29F3B009F999D /* Torrent */,
@@ -160,6 +186,10 @@
 				F7B4A86916D29ED9009F999D /* MSCAppDelegate.h */,
 				F7B4A86A16D29ED9009F999D /* MSCAppDelegate.m */,
 				F7B4A86C16D29ED9009F999D /* MainMenu.xib */,
+				F7EC072A173FBDBD00E11472 /* MSCMenuController.h */,
+				F7EC072B173FBDBD00E11472 /* MSCMenuController.m */,
+				F7EC072D173FC4D200E11472 /* MSCShared.h */,
+				F7EC072E173FC4D200E11472 /* MSCShared.m */,
 				F7B4A85E16D29ED9009F999D /* Supporting Files */,
 				F7B4A89316D2A20C009F999D /* MSCPreferences.h */,
 				F7B4A89416D2A20C009F999D /* MSCPreferences.m */,
@@ -178,6 +208,7 @@
 				F7B4A86516D29ED9009F999D /* NyaLookup-Prefix.pch */,
 				F7B4A86616D29ED9009F999D /* Credits.rtf */,
 				F77DF9FD16E60AA900176598 /* Localizable.strings */,
+				F7934CD0173F7283008328B7 /* Nyaitems.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -362,6 +393,11 @@
 				F7D35A3F16E1D94200872FE2 /* MSCRuby.m in Sources */,
 				F78B009916E330ED0071CA4A /* NSDictionary+JSON.m in Sources */,
 				F78B009C16E334A70071CA4A /* MSCTransmissionClient.m in Sources */,
+				F7934CD2173F7283008328B7 /* Nyaitems.xcdatamodeld in Sources */,
+				F7934CEB173F7BB2008328B7 /* Root.m in Sources */,
+				F7934CEE173F7BB9008328B7 /* Anime.m in Sources */,
+				F7EC072C173FBDBD00E11472 /* MSCMenuController.m in Sources */,
+				F7EC072F173FC4D200E11472 /* MSCShared.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +612,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F7934CD0173F7283008328B7 /* Nyaitems.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F7934CD1173F7283008328B7 /* Nyaitems.xcdatamodel */,
+			);
+			currentVersion = F7934CD1173F7283008328B7 /* Nyaitems.xcdatamodel */;
+			path = Nyaitems.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F7B4A84C16D29ED8009F999D /* Project object */;
 }
