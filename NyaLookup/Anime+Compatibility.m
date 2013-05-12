@@ -73,23 +73,25 @@
 - (bool)isWatching {
     return self.lastWatch != nil &&
         self.lastWatch.progress < self.series &&
-        self.lastWatch.onHold == [NSNumber numberWithBool:NO] &&
-        self.lastWatch.dropped == [NSNumber numberWithBool:NO];
+        self.lastWatch.onHold.boolValue == NO &&
+        self.lastWatch.dropped.boolValue == NO;
 }
 
 - (bool)isCompleted {
     return self.lastWatch != nil &&
         self.lastWatch.progress == self.series &&
-        self.lastWatch.onHold == [NSNumber numberWithBool:NO] &&
-        self.lastWatch.dropped == [NSNumber numberWithBool:NO];
+        self.lastWatch.onHold.boolValue == NO &&
+        self.lastWatch.dropped.boolValue == NO;
 }
 
 - (bool)isOnHold {
-    return self.lastWatch != nil && self.lastWatch.onHold == [NSNumber numberWithBool:NO];
+    return self.lastWatch != nil &&
+        self.lastWatch.onHold.boolValue == YES &&
+        self.lastWatch.dropped.boolValue == NO;
 }
 
 - (bool)isDropped {
-    return self.lastWatch != nil && self.lastWatch.dropped == [NSNumber numberWithBool:NO];
+    return self.lastWatch != nil && self.lastWatch.dropped.boolValue == YES;
 }
 
 

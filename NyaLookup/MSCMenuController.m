@@ -21,6 +21,17 @@
         NSLog(@"importing %@", anime.title);
         Anime* newAnime = [shared insertEntity:@"Anime"];
         [newAnime initWithAnime:anime];
+        
+        // set watching
+        Watch* watch = [shared insertEntity:@"Watch"];
+        watch.created = [NSDate date];
+        watch.updated = [NSDate date];
+        watch.progress = [NSNumber numberWithInt:anime.current];
+        watch.onHold = [NSNumber numberWithBool:NO];
+        watch.dropped = [NSNumber numberWithBool:NO];
+        [newAnime addWatchesObject:watch];
+        newAnime.lastWatch = watch;
+        
         [shared.root addAnimesObject:newAnime];
     }
     
