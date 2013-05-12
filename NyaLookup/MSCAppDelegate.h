@@ -44,7 +44,7 @@
 @property (retain) NSArray* torrents;
 @property (assign) IBOutlet NSArrayController* torrentsController;
 
-@property (retain) MSCAnime* currentAnime;
+@property (retain) Anime* currentAnime;
 
 @property (retain) MSCPreferences* preferences;
 

@@ -39,7 +39,8 @@
 @synthesize imageNSURL;
 
 - (NSInteger) max {
-    return self.series.intValue;
+    NSLog(@"MMMMMMAAAAAAAXXXXXXXX: %@", self.title);
+    return [self.series intValue];
 }
 
 - (NSInteger) next {
@@ -52,8 +53,8 @@
 
 - (NSString*) progress
 {
-    if (self.max > 0) {
-        return [NSString stringWithFormat:@"%ld / %ld", self.current, self.max];
+    if (self.series > 0) {
+        return [NSString stringWithFormat:@"%ld / %@", self.current, self.series];
     } else {
         return [NSString stringWithFormat:@"%ld / -", self.current];
     }

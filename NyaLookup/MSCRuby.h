@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "MSCPreferences.h"
-#import "MSCAnime.h"
 #import "MSCTorrent.h"
 #import "NSData+JSON.h"
 #import "NSArray+FP.h"
@@ -20,9 +19,8 @@
 
 + (id) client:(MSCPreferences*)prefs;
 - (NSArray*) searchTorrents:(NSString*)terms;
-- (NSArray*) searchTorrentsForAnime:(MSCAnime*)anime;
+- (NSArray*) searchTorrentsForAnime2:(Anime*)anime;
 - (NSArray*) indexAnime;
-- (NSURL*) imageUrl: (MSCAnime*)anime;
 - (NSString*) imageUrl2: (Anime*)anime;
 
 @end

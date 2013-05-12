@@ -26,7 +26,6 @@
 - (void) initWithAnime: (MSCAnime*)anime;
 
 // msc compatibility
-- (NSInteger) max;
 - (NSInteger) next;
 - (NSInteger) current;
 

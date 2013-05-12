@@ -175,8 +175,8 @@
         
         NSUInteger hits = 0;
         
-        for (MSCAnime* anime in self.animes) {
-            NSArray* aTorrents = [shared.ruby searchTorrentsForAnime:anime];
+        for (Anime* anime in self.animes) {
+            NSArray* aTorrents = [shared.ruby searchTorrentsForAnime2:anime];
             
             dispatch_sync(dispatch_get_main_queue(), ^{
                 [anime updateStatus: aTorrents];
@@ -230,7 +230,7 @@
     self.currentAnime = [self anime];
     [self progressStart];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSArray* torrentsArray = [shared.ruby searchTorrentsForAnime:self.currentAnime];
+        NSArray* torrentsArray = [shared.ruby searchTorrentsForAnime2:self.currentAnime];
         dispatch_sync(dispatch_get_main_queue(), ^{
             self.torrents = torrentsArray;
             [self progressStop];

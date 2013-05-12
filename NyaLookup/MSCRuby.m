@@ -38,7 +38,7 @@
     }];
 }
 
-- (NSArray*) searchTorrentsForAnime:(MSCAnime*)anime
+- (NSArray*) searchTorrentsForAnime2:(Anime*)anime
 {
     NSLog(@"ruby searchTorrentsForAnime: %@", anime.title);
     
@@ -50,7 +50,7 @@
     }
     
     // todo: write more generic algorithm (001/100, 010/100 etc..)
-    if (anime.max > 9 && anime.next < 10) {
+    if (anime.series.intValue > 9 && anime.next < 10) {
         [args addObject:[NSString stringWithFormat:@"0%ld", anime.next]];
     }
     else {
@@ -71,32 +71,6 @@
         return [[MSCAnime alloc] initWithDictionary:j];
     }];
 }
-
-- (NSURL*) imageUrl: (MSCAnime*)anime
-{
-    NSLog(@"ruby imageUrl: %@", anime.link);
-    
-    NSString* animeLink = [self encodeCrazyCharacters: anime.link];
-    
-    NSString* cachedUrl = [self.preferences retreiveImageForLink:animeLink];
-    if (cachedUrl != nil) {
-        return [NSURL URLWithString:cachedUrl];
-    }
-    
-    NSData* data = [self run:@[self.preferences.nyaimage, animeLink]];
-    NSString* string = [[NSString alloc] initWithData:data
-                                             encoding:NSUTF8StringEncoding];
-    
-    NSString* trimmed = [string stringByTrimmingCharactersInSet:
-                         [NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    
-    NSLog(@"ruby imageUrl returns: %@", trimmed);
-    
-    [self.preferences cacheImage:trimmed forLink:animeLink];
-    
-    return [NSURL URLWithString:trimmed];
-}
-
 
 - (NSString*) imageUrl2: (Anime*)anime
 {
