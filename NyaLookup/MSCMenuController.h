@@ -16,8 +16,11 @@
 
 @property MSCShared* shared;
 
+- (IBAction)importPending:(id)sender;
 - (IBAction)importWatching:(id)sender;
 - (IBAction)importCompleted:(id)sender;
+- (IBAction)importOnHold:(id)sender;
+- (IBAction)importDropped:(id)sender;
 - (IBAction)clearAll:(id)sender;
 
 @end

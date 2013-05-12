@@ -12,8 +12,12 @@
 
 @synthesize shared;
 
+- (IBAction)importPending:(id)sender {
+    NSLog(@"importing stage pending");
+}
+
 - (IBAction)importWatching:(id)sender {
-    NSLog(@"importWatching");
+    NSLog(@"importing stage watching");
     
     NSArray* animes = [shared.ruby indexAnime];
     
@@ -45,11 +49,19 @@
 }
 
 - (IBAction)importCompleted:(id)sender {
-    NSLog(@"importCompleted");
+    NSLog(@"importing stage completed");
+}
+
+- (IBAction)importOnHold:(id)sender {
+    NSLog(@"importing stage on hold");
+}
+
+- (IBAction)importDropped:(id)sender {
+    NSLog(@"importing stage dropped");
 }
 
 - (IBAction)clearAll:(id)sender {
-    NSLog(@"clearAll");
+    NSLog(@"clearing all data");
     for (id anime in shared.root.animes) {
         [shared.context deleteObject: anime];
     }
