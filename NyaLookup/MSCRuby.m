@@ -40,7 +40,7 @@
 
 - (NSArray*) searchTorrentsForAnime2:(Anime*)anime
 {
-    NSLog(@"ruby searchTorrentsForAnime: %@", anime.title);
+    NSLog(@"ruby searchTorrentsForAnime2: %@", anime.title);
     
     NSMutableArray* args = [NSMutableArray arrayWithObject:self.preferences.nyasearch];
     NSString* animeTitle = [self removeCrazyCharacters:anime.title];
@@ -124,14 +124,27 @@
 
 - (NSString*) encodeCrazyCharacters: (NSString*)string
 {
-    return [string stringByReplacingOccurrencesOfString:@"☆"
+    NSLog(@"encodeCrayCharacters: %@", string);
+    NSString* temp = [string stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
+    temp = [temp stringByReplacingOccurrencesOfString:@"☆"
                                              withString:@"%E2%98%86"];
+    temp = [temp stringByReplacingOccurrencesOfString:@"½"
+                                             withString:@"%BD"];
+    NSLog(@"encode done: %@", temp);
+    return temp;
 }
 
 - (NSString*) removeCrazyCharacters: (NSString*)string
 {
-    return [string stringByReplacingOccurrencesOfString:@"☆"
-                                             withString:@" "];
+    NSLog(@"remove crazy chars: %@", string);
+    NSString* temp = string;
+    NSArray* badChars = [NSArray arrayWithObjects:@"♪", @"☆", @"½", @"é", @"è", @"à", nil];
+    for (NSString* badChar in badChars) {
+        temp = [temp stringByReplacingOccurrencesOfString:badChar
+                                                 withString:@" "];
+    }
+    NSLog(@"remove done: %@", temp);
+    return temp;
 }
 
 
