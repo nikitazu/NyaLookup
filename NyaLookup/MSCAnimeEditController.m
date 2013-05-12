@@ -11,9 +11,11 @@
 @implementation MSCAnimeEditController
 
 @synthesize shared;
-@synthesize currentAnime;
+@synthesize anime;
 
 - (IBAction)showWindow:(id)sender {
+    anime = animeController.selection;
+    
     windowController = [[NSWindowController alloc]
                         initWithWindowNibName:@"AnimeEditWindow"
                                         owner:self];
@@ -31,8 +33,16 @@
     [window makeKeyAndOrderFront:nil];
 }
 
+// FIXME: save failing without error
 - (IBAction)okClick:(id)sender {
-    
+    NSError* error;
+    if ([shared.context save:&error] != YES) {
+        NSLog(@"ERROR: anime edit failed - %@, %@", error, error.userInfo);
+    }
+    [window close];
+    [windowController close];
+    window = nil;
+    windowController = nil;
 }
 
 - (IBAction)cancelClick:(id)sender {

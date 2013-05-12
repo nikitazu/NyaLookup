@@ -12,14 +12,14 @@
 
 @interface MSCAnimeEditController : NSObject
 {
+    IBOutlet NSObjectController* animeController;
     IBOutlet NSWindow* masterWindow;
     IBOutlet NSWindow* window;
     NSWindowController* windowController;
 }
 
 @property MSCShared* shared;
-
-@property (retain) Anime* currentAnime;
+@property Anime* anime;
 
 - (IBAction)showWindow:(id)sender;
 - (IBAction)okClick:(id)sender;

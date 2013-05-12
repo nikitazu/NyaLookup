@@ -1784,7 +1784,6 @@
 							<string key="NSFrame">{{580, 300}, {82, 32}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="481318257">
@@ -1830,7 +1829,6 @@
 							<string key="NSFrame">{{470, 46}, {186, 253}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:11</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSImageCell" key="NSCell" id="761751639">
@@ -2026,7 +2024,7 @@
 			<object class="NSCustomObject" id="574062299">
 				<string key="NSClassName">MSCFiltersController</string>
 			</object>
-			<object class="NSCustomObject" id="180427492">
+			<object class="NSCustomObject" id="507047204">
 				<string key="NSClassName">MSCAnimeEditController</string>
 			</object>
 		</array>
@@ -2812,7 +2810,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">animeSetSearchNameController</string>
 						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="180427492"/>
+						<reference key="destination" ref="507047204"/>
 					</object>
 					<int key="connectionID">1422</int>
 				</object>
@@ -3424,7 +3422,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
 						<string key="label">showWindow:</string>
-						<reference key="source" ref="180427492"/>
+						<reference key="source" ref="507047204"/>
 						<reference key="destination" ref="166267581"/>
 					</object>
 					<int key="connectionID">1423</int>
@@ -3432,10 +3430,18 @@
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">masterWindow</string>
-						<reference key="source" ref="180427492"/>
+						<reference key="source" ref="507047204"/>
 						<reference key="destination" ref="972006081"/>
 					</object>
 					<int key="connectionID">1427</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">animeController</string>
+						<reference key="source" ref="507047204"/>
+						<reference key="destination" ref="1008167840"/>
+					</object>
+					<int key="connectionID">1432</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -6089,7 +6095,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1421</int>
-						<reference key="object" ref="180427492"/>
+						<reference key="object" ref="507047204"/>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">MSCAnimeEditController</string>
 					</object>
@@ -6499,7 +6505,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1429</int>
+			<int key="maxID">1432</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -6526,10 +6532,15 @@
 						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="animeController">NSObjectController</string>
 						<string key="masterWindow">NSWindow</string>
 						<string key="window">NSWindow</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="animeController">
+							<string key="name">animeController</string>
+							<string key="candidateClassName">NSObjectController</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="masterWindow">
 							<string key="name">masterWindow</string>
 							<string key="candidateClassName">NSWindow</string>

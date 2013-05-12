@@ -1808,7 +1808,6 @@
 							<string key="NSFrame">{{20, 19}, {636, 20}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<string key="NSHuggingPriority">{250, 250}</string>
 							<int key="NSpiFlags">16399</int>
@@ -2024,7 +2023,7 @@
 			<object class="NSCustomObject" id="414915392">
 				<string key="NSClassName">MSCFiltersController</string>
 			</object>
-			<object class="NSCustomObject" id="895418192">
+			<object class="NSCustomObject" id="163468165">
 				<string key="NSClassName">MSCAnimeEditController</string>
 			</object>
 		</array>
@@ -2786,7 +2785,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">animeSetSearchNameController</string>
 						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="895418192"/>
+						<reference key="destination" ref="163468165"/>
 					</object>
 					<int key="connectionID">1364</int>
 				</object>
@@ -2893,7 +2892,6 @@
 									</set>
 									<string key="NSFrame">{{3, 3}, {64, 68}}</string>
 									<reference key="NSSuperview" ref="16936794"/>
-									<reference key="NSNextKeyView"/>
 									<string key="NSReuseIdentifierKey">_NS:11</string>
 									<bool key="NSEnabled">YES</bool>
 									<object class="NSImageCell" key="NSCell" id="510210698">
@@ -3399,7 +3397,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
 						<string key="label">showWindow:</string>
-						<reference key="source" ref="895418192"/>
+						<reference key="source" ref="163468165"/>
 						<reference key="destination" ref="30735480"/>
 					</object>
 					<int key="connectionID">1367</int>
@@ -3407,10 +3405,18 @@
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">masterWindow</string>
-						<reference key="source" ref="895418192"/>
+						<reference key="source" ref="163468165"/>
 						<reference key="destination" ref="972006081"/>
 					</object>
 					<int key="connectionID">1369</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">animeController</string>
+						<reference key="source" ref="163468165"/>
+						<reference key="destination" ref="1008167840"/>
+					</object>
+					<int key="connectionID">1372</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -6064,7 +6070,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1363</int>
-						<reference key="object" ref="895418192"/>
+						<reference key="object" ref="163468165"/>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">MSCAnimeEditController</string>
 					</object>
@@ -6470,7 +6476,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1371</int>
+			<int key="maxID">1372</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -6497,10 +6503,15 @@
 						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="animeController">NSObjectController</string>
 						<string key="masterWindow">NSWindow</string>
 						<string key="window">NSWindow</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="animeController">
+							<string key="name">animeController</string>
+							<string key="candidateClassName">NSObjectController</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="masterWindow">
 							<string key="name">masterWindow</string>
 							<string key="candidateClassName">NSWindow</string>
