@@ -23,11 +23,18 @@
 
 
 - (NSInteger) next {
-    return 1;
+    NSInteger result = self.current + 1;
+    NSInteger max = self.series.intValue;
+    
+    return result > max ? max : result;
 }
 
 - (NSInteger) current {
-    return 1;
+    if (self.lastWatch == nil) {
+        return 0;
+    } else {
+        return self.lastWatch.progress.intValue;
+    }
 }
 
 - (NSString*) progress
