@@ -28,7 +28,6 @@
 
 @synthesize status;
 @synthesize statusColor;
-@synthesize imageNSURL;
 
 // end
 

@@ -18,7 +18,6 @@
     self.series = [NSNumber numberWithInt:anime.max];
     self.link = anime.link;
     self.imageUrl = nil;
-    self.imageNSURL = nil;
 }
 
 

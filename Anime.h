@@ -28,7 +28,6 @@
 
 @property NSString* status;
 @property NSColor* statusColor;
-@property NSURL* imageNSURL;
 
 // end
 
