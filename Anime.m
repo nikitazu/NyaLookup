@@ -14,6 +14,7 @@
 @implementation Anime
 
 @dynamic airing;
+@dynamic imageFile;
 @dynamic imageUrl;
 @dynamic link;
 @dynamic score;

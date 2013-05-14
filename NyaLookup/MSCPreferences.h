@@ -23,11 +23,8 @@
 - (NSString*) nyasearch;
 - (NSString*) nyalist;
 - (NSString*) nyaimage;
-
+- (NSString*) cachePath;
 - (NSString*) transmissionServer;
-
-- (NSString*) retreiveImageForLink:(NSString*)link;
-- (void) cacheImage:(NSString*)imageUrl forLink:(NSString*)link;
 
 /// @Reset all settings to their default values
 - (void) reset;

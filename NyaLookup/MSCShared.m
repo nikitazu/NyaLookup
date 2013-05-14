@@ -13,6 +13,7 @@
 @synthesize root;
 @synthesize ruby;
 @synthesize transmission;
+@synthesize imageCache;
 
 - (id)initWithContext:(NSManagedObjectContext*)ctx
              andModel:(NSManagedObjectModel*)mdl

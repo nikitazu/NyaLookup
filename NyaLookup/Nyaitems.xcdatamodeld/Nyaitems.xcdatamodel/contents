@@ -2,6 +2,7 @@
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Anime" representedClassName="Anime" syncable="YES">
         <attribute name="airing" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="imageFile" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="score" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -25,7 +26,7 @@
         <relationship name="anime" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Anime" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Anime" positionX="-162" positionY="234" width="128" height="193"/>
+        <element name="Anime" positionX="-162" positionY="234" width="128" height="210"/>
         <element name="Root" positionX="-515" positionY="215" width="128" height="73"/>
         <element name="Watch" positionX="187" positionY="279" width="128" height="133"/>
     </elements>

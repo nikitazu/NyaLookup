@@ -14,6 +14,7 @@
 @interface Anime : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * airing;
+@property (nonatomic, retain) NSString * imageFile;
 @property (nonatomic, retain) NSString * imageUrl;
 @property (nonatomic, retain) NSString * link;
 @property (nonatomic, retain) NSNumber * score;

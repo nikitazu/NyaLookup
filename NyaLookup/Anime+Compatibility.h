@@ -17,7 +17,6 @@
 - (NSInteger) next;
 - (NSInteger) current;
 
-
 - (NSString*) progress;
 - (void) updateStatus: (NSArray*)torrents;
 

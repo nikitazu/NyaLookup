@@ -3070,19 +3070,19 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">valueURL: objectValue.imageUrl</string>
+						<string key="label">valuePath: objectValue.imageFile</string>
 						<reference key="source" ref="845047678"/>
 						<reference key="destination" ref="16936794"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="845047678"/>
 							<reference key="NSDestination" ref="16936794"/>
-							<string key="NSLabel">valueURL: objectValue.imageUrl</string>
-							<string key="NSBinding">valueURL</string>
-							<string key="NSKeyPath">objectValue.imageUrl</string>
+							<string key="NSLabel">valuePath: objectValue.imageFile</string>
+							<string key="NSBinding">valuePath</string>
+							<string key="NSKeyPath">objectValue.imageFile</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">1437</int>
+					<int key="connectionID">1451</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -3304,19 +3304,19 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">valueURL: selection.self.imageUrl</string>
+						<string key="label">valuePath: selection.self.imageFile</string>
 						<reference key="source" ref="265671992"/>
 						<reference key="destination" ref="1008167840"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="265671992"/>
 							<reference key="NSDestination" ref="1008167840"/>
-							<string key="NSLabel">valueURL: selection.self.imageUrl</string>
-							<string key="NSBinding">valueURL</string>
-							<string key="NSKeyPath">selection.self.imageUrl</string>
+							<string key="NSLabel">valuePath: selection.self.imageFile</string>
+							<string key="NSBinding">valuePath</string>
+							<string key="NSKeyPath">selection.self.imageFile</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">1436</int>
+					<int key="connectionID">1455</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -4426,12 +4426,12 @@
 							<reference ref="843812123"/>
 							<reference ref="265671992"/>
 							<reference ref="345567439"/>
-							<reference ref="1034911288"/>
 							<reference ref="132604494"/>
 							<reference ref="4441573"/>
 							<reference ref="140641872"/>
 							<reference ref="177281943"/>
 							<reference ref="305155365"/>
+							<reference ref="1034911288"/>
 						</array>
 						<reference key="parent" ref="972006081"/>
 					</object>
@@ -6508,7 +6508,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1437</int>
+			<int key="maxID">1455</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

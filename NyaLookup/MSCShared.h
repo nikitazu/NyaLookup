@@ -11,6 +11,7 @@
 #import "Root.h"
 #import "MSCRuby.h"
 #import "MSCTransmissionClient.h"
+#import "MSCImageCache.h"
 
 @interface MSCShared : NSObject
 {
@@ -23,6 +24,7 @@
 @property Root* root;
 @property MSCRuby* ruby;
 @property MSCTransmissionClient* transmission;
+@property MSCImageCache* imageCache;
 
 - (id)initWithContext:(NSManagedObjectContext*)ctx
              andModel:(NSManagedObjectModel*)mdl

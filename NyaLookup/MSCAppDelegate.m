@@ -7,6 +7,7 @@
 //
 
 #import "MSCAppDelegate.h"
+#import "MSCImageCache.h"
 
 @implementation MSCAppDelegate
 
@@ -35,6 +36,7 @@
     
     shared.ruby =           [MSCRuby client:self.preferences];
     shared.transmission =   [MSCTransmissionClient client:self.preferences];
+    shared.imageCache =     [MSCImageCache initWithPreferences:self.preferences];
     
     self.menuController.shared = shared;
     self.filtersController.shared = shared;
@@ -223,9 +225,16 @@
         for (Anime* anime in self.shared.root.animes) {
             if (anime.imageUrl == nil) {
                 NSString* url = [shared.ruby imageUrl2:anime];
+                NSString* file = [shared.imageCache cacheImage:url];
+                
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     anime.imageUrl = url;
-                    [self.shared.context save:nil];
+                    anime.imageFile = file;
+                    
+                    NSError* error;
+                    if ([shared.context save:&error] == NO) {
+                        [self logError:error inMethod:@"updateAnimeImagesInBackground"];
+                    }
                 });
             }
         }
@@ -248,12 +257,15 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         if (anime.imageUrl == nil) {
             NSString* url = [shared.ruby imageUrl2:anime];
+            NSString* file = [shared.imageCache cacheImage:url];
+            
             dispatch_sync(dispatch_get_main_queue(), ^{
                 anime.imageUrl = url;
+                anime.imageFile = file;
                 
                 NSError* error;
                 if ([shared.context save:&error] == NO) {
-                    [self logError:error inMethod:@"searchTorrents/imageUrl/save"];
+                    [self logError:error inMethod:@"searchTorrents"];
                 }
             });
         }

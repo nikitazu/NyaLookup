@@ -86,11 +86,6 @@
     
     NSString* animeLink = [self encodeCrazyCharacters: anime.link];
     
-    NSString* cachedUrl = [self.preferences retreiveImageForLink:animeLink];
-    if (cachedUrl != nil) {
-        return cachedUrl;
-    }
-    
     NSData* data = [self run:@[self.preferences.nyaimage, animeLink]];
     NSString* string = [[NSString alloc] initWithData:data
                                              encoding:NSUTF8StringEncoding];
@@ -98,9 +93,7 @@
     NSString* trimmed = [string stringByTrimmingCharactersInSet:
                          [NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
-    NSLog(@"ruby imageUrl2 returns: %@", trimmed);
-    
-    [self.preferences cacheImage:trimmed forLink:animeLink];
+    //NSLog(@"ruby imageUrl2 returns: %@", trimmed);
     
     return trimmed;
 }
