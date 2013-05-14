@@ -51,8 +51,6 @@
 
 @property (retain) Anime* currentAnime;
 
-@property (retain) MSCPreferences* preferences;
-
 - (IBAction) searchTorrents:(id)sender;
 - (IBAction) getTorrent:(id)sender;
 - (IBAction) queryTorrent:(id)sender;

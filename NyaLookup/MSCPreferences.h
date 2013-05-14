@@ -15,8 +15,7 @@
     NSUserDefaults* _prefs;
 }
 
-/// Nice static @constructor
-+ (id)preferences;
++ (id)singleton;
 
 - (NSString*) ruby;
 - (NSString*) nyafind;

@@ -10,18 +10,14 @@
 
 @implementation MSCRuby
 
-@synthesize preferences;
-
-
-+ (id) client:(MSCPreferences*)prefs
++ (id)singleton
 {
-    MSCRuby* client = [[MSCRuby alloc] init];
-    if (client == nil) {
-        return nil;
-    }
-    
-    client.preferences = prefs;
-    return client;
+    static dispatch_once_t pred = 0;
+    __strong static id _sharedObject = nil;
+    dispatch_once(&pred, ^{
+        _sharedObject = [[self alloc] init]; // <-- my code here
+    });
+    return _sharedObject;
 }
 
 - (NSArray*) searchTorrents:(NSString*)terms
@@ -138,6 +134,10 @@
     }
     NSLog(@"remove done: %@", temp);
     return temp;
+}
+
+- (MSCPreferences*) preferences {
+    return [MSCPreferences singleton];
 }
 
 

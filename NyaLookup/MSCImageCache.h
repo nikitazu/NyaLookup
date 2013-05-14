@@ -11,9 +11,7 @@
 
 @interface MSCImageCache : NSObject
 
-@property (readwrite,retain) MSCPreferences* preferences;
-
-+ (id) initWithPreferences:(MSCPreferences*)prefs;
++ (id) singleton;
 - (NSString*) cacheImage:(NSString*)url;
 
 @end

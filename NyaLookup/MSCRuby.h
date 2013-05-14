@@ -16,9 +16,8 @@
 
 @interface MSCRuby : NSObject
 
-@property (readwrite,retain) MSCPreferences* preferences;
++ (id)singleton;
 
-+ (id) client:(MSCPreferences*)prefs;
 - (NSArray*) searchTorrents:(NSString*)terms;
 - (NSArray*) searchTorrentsForAnime2:(Anime*)anime;
 - (NSArray*) indexAnime;

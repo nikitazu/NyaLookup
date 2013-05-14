@@ -10,20 +10,25 @@
 
 @implementation MSCTransmissionClient
 
-@synthesize preferences;
++ (id)singleton
+{
+    static dispatch_once_t pred = 0;
+    __strong static id _sharedObject = nil;
+    dispatch_once(&pred, ^{
+        _sharedObject = [[self alloc] init]; // <-- my code here
+    });
+    return _sharedObject;
+}
+
 @synthesize sessionID;
 
-+ (id) client:(MSCPreferences*)prefs
+- (id)init
 {
-    MSCTransmissionClient* client = [[MSCTransmissionClient alloc] init];
-    if (client == nil) {
-        return nil;
+    self = [super init];
+    if (self) {
+        sessionID = nil;
     }
-    
-    client.preferences = prefs;
-    client.sessionID = nil;
-    
-    return client;
+    return self;
 }
 
 - (id) torrentAdd:(NSString*) url
@@ -113,6 +118,10 @@
     [request setHTTPBody:postData];
     
     return request;
+}
+
+- (MSCPreferences*)preferences {
+    return [MSCPreferences singleton];
 }
 
 @end

@@ -13,10 +13,9 @@
 
 @interface MSCTransmissionClient : NSObject
 
-@property (readwrite,retain) MSCPreferences* preferences;
-@property NSString* sessionID;
++ (id)singleton;
 
-+ (id) client:(MSCPreferences*)prefs;
+@property NSString* sessionID;
 
 - (id) torrentAdd:(NSString*) url;
 - (id) send: (NSDictionary*) data;

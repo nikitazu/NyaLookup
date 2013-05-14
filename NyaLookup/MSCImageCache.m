@@ -10,12 +10,14 @@
 
 @implementation MSCImageCache
 
-@synthesize preferences;
-
-+ (id) initWithPreferences:(MSCPreferences*)prefs {
-    MSCImageCache* instance = [[MSCImageCache alloc] init];
-    instance.preferences = prefs;
-    return instance;
++ (id)singleton
+{
+    static dispatch_once_t pred = 0;
+    __strong static id _sharedObject = nil;
+    dispatch_once(&pred, ^{
+        _sharedObject = [[self alloc] init]; // <-- my code here
+    });
+    return _sharedObject;
 }
 
 - (NSString*) cacheImage:(NSString*)url {

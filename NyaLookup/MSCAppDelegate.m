@@ -29,14 +29,12 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    self.preferences = [MSCPreferences preferences];
-    
     [self initCoreData];
     [self initRoot];
     
-    shared.ruby =           [MSCRuby client:self.preferences];
-    shared.transmission =   [MSCTransmissionClient client:self.preferences];
-    shared.imageCache =     [MSCImageCache initWithPreferences:self.preferences];
+    shared.ruby =           [MSCRuby singleton];
+    shared.transmission =   [MSCTransmissionClient singleton];
+    shared.imageCache =     [MSCImageCache singleton];
     
     self.menuController.shared = shared;
     self.filtersController.shared = shared;
