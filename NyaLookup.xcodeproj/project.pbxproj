@@ -161,14 +161,14 @@
 				F7EC074A173FF1B900E11472 /* Anime.m */,
 				F7EC0739173FE47800E11472 /* Watch.h */,
 				F7EC073A173FE47800E11472 /* Watch.m */,
+				F7E96FD81742AC3E001D2015 /* Watch+Progress.h */,
+				F7E96FD91742AC3E001D2015 /* Watch+Progress.m */,
 				F7934CE9173F7BB2008328B7 /* Root.h */,
 				F7934CEA173F7BB2008328B7 /* Root.m */,
 				F7EC073E173FE5C600E11472 /* Anime+Compatibility.h */,
 				F7EC073F173FE5C600E11472 /* Anime+Compatibility.m */,
 				F7EC074C173FFC6F00E11472 /* Root+AnimeFilters.h */,
 				F7EC074D173FFC6F00E11472 /* Root+AnimeFilters.m */,
-				F7E96FD81742AC3E001D2015 /* Watch+Progress.h */,
-				F7E96FD91742AC3E001D2015 /* Watch+Progress.m */,
 			);
 			name = Nyaitems;
 			sourceTree = "<group>";

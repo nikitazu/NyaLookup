@@ -10,7 +10,7 @@
 
 @interface Watch (Progress)
 
-- (void) increment;
-- (void) decrement;
+- (bool) increment;
+- (bool) decrement;
 
 @end

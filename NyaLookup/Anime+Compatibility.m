@@ -99,8 +99,7 @@
         NSLog(@"%@ - cannot increment pending series", self.title);
         return NO;
     } else {
-        [self.lastWatch increment];
-        return YES;
+        return [self.lastWatch increment];
     }
 }
 
@@ -109,8 +108,7 @@
         NSLog(@"%@ - cannot decrement pending series", self.title);
         return NO;
     } else {
-        [self.lastWatch decrement];
-        return YES;
+        return [self.lastWatch decrement];
     }
 }
 
