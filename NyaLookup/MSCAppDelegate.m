@@ -220,15 +220,13 @@
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
-        for (Anime* anime in self.animes) {
-            
+        for (Anime* anime in self.shared.root.animes) {
             if (anime.imageUrl == nil) {
                 NSString* url = [shared.ruby imageUrl2:anime];
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     anime.imageUrl = url;
+                    [self.shared.context save:nil];
                 });
-            } else {
-                NSLog(@"anime image url: %@", anime.imageUrl);
             }
         }
     });
