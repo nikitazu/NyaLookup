@@ -32,10 +32,6 @@
     [self initCoreData];
     [self initRoot];
     
-    shared.ruby =           [MSCRuby singleton];
-    shared.transmission =   [MSCTransmissionClient singleton];
-    shared.imageCache =     [MSCImageCache singleton];
-    
     self.menuController.shared = shared;
     self.filtersController.shared = shared;
     self.animeEditController.shared = shared;
@@ -218,12 +214,15 @@
 
 - (void) updateAnimeImagesInBackground
 {
+    MSCImageCache* cache = [MSCImageCache singleton];
+    MSCRuby* ruby = [MSCRuby singleton];
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
         for (Anime* anime in self.shared.root.animes) {
             if (anime.imageUrl == nil) {
-                NSString* url = [shared.ruby imageUrl2:anime];
-                NSString* file = [shared.imageCache cacheImage:url];
+                NSString* url = [ruby imageUrl2:anime];
+                NSString* file = [cache cacheImage:url];
                 
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     anime.imageUrl = url;
@@ -250,12 +249,13 @@
             [self progressStop];
         });
     });
-    
+    MSCImageCache* cache = [MSCImageCache singleton];
+    MSCRuby* ruby = [MSCRuby singleton];
     Anime* anime = self.currentAnime;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         if (anime.imageUrl == nil) {
-            NSString* url = [shared.ruby imageUrl2:anime];
-            NSString* file = [shared.imageCache cacheImage:url];
+            NSString* url = [ruby imageUrl2:anime];
+            NSString* file = [cache cacheImage:url];
             
             dispatch_sync(dispatch_get_main_queue(), ^{
                 anime.imageUrl = url;

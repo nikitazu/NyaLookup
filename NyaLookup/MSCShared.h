@@ -22,9 +22,6 @@
 }
 
 @property Root* root;
-@property MSCRuby* ruby;
-@property MSCTransmissionClient* transmission;
-@property MSCImageCache* imageCache;
 
 - (id)initWithContext:(NSManagedObjectContext*)ctx
              andModel:(NSManagedObjectModel*)mdl
@@ -33,6 +30,10 @@
 - (NSManagedObjectContext*) context;
 - (NSManagedObjectModel*) model;
 - (NSPersistentStoreCoordinator*) store;
+
+// singleton helpers
+- (MSCRuby*)ruby;
+- (MSCTransmissionClient*)transmission;
 
 // core data helpers
 - (NSEntityDescription*) entityDescription: (NSString*)name;

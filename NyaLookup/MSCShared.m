@@ -11,9 +11,6 @@
 @implementation MSCShared
 
 @synthesize root;
-@synthesize ruby;
-@synthesize transmission;
-@synthesize imageCache;
 
 - (id)initWithContext:(NSManagedObjectContext*)ctx
              andModel:(NSManagedObjectModel*)mdl
@@ -28,6 +25,8 @@
     return self;
 }
 
+// core data access
+
 - (NSManagedObjectContext*) context {
     return _context;
 }
@@ -38,6 +37,16 @@
 
 - (NSPersistentStoreCoordinator*) store {
     return _store;
+}
+
+// singleton helpers
+
+- (MSCRuby*) ruby {
+    return [MSCRuby singleton];
+}
+
+- (MSCTransmissionClient*) transmission {
+    return  [MSCTransmissionClient singleton];
 }
 
 // core data helpers
