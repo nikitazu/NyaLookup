@@ -20,7 +20,6 @@
 
 @property id main;
 @property MSCShared* shared;
-//@property Anime* anime;
 
 - (IBAction)showWindow:(id)sender;
 - (IBAction)okClick:(id)sender;
