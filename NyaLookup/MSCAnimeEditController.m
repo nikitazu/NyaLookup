@@ -40,6 +40,7 @@
 }
 
 - (IBAction)cancelClick:(id)sender {
+    [self.shared.context rollback];
     [window close];
     [windowController close];
     window = nil;
