@@ -20,5 +20,7 @@
 - (IBAction)showWindow:(id)sender;
 - (IBAction)okClick:(id)sender;
 - (IBAction)cancelClick:(id)sender;
+- (IBAction)incrementSeries:(id)sender;
+- (IBAction)decrementSeries:(id)sender;
 
 @end

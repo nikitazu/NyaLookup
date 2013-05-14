@@ -94,4 +94,25 @@
 }
 
 
+- (bool)incrementSeries {
+    if (self.isPending) {
+        NSLog(@"%@ - cannot increment pending series", self.title);
+        return NO;
+    } else {
+        [self.lastWatch increment];
+        return YES;
+    }
+}
+
+- (bool)decrementSeries {
+    if (self.isPending) {
+        NSLog(@"%@ - cannot decrement pending series", self.title);
+        return NO;
+    } else {
+        [self.lastWatch decrement];
+        return YES;
+    }
+}
+
+
 @end

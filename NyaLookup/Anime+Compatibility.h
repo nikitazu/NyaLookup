@@ -8,6 +8,7 @@
 
 #import "Anime.h"
 #import "Watch.h"
+#import "Watch+Progress.h"
 #import "MSCAnime.h"
 
 @interface Anime (Compatibility)
@@ -25,5 +26,8 @@
 - (bool)isCompleted;
 - (bool)isOnHold;
 - (bool)isDropped;
+
+- (bool)incrementSeries;
+- (bool)decrementSeries;
 
 @end

@@ -52,4 +52,17 @@
     windowController = nil;
 }
 
+- (IBAction)incrementSeries:(id)sender {
+    if ([[self.main anime] incrementSeries]) {
+        [self.shared.context save:nil];
+    }
+}
+
+- (IBAction)decrementSeries:(id)sender {
+    if ([[self.main anime] decrementSeries]) {
+        [self.shared.context save:nil];
+    }
+}
+
+
 @end
