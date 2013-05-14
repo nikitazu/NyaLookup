@@ -36,15 +36,6 @@
     }
 }
 
-- (NSString*) progress
-{
-    if (self.series > 0) {
-        return [NSString stringWithFormat:@"%ld / %@", self.current, self.series];
-    } else {
-        return [NSString stringWithFormat:@"%ld / -", self.current];
-    }
-}
-
 - (void) updateStatus: (NSArray*)torrents
 {
     if (torrents.count == 1)
