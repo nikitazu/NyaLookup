@@ -54,7 +54,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F75A55C616E6079700318863 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		F75A55C716E6079700318863 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F75A55C816E6079700318863 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = ru; path = ru.lproj/Credits.rtf; sourceTree = "<group>"; };
 		F75A55C916E6079700318863 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -509,7 +508,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				F7B4A86D16D29ED9009F999D /* en */,
-				F75A55C616E6079700318863 /* ru */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
