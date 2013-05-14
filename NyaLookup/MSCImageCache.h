@@ -12,6 +12,6 @@
 @interface MSCImageCache : NSObject
 
 + (id) singleton;
-- (NSString*) cacheImage:(NSString*)url;
+- (NSString*) cacheImage:(NSString*)url withName: (NSString*)name;
 
 @end

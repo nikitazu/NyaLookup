@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "MSCController.h"
+#import "MSCBackgroundManager.h"
 #import "Root.h"
 #import "Root+AnimeFilters.h"
-#import "MSCBackgroundManager.h"
+#import "Root+Caching.h"
+#import "ImageCache.h"
+#import "ImageCache+Checks.h"
 
 @interface MSCFiltersController : MSCController
 

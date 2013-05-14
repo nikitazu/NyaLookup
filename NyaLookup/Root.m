@@ -14,5 +14,6 @@
 
 @dynamic v;
 @dynamic animes;
+@dynamic imageCaches;
 
 @end

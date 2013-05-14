@@ -214,28 +214,12 @@
 
 - (void) updateAnimeImagesInBackground
 {
-    MSCImageCache* cache = [MSCImageCache singleton];
-    MSCRuby* ruby = [MSCRuby singleton];
+    if (self.animes == nil) {
+        return;
+    }
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        
-        for (Anime* anime in self.shared.root.animes) {
-            if (anime.imageUrl == nil) {
-                NSString* url = [ruby imageUrl2:anime];
-                NSString* file = [cache cacheImage:url];
-                
-                dispatch_sync(dispatch_get_main_queue(), ^{
-                    anime.imageUrl = url;
-                    anime.imageFile = file;
-                    
-                    NSError* error;
-                    if ([shared.context save:&error] == NO) {
-                        [self logError:error inMethod:@"updateAnimeImagesInBackground"];
-                    }
-                });
-            }
-        }
-    });
+    [self.shared.root updateImagesFor:self.animes
+                             inShared:self.shared];
 }
 
 - (IBAction) searchTorrents:(id)sender
@@ -254,25 +238,9 @@
             [self progressStop];
         });
     });
-    MSCImageCache* cache = [MSCImageCache singleton];
-    MSCRuby* ruby = [MSCRuby singleton];
-    Anime* anime = self.currentAnime;
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        if (anime.imageUrl == nil) {
-            NSString* url = [ruby imageUrl2:anime];
-            NSString* file = [cache cacheImage:url];
-            
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                anime.imageUrl = url;
-                anime.imageFile = file;
-                
-                NSError* error;
-                if ([shared.context save:&error] == NO) {
-                    [self logError:error inMethod:@"searchTorrents"];
-                }
-            });
-        }
-    });
+    
+    [self.shared.root updateImageFor:self.currentAnime
+                            inShared:self.shared];
 }
 
 - (IBAction) getTorrent:(id)sender

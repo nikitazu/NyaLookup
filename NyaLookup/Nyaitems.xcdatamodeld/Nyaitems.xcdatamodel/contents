@@ -13,9 +13,16 @@
         <relationship name="root" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Root" inverseName="animes" inverseEntity="Root" syncable="YES"/>
         <relationship name="watches" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Watch" inverseName="anime" inverseEntity="Watch" syncable="YES"/>
     </entity>
+    <entity name="ImageCache" representedClassName="ImageCache" syncable="YES">
+        <attribute name="animeUrl" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="fileUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="root" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Root" inverseName="imageCaches" inverseEntity="Root" syncable="YES"/>
+    </entity>
     <entity name="Root" representedClassName="Root" syncable="YES">
         <attribute name="v" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="animes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Anime" inverseName="root" inverseEntity="Anime" syncable="YES"/>
+        <relationship name="imageCaches" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ImageCache" inverseName="root" inverseEntity="ImageCache" syncable="YES"/>
     </entity>
     <entity name="Watch" representedClassName="Watch" syncable="YES">
         <attribute name="created" optional="YES" attributeType="Date" syncable="YES"/>
@@ -27,7 +34,8 @@
     </entity>
     <elements>
         <element name="Anime" positionX="-162" positionY="234" width="128" height="210"/>
-        <element name="Root" positionX="-515" positionY="215" width="128" height="73"/>
-        <element name="Watch" positionX="187" positionY="279" width="128" height="133"/>
+        <element name="Root" positionX="-515" positionY="215" width="128" height="88"/>
+        <element name="Watch" positionX="144" positionY="335" width="128" height="133"/>
+        <element name="ImageCache" positionX="-756" positionY="270" width="128" height="103"/>
     </elements>
 </model>

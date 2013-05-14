@@ -20,35 +20,29 @@
     return _sharedObject;
 }
 
-- (NSString*) cacheImage:(NSString*)url {
-    NSString* saveto = [self pathForTemporaryFileWithPrefix:@"nya"];
+- (NSString*) cacheImage:(NSString*)url withName: (NSString*)name {
+    NSString* cacheDir = [[MSCPreferences singleton] cachePath];
+    
+    [[NSFileManager defaultManager] createDirectoryAtPath:cacheDir
+                              withIntermediateDirectories:YES
+                                               attributes:nil
+                                                    error:nil];
+    
+    NSString* saneName = [self sanitizeFileNameString: name];
+    NSString* saveto = [NSString pathWithComponents:@[cacheDir, saneName]];
     NSURL* uri = [NSURL URLWithString:url];
     NSData* data = [NSData dataWithContentsOfURL:uri];
     [data writeToFile:saveto atomically:YES];
-    //NSLog(@"cachedImage in file: %@", saveto);
     return saveto;
 }
 
-- (NSString *)pathForTemporaryFileWithPrefix:(NSString *)prefix
-{
-    NSString *  result;
-    CFUUIDRef   uuid;
-    CFStringRef uuidStr;
+- (NSString*) sanitizeFileNameString:(NSString *)fileName {
+    NSCharacterSet* illegalFileNameCharacters =
+        [NSCharacterSet characterSetWithCharactersInString:@"/\\?%*|\"<>"];
     
-    uuid = CFUUIDCreate(NULL);
-    assert(uuid != NULL);
-    
-    uuidStr = CFUUIDCreateString(NULL, uuid);
-    assert(uuidStr != NULL);
-    
-    result = [NSTemporaryDirectory() stringByAppendingPathComponent:
-              [NSString stringWithFormat:@"%@-%@", prefix, uuidStr]];
-    assert(result != nil);
-    
-    CFRelease(uuidStr);
-    CFRelease(uuid);
-    
-    return result;
+    return [[fileName componentsSeparatedByCharactersInSet:illegalFileNameCharacters]
+            componentsJoinedByString:@""];
 }
+
 
 @end
