@@ -10,11 +10,7 @@
 
 @implementation MSCAnimeEditController
 
-@synthesize main;
-@synthesize shared;
-
 - (IBAction)showWindow:(id)sender {
-    main = [NSApp delegate];
     windowController = [[NSWindowController alloc]
                         initWithWindowNibName:@"AnimeEditWindow"
                                         owner:self];
@@ -34,7 +30,7 @@
 
 - (IBAction)okClick:(id)sender {
     NSError* error;
-    if ([shared.context save:&error] == NO) {
+    if ([self.shared.context save:&error] == NO) {
         NSLog(@"ERROR: anime edit failed - %@, %@", error, error.userInfo);
     }
     [window close];

@@ -7,14 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MSCShared.h"
+#import "MSCController.h"
 #import "MSCAnime.h"
 #import "Anime.h"
 #import "Anime+Compatibility.h"
 
-@interface MSCMenuController : NSObject
-
-@property MSCShared* shared;
+@interface MSCMenuController : MSCController
 
 - (IBAction)importPending:(id)sender;
 - (IBAction)importWatching:(id)sender;

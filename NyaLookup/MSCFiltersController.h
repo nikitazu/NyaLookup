@@ -7,13 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MSCShared.h"
+#import "MSCController.h"
 #import "Root.h"
 #import "Root+AnimeFilters.h"
 
-@interface MSCFiltersController : NSObject
-
-@property MSCShared* shared;
+@interface MSCFiltersController : MSCController
 
 - (IBAction)pending:(id)sender;
 - (IBAction)watching:(id)sender;

@@ -7,19 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MSCShared.h"
-#import "Anime.h"
+#import "MSCController.h"
 
-@interface MSCAnimeEditController : NSObject
+@interface MSCAnimeEditController : MSCController
 {
     IBOutlet NSObjectController* animeController;
     IBOutlet NSWindow* masterWindow;
     IBOutlet NSWindow* window;
     NSWindowController* windowController;
 }
-
-@property id main;
-@property MSCShared* shared;
 
 - (IBAction)showWindow:(id)sender;
 - (IBAction)okClick:(id)sender;

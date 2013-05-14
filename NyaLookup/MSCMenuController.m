@@ -42,7 +42,7 @@
         NSLog(@"importing %@", anime.title);
         Anime* newAnime = [shared insertEntity:@"Anime"];
         [newAnime initWithAnime:anime];
-        [shared.root addAnimesObject:newAnime];
+        [self.shared.root addAnimesObject:newAnime];
         
 //        newAnime.imageUrl = [shared.ruby imageUrl2:newAnime];
         
