@@ -93,6 +93,7 @@
     
     for (id anime in shared.root.animes) {
         [shared.context deleteObject: anime];
+        [[NSFileManager defaultManager] removeItemAtPath:[anime imageFile] error:nil];
     }
     
     NSError* error;
