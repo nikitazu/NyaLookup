@@ -35,8 +35,6 @@
                      forKey:@"nyalist"];
         [defaults setObject:@"/Users/nikitazu/prj/oss/nyafind/nyaimage.rb"
                      forKey:@"nyaimage"];
-        [defaults setObject:@"/Users/nikitazu/.NyaLookupCache"
-                     forKey:@"cachePath"];
         [defaults setObject:@"http://zeus:9091/transmission/rpc"
                      forKey:@"transmissionServer"];
         
@@ -66,10 +64,6 @@
     return [_prefs valueForKey:@"nyaimage"];
 }
 
-- (NSString*) cachePath {
-    return [_prefs valueForKey:@"cachePath"];
-}
-
 - (NSString*) transmissionServer {
     return [_prefs valueForKey:@"transmissionServer"];
 }
@@ -85,8 +79,6 @@
                forKey:@"nyalist"];
     [_prefs setObject:@"/Users/nikitazu/prj/oss/nyafind/nyaimage.rb"
                forKey:@"nyaimage"];
-    [_prefs setObject:@"/Users/nikitazu/.NyaLookupCache"
-               forKey:@"cachePath"];
     [_prefs setObject:@"http://zeus:9091/transmission/rpc"
                forKey:@"transmissionServer"];
 }

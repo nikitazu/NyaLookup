@@ -21,7 +21,8 @@
 }
 
 - (NSString*) cacheImage:(NSString*)url withName: (NSString*)name {
-    NSString* cacheDir = [[MSCPreferences singleton] cachePath];
+    NSString* home = NSHomeDirectory();
+    NSString* cacheDir = [NSString pathWithComponents:@[home, @".NyaLookupCache"]];
     
     [[NSFileManager defaultManager] createDirectoryAtPath:cacheDir
                               withIntermediateDirectories:YES

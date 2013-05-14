@@ -22,7 +22,6 @@
 - (NSString*) nyasearch;
 - (NSString*) nyalist;
 - (NSString*) nyaimage;
-- (NSString*) cachePath;
 - (NSString*) transmissionServer;
 
 /// @Reset all settings to their default values
