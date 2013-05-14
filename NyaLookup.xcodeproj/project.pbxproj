@@ -202,7 +202,6 @@
 		F7B4A85D16D29ED9009F999D /* NyaLookup */ = {
 			isa = PBXGroup;
 			children = (
-				F7B4A85E16D29ED9009F999D /* Supporting Files */,
 				F7EC0747173FEC8800E11472 /* ThirdParty */,
 				F7934CDC173F78FD008328B7 /* Nyaitems */,
 				F7FA59F916D40198002A4347 /* WEB */,
@@ -278,6 +277,7 @@
 		F7E96FC617402347001D2015 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F7B4A85E16D29ED9009F999D /* Supporting Files */,
 				F7EC0730173FDFBC00E11472 /* MSCFiltersController.h */,
 				F7EC0731173FDFBC00E11472 /* MSCFiltersController.m */,
 				F7EC072A173FBDBD00E11472 /* MSCMenuController.h */,

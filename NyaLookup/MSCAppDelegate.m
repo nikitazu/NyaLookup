@@ -40,6 +40,11 @@
     self.filtersController.shared = shared;
     self.animeEditController.shared = shared;
     
+    NSLog(@"check controllers: menu=%@ filters=%@ anime=%@",
+          self.menuController,
+          self.filtersController,
+          self.animeEditController);
+    
     [self progressStart];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSArray* animeArray = [_root filterWatching];
