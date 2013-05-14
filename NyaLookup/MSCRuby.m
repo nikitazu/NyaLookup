@@ -99,7 +99,7 @@
     NSTask* task = [[NSTask alloc] init];
     NSPipe* tout = [NSPipe pipe];
     
-    NSLog(@"run: %@", args);
+    //NSLog(@"run: %@", args);
     
     [task setLaunchPath: self.preferences.ruby];
     [task setArguments: args];
@@ -113,26 +113,26 @@
 
 - (NSString*) encodeCrazyCharacters: (NSString*)string
 {
-    NSLog(@"encodeCrayCharacters: %@", string);
+    //NSLog(@"encodeCrayCharacters: %@", string);
     NSString* temp = [string stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
     temp = [temp stringByReplacingOccurrencesOfString:@"☆"
                                              withString:@"%E2%98%86"];
     temp = [temp stringByReplacingOccurrencesOfString:@"½"
                                              withString:@"%BD"];
-    NSLog(@"encode done: %@", temp);
+    //NSLog(@"encode done: %@", temp);
     return temp;
 }
 
 - (NSString*) removeCrazyCharacters: (NSString*)string
 {
-    NSLog(@"remove crazy chars: %@", string);
+    //NSLog(@"remove crazy chars: %@", string);
     NSString* temp = string;
     NSArray* badChars = [NSArray arrayWithObjects:@"♪", @"☆", @"½", @"é", @"è", @"à", nil];
     for (NSString* badChar in badChars) {
         temp = [temp stringByReplacingOccurrencesOfString:badChar
                                                  withString:@" "];
     }
-    NSLog(@"remove done: %@", temp);
+    //NSLog(@"remove done: %@", temp);
     return temp;
 }
 
