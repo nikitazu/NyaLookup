@@ -16,4 +16,8 @@
     return [NSApp delegate];
 }
 
+- (void) logError: (NSError*)error inMethod:(NSString*)method {
+    NSLog(@"ERROR: %@ - %@, %@", method, error, error.userInfo);
+}
+
 @end

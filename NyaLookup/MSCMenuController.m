@@ -71,7 +71,6 @@
         {
             watch.dropped = [NSNumber numberWithBool:YES];
         }
-        
     }
     
     NSError* error;
@@ -87,6 +86,11 @@
 
 - (IBAction)clearAll:(id)sender {
     NSLog(@"clearing all data");
+    
+    [[MSCBackgroundManager singleton] stopTask:@"updateImagesForAnimes"];
+    
+    [self.main setAnimes: nil];
+    
     for (id anime in shared.root.animes) {
         [shared.context deleteObject: anime];
     }

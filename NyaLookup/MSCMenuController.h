@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "MSCController.h"
+#import "MSCBackgroundManager.h"
 #import "MSCAnime.h"
 #import "Anime.h"
 #import "Anime+Compatibility.h"

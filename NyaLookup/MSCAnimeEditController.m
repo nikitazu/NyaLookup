@@ -11,6 +11,11 @@
 @implementation MSCAnimeEditController
 
 - (IBAction)showWindow:(id)sender {
+    if (![self.main anime]) {
+        NSLog(@"no anime selected");
+        return;
+    }
+    
     windowController = [[NSWindowController alloc]
                         initWithWindowNibName:@"AnimeEditWindow"
                                         owner:self];

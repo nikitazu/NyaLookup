@@ -240,6 +240,11 @@
 
 - (IBAction) searchTorrents:(id)sender
 {
+    if (![self anime]) {
+        NSLog(@"no anime selected");
+        return;
+    }
+    
     self.currentAnime = [self anime];
     [self progressStart];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -272,6 +277,11 @@
 
 - (IBAction) getTorrent:(id)sender
 {
+    if (![self torrent]) {
+        NSLog(@"no torrent selected");
+        return;
+    }
+    
     [self progressStart];
     [self writeToPasteBoard:[[self torrent] link]];
     
@@ -290,12 +300,21 @@
 
 - (Anime*) anime
 {
-    return self.animesController.selectedObjects[0];
+    @try {
+        return self.animesController.selectedObjects[0];
+    }
+    @catch (NSException *_) {
+        return nil;
+    }
 }
 
 - (MSCTorrent*) torrent
 {
-    return self.torrentsController.selectedObjects[0];
+    @try {
+        return self.torrentsController.selectedObjects[0];
+    } @catch (NSException *_) {
+        return nil;
+    }
 }
 
 - (BOOL) writeToPasteBoard:(NSString *)stringToWrite

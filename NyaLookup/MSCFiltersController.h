@@ -10,6 +10,7 @@
 #import "MSCController.h"
 #import "Root.h"
 #import "Root+AnimeFilters.h"
+#import "MSCBackgroundManager.h"
 
 @interface MSCFiltersController : MSCController
 

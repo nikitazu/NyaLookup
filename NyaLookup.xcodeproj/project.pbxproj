@@ -34,6 +34,7 @@
 		F7E96FCA17402BF9001D2015 /* AnimeEditWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7E96FC917402BF9001D2015 /* AnimeEditWindow.xib */; };
 		F7E96FD01742191F001D2015 /* MSCController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E96FCF1742191F001D2015 /* MSCController.m */; };
 		F7E96FD417423830001D2015 /* MSCImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E96FD317423830001D2015 /* MSCImageCache.m */; };
+		F7E96FD717424C08001D2015 /* MSCBackgroundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E96FD617424C07001D2015 /* MSCBackgroundManager.m */; };
 		F7EC072C173FBDBD00E11472 /* MSCMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EC072B173FBDBD00E11472 /* MSCMenuController.m */; };
 		F7EC072F173FC4D200E11472 /* MSCShared.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EC072E173FC4D200E11472 /* MSCShared.m */; };
 		F7EC0732173FDFBC00E11472 /* MSCFiltersController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EC0731173FDFBC00E11472 /* MSCFiltersController.m */; };
@@ -108,6 +109,8 @@
 		F7E96FCF1742191F001D2015 /* MSCController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCController.m; sourceTree = "<group>"; };
 		F7E96FD217423830001D2015 /* MSCImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCImageCache.h; sourceTree = "<group>"; };
 		F7E96FD317423830001D2015 /* MSCImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCImageCache.m; sourceTree = "<group>"; };
+		F7E96FD517424C07001D2015 /* MSCBackgroundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCBackgroundManager.h; sourceTree = "<group>"; };
+		F7E96FD617424C07001D2015 /* MSCBackgroundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCBackgroundManager.m; sourceTree = "<group>"; };
 		F7EC072A173FBDBD00E11472 /* MSCMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCMenuController.h; sourceTree = "<group>"; };
 		F7EC072B173FBDBD00E11472 /* MSCMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCMenuController.m; sourceTree = "<group>"; };
 		F7EC072D173FC4D200E11472 /* MSCShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCShared.h; sourceTree = "<group>"; };
@@ -225,6 +228,8 @@
 				F7B4A89416D2A20C009F999D /* MSCPreferences.m */,
 				F76F9EE816D536CD00548C4D /* NSArray+FP.h */,
 				F76F9EE916D536CD00548C4D /* NSArray+FP.m */,
+				F7E96FD517424C07001D2015 /* MSCBackgroundManager.h */,
+				F7E96FD617424C07001D2015 /* MSCBackgroundManager.m */,
 			);
 			path = NyaLookup;
 			sourceTree = "<group>";
@@ -461,6 +466,7 @@
 				F7E96FC517402320001D2015 /* MSCAnimeEditController.m in Sources */,
 				F7E96FD01742191F001D2015 /* MSCController.m in Sources */,
 				F7E96FD417423830001D2015 /* MSCImageCache.m in Sources */,
+				F7E96FD717424C08001D2015 /* MSCBackgroundManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

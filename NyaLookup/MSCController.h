@@ -15,4 +15,6 @@
 
 - (id)main;
 
+- (void) logError: (NSError*)error inMethod:(NSString*)method;
+
 @end
