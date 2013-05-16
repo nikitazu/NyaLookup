@@ -45,6 +45,7 @@
 
 @property (retain) NSArray* animes;
 @property (assign) IBOutlet NSArrayController* animesController;
+- (NSArray*) animesSortDescriptor;
 
 @property (retain) NSArray* torrents;
 @property (assign) IBOutlet NSArrayController* torrentsController;

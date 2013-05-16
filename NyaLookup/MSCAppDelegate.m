@@ -276,6 +276,13 @@
     }
 }
 
+- (NSArray*) animesSortDescriptor {
+    return [NSArray arrayWithObjects:
+            [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES],
+            [NSSortDescriptor sortDescriptorWithKey:@"type" ascending:YES],
+            nil];
+}
+
 - (MSCTorrent*) torrent
 {
     @try {
