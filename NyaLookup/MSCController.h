@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MSCShared.h"
 
-@interface MSCController : NSObject
+@interface MSCController : NSViewController
 
 @property MSCShared* shared;
 

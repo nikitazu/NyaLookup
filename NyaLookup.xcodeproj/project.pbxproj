@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7551C6E174604DA00F38DBB /* NSButton+DrawingIcons.m in Sources */ = {isa = PBXBuildFile; fileRef = F7551C6D174604DA00F38DBB /* NSButton+DrawingIcons.m */; };
 		F76F9EE716D5324500548C4D /* NSData+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = F76F9EE616D5324500548C4D /* NSData+JSON.m */; };
 		F76F9EEA16D536CD00548C4D /* NSArray+FP.m in Sources */ = {isa = PBXBuildFile; fileRef = F76F9EE916D536CD00548C4D /* NSArray+FP.m */; };
 		F77DF9FB16E60AA900176598 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F77DF9FD16E60AA900176598 /* Localizable.strings */; };
@@ -61,6 +62,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F7551C6C174604DA00F38DBB /* NSButton+DrawingIcons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSButton+DrawingIcons.h"; sourceTree = "<group>"; };
+		F7551C6D174604DA00F38DBB /* NSButton+DrawingIcons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSButton+DrawingIcons.m"; sourceTree = "<group>"; };
 		F75A55C716E6079700318863 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F75A55C816E6079700318863 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = ru; path = ru.lproj/Credits.rtf; sourceTree = "<group>"; };
 		F75A55C916E6079700318863 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -196,6 +199,8 @@
 			children = (
 				F7AB98691745E92E005EFC81 /* NSButton+TextColor.h */,
 				F7AB986A1745E92E005EFC81 /* NSButton+TextColor.m */,
+				F7551C6C174604DA00F38DBB /* NSButton+DrawingIcons.h */,
+				F7551C6D174604DA00F38DBB /* NSButton+DrawingIcons.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -505,6 +510,7 @@
 				F7E96FE01742C490001D2015 /* Root+Caching.m in Sources */,
 				F7E96FE61742C6F3001D2015 /* ImageCache+Checks.m in Sources */,
 				F7AB986B1745E92E005EFC81 /* NSButton+TextColor.m in Sources */,
+				F7551C6E174604DA00F38DBB /* NSButton+DrawingIcons.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 #import "MSCFiltersController.h"
 #import "NSButton+TextColor.h"
+#import "NSButton+DrawingIcons.h"
 
 @implementation MSCFiltersController
 
@@ -19,6 +20,11 @@
         buttonsDefaultColor = [NSColor whiteColor];
     }
     return self;
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    [self selectButton:watchingButton];
 }
 
 - (IBAction)pending:(id)sender {
@@ -64,13 +70,15 @@
     [droppedButton setTextColor:buttonsDefaultColor];
     [button setTextColor:buttonsSelectedColor];
     
+    [pendingButton setImage:nil];
+    [watchingButton setImage:nil];
+    [completedButton setImage:nil];
+    [onHoldButton setImage:nil];
+    [droppedButton setImage:nil];
+    [button drawCircleWithColor:[NSColor selectedControlColor]];
     
-    pendingButton.state = 0;
-    watchingButton.state = 0;
-    completedButton.state = 0;
-    onHoldButton.state = 0;
-    droppedButton.state = 0;
-    button.state = 1;
+    [[self.main window] display]; // little hack to fix drawing circle
 }
+
 
 @end
