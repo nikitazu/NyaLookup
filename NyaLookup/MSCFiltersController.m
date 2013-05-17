@@ -15,7 +15,7 @@
 {
     self = [super init];
     if (self) {
-        buttonsSelectedColor = [NSColor blueColor];
+        buttonsSelectedColor = [NSColor blackColor];
         buttonsDefaultColor = [NSColor whiteColor];
     }
     return self;
