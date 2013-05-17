@@ -2953,6 +2953,7 @@
 									</set>
 									<string key="NSFrame">{{3, 3}, {64, 68}}</string>
 									<reference key="NSSuperview" ref="16936794"/>
+									<reference key="NSNextKeyView"/>
 									<string key="NSReuseIdentifierKey">_NS:11</string>
 									<bool key="NSEnabled">YES</bool>
 									<object class="NSImageCell" key="NSCell" id="510210698">
@@ -3496,6 +3497,46 @@
 						<reference key="destination" ref="305155365"/>
 					</object>
 					<int key="connectionID">1370</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">pendingButton</string>
+						<reference key="source" ref="574062299"/>
+						<reference key="destination" ref="132604494"/>
+					</object>
+					<int key="connectionID">1490</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">watchingButton</string>
+						<reference key="source" ref="574062299"/>
+						<reference key="destination" ref="4441573"/>
+					</object>
+					<int key="connectionID">1491</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">completedButton</string>
+						<reference key="source" ref="574062299"/>
+						<reference key="destination" ref="140641872"/>
+					</object>
+					<int key="connectionID">1492</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">onHoldButton</string>
+						<reference key="source" ref="574062299"/>
+						<reference key="destination" ref="177281943"/>
+					</object>
+					<int key="connectionID">1493</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">droppedButton</string>
+						<reference key="source" ref="574062299"/>
+						<reference key="destination" ref="305155365"/>
+					</object>
+					<int key="connectionID">1494</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -6780,7 +6821,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1486</int>
+			<int key="maxID">1494</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -6949,6 +6990,35 @@
 						<object class="IBActionInfo" key="watching:">
 							<string key="name">watching:</string>
 							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="completedButton">NSButton</string>
+						<string key="droppedButton">NSButton</string>
+						<string key="onHoldButton">NSButton</string>
+						<string key="pendingButton">NSButton</string>
+						<string key="watchingButton">NSButton</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="completedButton">
+							<string key="name">completedButton</string>
+							<string key="candidateClassName">NSButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="droppedButton">
+							<string key="name">droppedButton</string>
+							<string key="candidateClassName">NSButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="onHoldButton">
+							<string key="name">onHoldButton</string>
+							<string key="candidateClassName">NSButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="pendingButton">
+							<string key="name">pendingButton</string>
+							<string key="candidateClassName">NSButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="watchingButton">
+							<string key="name">watchingButton</string>
+							<string key="candidateClassName">NSButton</string>
 						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">

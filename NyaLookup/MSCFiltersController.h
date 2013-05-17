@@ -16,6 +16,16 @@
 #import "ImageCache+Checks.h"
 
 @interface MSCFiltersController : MSCController
+{
+    NSColor* buttonsSelectedColor;
+    NSColor* buttonsDefaultColor;
+    
+    IBOutlet NSButton* pendingButton;
+    IBOutlet NSButton* watchingButton;
+    IBOutlet NSButton* completedButton;
+    IBOutlet NSButton* onHoldButton;
+    IBOutlet NSButton* droppedButton;
+}
 
 - (IBAction)pending:(id)sender;
 - (IBAction)watching:(id)sender;

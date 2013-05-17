@@ -10,6 +10,7 @@
 
 @implementation MSCShared
 
+// shared state
 @synthesize root;
 
 - (id)initWithContext:(NSManagedObjectContext*)ctx

@@ -21,6 +21,7 @@
     NSPersistentStoreCoordinator*   _store;
 }
 
+// shared state
 @property Root* root;
 
 - (id)initWithContext:(NSManagedObjectContext*)ctx

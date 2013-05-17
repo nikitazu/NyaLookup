@@ -14,6 +14,7 @@
 		F78B009C16E334A70071CA4A /* MSCTransmissionClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F78B009B16E334A70071CA4A /* MSCTransmissionClient.m */; };
 		F7934CD2173F7283008328B7 /* Nyaitems.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F7934CD0173F7283008328B7 /* Nyaitems.xcdatamodeld */; };
 		F7934CEB173F7BB2008328B7 /* Root.m in Sources */ = {isa = PBXBuildFile; fileRef = F7934CEA173F7BB2008328B7 /* Root.m */; };
+		F7AB986B1745E92E005EFC81 /* NSButton+TextColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F7AB986A1745E92E005EFC81 /* NSButton+TextColor.m */; };
 		F7B4A85816D29ED9009F999D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7B4A85716D29ED9009F999D /* Cocoa.framework */; };
 		F7B4A86216D29ED9009F999D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7B4A86016D29ED9009F999D /* InfoPlist.strings */; };
 		F7B4A86416D29ED9009F999D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B4A86316D29ED9009F999D /* main.m */; };
@@ -76,6 +77,8 @@
 		F7934CD1173F7283008328B7 /* Nyaitems.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Nyaitems.xcdatamodel; sourceTree = "<group>"; };
 		F7934CE9173F7BB2008328B7 /* Root.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Root.h; sourceTree = "<group>"; };
 		F7934CEA173F7BB2008328B7 /* Root.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Root.m; sourceTree = "<group>"; };
+		F7AB98691745E92E005EFC81 /* NSButton+TextColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSButton+TextColor.h"; sourceTree = "<group>"; };
+		F7AB986A1745E92E005EFC81 /* NSButton+TextColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSButton+TextColor.m"; sourceTree = "<group>"; };
 		F7B4A85416D29ED9009F999D /* NyaLookup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NyaLookup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7B4A85716D29ED9009F999D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		F7B4A85A16D29ED9009F999D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -188,6 +191,15 @@
 			name = Nyaitems;
 			sourceTree = "<group>";
 		};
+		F7AB98671745E8F9005EFC81 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F7AB98691745E92E005EFC81 /* NSButton+TextColor.h */,
+				F7AB986A1745E92E005EFC81 /* NSButton+TextColor.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		F7B4A84B16D29ED8009F999D = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +242,7 @@
 		F7B4A85D16D29ED9009F999D /* NyaLookup */ = {
 			isa = PBXGroup;
 			children = (
+				F7AB98671745E8F9005EFC81 /* Views */,
 				F7B4A85E16D29ED9009F999D /* Supporting Files */,
 				F7EC0747173FEC8800E11472 /* ThirdParty */,
 				F7934CDC173F78FD008328B7 /* Nyaitems */,
@@ -491,6 +504,7 @@
 				F7E96FDD1742B747001D2015 /* ImageCache.m in Sources */,
 				F7E96FE01742C490001D2015 /* Root+Caching.m in Sources */,
 				F7E96FE61742C6F3001D2015 /* ImageCache+Checks.m in Sources */,
+				F7AB986B1745E92E005EFC81 /* NSButton+TextColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
