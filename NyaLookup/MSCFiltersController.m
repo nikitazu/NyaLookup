@@ -64,6 +64,13 @@
     [droppedButton setTextColor:buttonsDefaultColor];
     [button setTextColor:buttonsSelectedColor];
     
+    
+    pendingButton.state = 0;
+    watchingButton.state = 0;
+    completedButton.state = 0;
+    onHoldButton.state = 0;
+    droppedButton.state = 0;
+    button.state = 1;
 }
 
 @end

@@ -1802,7 +1802,6 @@
 							<string key="NSFrame">{{580, 300}, {82, 32}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="481318257">
@@ -1848,7 +1847,6 @@
 							<string key="NSFrame">{{470, 46}, {186, 253}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:11</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSImageCell" key="NSCell" id="761751639">
@@ -1887,11 +1885,15 @@
 								</object>
 								<string key="NSCellIdentifier">_NS:9</string>
 								<reference key="NSControlView" ref="132604494"/>
-								<int key="NSButtonFlags">-2034483200</int>
+								<int key="NSButtonFlags">-927186944</int>
 								<int key="NSButtonFlags2">39</int>
-								<object class="NSCustomResource" key="NSNormalImage" id="102144302">
+								<object class="NSCustomResource" key="NSNormalImage" id="25859459">
 									<string key="NSClassName">NSImage</string>
 									<string key="NSResourceName">NSRefreshTemplate</string>
+								</object>
+								<object class="NSCustomResource" key="NSAlternateImage" id="93771011">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">NSRefreshFreestandingTemplate</string>
 								</object>
 								<string key="NSAlternateContents"/>
 								<string key="NSKeyEquivalent"/>
@@ -1916,9 +1918,10 @@
 								<reference key="NSSupport" ref="27"/>
 								<string key="NSCellIdentifier">_NS:9</string>
 								<reference key="NSControlView" ref="4441573"/>
-								<int key="NSButtonFlags">-2034483200</int>
+								<int key="NSButtonFlags">-927186944</int>
 								<int key="NSButtonFlags2">39</int>
-								<reference key="NSNormalImage" ref="102144302"/>
+								<reference key="NSNormalImage" ref="25859459"/>
+								<reference key="NSAlternateImage" ref="93771011"/>
 								<string key="NSAlternateContents"/>
 								<string key="NSKeyEquivalent"/>
 								<int key="NSPeriodicDelay">200</int>
@@ -1942,9 +1945,10 @@
 								<reference key="NSSupport" ref="27"/>
 								<string key="NSCellIdentifier">_NS:9</string>
 								<reference key="NSControlView" ref="140641872"/>
-								<int key="NSButtonFlags">-2034483200</int>
+								<int key="NSButtonFlags">-927186944</int>
 								<int key="NSButtonFlags2">39</int>
-								<reference key="NSNormalImage" ref="102144302"/>
+								<reference key="NSNormalImage" ref="25859459"/>
+								<reference key="NSAlternateImage" ref="93771011"/>
 								<string key="NSAlternateContents"/>
 								<string key="NSKeyEquivalent"/>
 								<int key="NSPeriodicDelay">200</int>
@@ -1968,9 +1972,10 @@
 								<reference key="NSSupport" ref="27"/>
 								<string key="NSCellIdentifier">_NS:9</string>
 								<reference key="NSControlView" ref="177281943"/>
-								<int key="NSButtonFlags">-2034483200</int>
+								<int key="NSButtonFlags">-927186944</int>
 								<int key="NSButtonFlags2">39</int>
-								<reference key="NSNormalImage" ref="102144302"/>
+								<reference key="NSNormalImage" ref="25859459"/>
+								<reference key="NSAlternateImage" ref="93771011"/>
 								<string key="NSAlternateContents"/>
 								<string key="NSKeyEquivalent"/>
 								<int key="NSPeriodicDelay">200</int>
@@ -1994,9 +1999,10 @@
 								<reference key="NSSupport" ref="27"/>
 								<string key="NSCellIdentifier">_NS:9</string>
 								<reference key="NSControlView" ref="305155365"/>
-								<int key="NSButtonFlags">-2034483200</int>
+								<int key="NSButtonFlags">-927186944</int>
 								<int key="NSButtonFlags2">39</int>
-								<reference key="NSNormalImage" ref="102144302"/>
+								<reference key="NSNormalImage" ref="25859459"/>
+								<reference key="NSAlternateImage" ref="93771011"/>
 								<string key="NSAlternateContents"/>
 								<string key="NSKeyEquivalent"/>
 								<int key="NSPeriodicDelay">200</int>
@@ -2961,7 +2967,6 @@
 									</set>
 									<string key="NSFrame">{{3, 3}, {64, 68}}</string>
 									<reference key="NSSuperview" ref="16936794"/>
-									<reference key="NSNextKeyView"/>
 									<string key="NSReuseIdentifierKey">_NS:11</string>
 									<bool key="NSEnabled">YES</bool>
 									<object class="NSImageCell" key="NSCell" id="510210698">
@@ -7094,6 +7099,7 @@
 			<string key="NSApplicationIcon">{128, 128}</string>
 			<string key="NSMenuCheckmark">{11, 11}</string>
 			<string key="NSMenuMixedState">{10, 3}</string>
+			<string key="NSRefreshFreestandingTemplate">{14, 14}</string>
 			<string key="NSRefreshTemplate">{10, 12}</string>
 		</dictionary>
 		<bool key="IBDocument.UseAutolayout">YES</bool>
