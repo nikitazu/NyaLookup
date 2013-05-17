@@ -18,7 +18,7 @@
     
     for (ImageCache* c in self.imageCaches.allObjects) {
         if ([c.animeUrl isEqualToString: anime.link]) {
-            NSLog(@"found in cache %@", anime.title);
+            //NSLog(@"found in cache %@", anime.title);
             return c;
         }
     }

@@ -34,9 +34,8 @@
 }
 
 - (IBAction)okClick:(id)sender {
-    NSError* error;
-    if ([self.shared.context save:&error] == NO) {
-        NSLog(@"ERROR: anime edit failed - %@, %@", error, error.userInfo);
+    if (![self.shared saveContex]) {
+        NSLog(@"ERROR: anime edit failed");
     }
     [window close];
     [windowController close];
@@ -54,13 +53,13 @@
 
 - (IBAction)incrementSeries:(id)sender {
     if ([[self.main anime] incrementSeries]) {
-        [self.shared.context save:nil];
+        [self.shared saveContex];
     }
 }
 
 - (IBAction)decrementSeries:(id)sender {
     if ([[self.main anime] decrementSeries]) {
-        [self.shared.context save:nil];
+        [self.shared saveContex];
     }
 }
 

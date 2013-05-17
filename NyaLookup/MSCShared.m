@@ -61,4 +61,13 @@
                                          inManagedObjectContext:_context];
 }
 
+- (bool)saveContex {
+    NSError* error;
+    if (![self.context save: &error]) {
+        NSLog(@"ERROR: saving shared context failed - %@, %@", error, error.userInfo);
+        return NO;
+    }
+    return YES;
+}
+
 @end

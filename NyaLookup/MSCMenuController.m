@@ -44,8 +44,6 @@
         [newAnime initWithAnime:anime];
         [self.shared.root addAnimesObject:newAnime];
         
-//        newAnime.imageUrl = [shared.ruby imageUrl2:newAnime];
-        
         if ([status isEqualToString:@"pending"]) {
             continue;
         }
@@ -73,13 +71,9 @@
         }
     }
     
-    NSError* error;
-    if ([shared.context save:&error] != YES) {
-        [self logError:error inMethod:@"importWithStatus:/save"];
-        return;
+    if ([self.shared saveContex]) {
+        NSLog(@"importing stage completed");
     }
-    
-    NSLog(@"importing stage completed");
 }
 
 
@@ -92,19 +86,13 @@
     [self.main setAnimes: nil];
     
     for (id anime in shared.root.animes) {
-        [shared.context deleteObject: anime];
+        [self.shared.context deleteObject: anime];
         [[NSFileManager defaultManager] removeItemAtPath:[anime imageFile] error:nil];
     }
     
-    NSError* error;
-    if ([shared.context save:&error] == YES) {
+    if ([self.shared saveContex]) {
         NSLog(@"data cleared");
     }
-    else
-    {
-        [self logError:error inMethod:@"clearAll/save"];
-    }
-    
 }
 
 - (void) logError: (NSError*)error inMethod:(NSString*)method {

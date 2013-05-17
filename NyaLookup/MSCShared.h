@@ -39,5 +39,6 @@
 // core data helpers
 - (NSEntityDescription*) entityDescription: (NSString*)name;
 - (id)insertEntity: (NSString*)name;
+- (bool)saveContex;
 
 @end
