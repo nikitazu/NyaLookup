@@ -10,6 +10,7 @@
 
 @implementation MSCAnimeEditController
 
+// edit anime
 - (IBAction)showWindow:(id)sender {
     if (![self.main anime]) {
         NSLog(@"no anime selected");
@@ -51,6 +52,7 @@
     windowController = nil;
 }
 
+// increment/decrement
 - (IBAction)incrementSeries:(id)sender {
     if ([[self.main anime] incrementSeries]) {
         [self.shared saveContex];
@@ -63,5 +65,25 @@
     }
 }
 
+// change status
+- (IBAction)setPending:(id)sender {
+    NSLog(@"setting anime as pending");
+}
+
+- (IBAction)watch:(id)sender {
+    NSLog(@"watching anime");
+}
+
+- (IBAction)complete:(id)sender {
+    NSLog(@"completed watching anime");
+}
+
+- (IBAction)hold:(id)sender {
+    NSLog(@"putting anime on hold");
+}
+
+- (IBAction)drop:(id)sender {
+    NSLog(@"dropping anime");
+}
 
 @end

@@ -17,10 +17,20 @@
     NSWindowController* windowController;
 }
 
+// edit anime
 - (IBAction)showWindow:(id)sender;
 - (IBAction)okClick:(id)sender;
 - (IBAction)cancelClick:(id)sender;
+
+// increment/decrement
 - (IBAction)incrementSeries:(id)sender;
 - (IBAction)decrementSeries:(id)sender;
+
+// change status
+- (IBAction)setPending:(id)sender;
+- (IBAction)watch:(id)sender;
+- (IBAction)complete:(id)sender;
+- (IBAction)hold:(id)sender;
+- (IBAction)drop:(id)sender;
 
 @end

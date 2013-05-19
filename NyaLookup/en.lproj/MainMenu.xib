@@ -1540,7 +1540,7 @@
 											<string key="NSFrameSize">{440, 235}</string>
 											<reference key="NSSuperview" ref="947663021"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="942711924"/>
+											<reference key="NSNextKeyView" ref="299254547"/>
 											<string key="NSReuseIdentifierKey">_NS:13</string>
 											<bool key="NSEnabled">YES</bool>
 											<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -1695,7 +1695,7 @@
 							<string key="NSFrame">{{20, 46}, {442, 253}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="299254547"/>
+							<reference key="NSNextKeyView" ref="947663021"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<int key="NSsFlags">133682</int>
 							<reference key="NSVScroller" ref="1022102079"/>
@@ -1722,7 +1722,7 @@
 											<string key="NSFrameSize">{634, 253}</string>
 											<reference key="NSSuperview" ref="1019649065"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="16936794"/>
+											<reference key="NSNextKeyView" ref="841581730"/>
 											<string key="NSReuseIdentifierKey">_NS:13</string>
 											<bool key="NSEnabled">YES</bool>
 											<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -1843,7 +1843,7 @@
 							<string key="NSFrame">{{20, 337}, {636, 271}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="841581730"/>
+							<reference key="NSNextKeyView" ref="1019649065"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<int key="NSsFlags">133682</int>
 							<reference key="NSVScroller" ref="357342359"/>
@@ -1862,7 +1862,6 @@
 							<string key="NSFrame">{{580, 300}, {82, 32}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="481318257">
@@ -1887,7 +1886,6 @@
 							<string key="NSFrame">{{20, 19}, {636, 20}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<string key="NSHuggingPriority">{250, 250}</string>
 							<int key="NSpiFlags">16399</int>
@@ -1908,7 +1906,6 @@
 							<string key="NSFrame">{{470, 46}, {186, 253}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:11</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSImageCell" key="NSCell" id="761751639">
@@ -2063,7 +2060,7 @@
 					<reference key="NSNextKeyView" ref="132604494"/>
 					<bool key="NSViewIsLayerTreeHost">YES</bool>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
@@ -3636,6 +3633,46 @@
 						<reference key="destination" ref="825459603"/>
 					</object>
 					<int key="connectionID">1459</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">setPending:</string>
+						<reference key="source" ref="765841228"/>
+						<reference key="destination" ref="242357840"/>
+					</object>
+					<int key="connectionID">1522</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">watch:</string>
+						<reference key="source" ref="765841228"/>
+						<reference key="destination" ref="750813952"/>
+					</object>
+					<int key="connectionID">1523</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">complete:</string>
+						<reference key="source" ref="765841228"/>
+						<reference key="destination" ref="980287025"/>
+					</object>
+					<int key="connectionID">1524</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">hold:</string>
+						<reference key="source" ref="765841228"/>
+						<reference key="destination" ref="523648150"/>
+					</object>
+					<int key="connectionID">1525</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">drop:</string>
+						<reference key="source" ref="765841228"/>
+						<reference key="destination" ref="904113855"/>
+					</object>
+					<int key="connectionID">1526</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -6927,7 +6964,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1521</int>
+			<int key="maxID">1526</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -6936,18 +6973,35 @@
 					<string key="superclassName">MSCController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="cancelClick:">id</string>
+						<string key="complete:">id</string>
 						<string key="decrementSeries:">id</string>
+						<string key="drop:">id</string>
+						<string key="hold:">id</string>
 						<string key="incrementSeries:">id</string>
 						<string key="okClick:">id</string>
+						<string key="setPending:">id</string>
 						<string key="showWindow:">id</string>
+						<string key="watch:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="cancelClick:">
 							<string key="name">cancelClick:</string>
 							<string key="candidateClassName">id</string>
 						</object>
+						<object class="IBActionInfo" key="complete:">
+							<string key="name">complete:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="decrementSeries:">
 							<string key="name">decrementSeries:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="drop:">
+							<string key="name">drop:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="hold:">
+							<string key="name">hold:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="incrementSeries:">
@@ -6958,8 +7012,16 @@
 							<string key="name">okClick:</string>
 							<string key="candidateClassName">id</string>
 						</object>
+						<object class="IBActionInfo" key="setPending:">
+							<string key="name">setPending:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="showWindow:">
 							<string key="name">showWindow:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="watch:">
+							<string key="name">watch:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>
