@@ -50,13 +50,11 @@
 @property (retain) NSArray* torrents;
 @property (assign) IBOutlet NSArrayController* torrentsController;
 
-@property (retain) Anime* currentAnime;
-
 - (IBAction) searchTorrents:(id)sender;
 - (IBAction) getTorrent:(id)sender;
 - (IBAction) queryTorrent:(id)sender;
 
-// core data access
+// shared state access
 @property MSCShared* shared;
 
 @end

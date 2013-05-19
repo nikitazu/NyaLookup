@@ -103,5 +103,58 @@
     }
 }
 
+- (void)setPending {
+    [self removeWatches: self.watches];
+    self.lastWatch = nil;
+}
+
+- (void)watch:(Watch *)newWatch {
+    newWatch.created = [NSDate date];
+    newWatch.updated = [NSDate date];
+    newWatch.progress = [NSNumber numberWithInt:self.current];
+    newWatch.onHold = [NSNumber numberWithBool:NO];
+    newWatch.dropped = [NSNumber numberWithBool:NO];
+    
+    [self addWatchesObject:newWatch];
+    self.lastWatch = newWatch;
+}
+
+- (BOOL)complete {
+    if (self.lastWatch == nil) {
+        NSLog(@"cannot complete %@, not watching", self.title);
+        return NO;
+    }
+    
+    self.lastWatch.progress = self.series;
+    self.lastWatch.onHold = [NSNumber numberWithBool:NO];
+    self.lastWatch.dropped = [NSNumber numberWithBool:NO];
+    return YES;
+}
+
+- (BOOL)hold {
+    if (self.lastWatch == nil) {
+        NSLog(@"cannot hold %@, not watching", self.title);
+        return NO;
+    }
+    
+    if (self.lastWatch.dropped.boolValue) {
+        NSLog(@"cannot hold %@, is dropped", self.title);
+        return NO;
+    }
+    
+    self.lastWatch.onHold = [NSNumber numberWithBool:YES];
+    return YES;
+}
+
+- (BOOL)drop {
+    if (self.lastWatch == nil) {
+        NSLog(@"cannot drop %@, not watching", self.title);
+        return NO;
+    }
+    
+    self.lastWatch.dropped = [NSNumber numberWithBool:YES];
+    return YES;
+}
+
 
 @end

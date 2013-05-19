@@ -17,8 +17,6 @@
 @synthesize torrents;
 @synthesize torrentsController;
 
-@synthesize currentAnime;
-
 // controllers
 @synthesize menuController;
 @synthesize filtersController;
@@ -49,7 +47,6 @@
             dispatch_sync(dispatch_get_main_queue(), ^{
                 NSLog(@"syncronizing initial interface - data");
                 self.animes = animeArray;
-                self.currentAnime = [self anime];
                 [self testConnectionSuccess];
                 NSLog(@"syncronizing initial interface - done");
             });
@@ -225,22 +222,23 @@
 
 - (IBAction) searchTorrents:(id)sender
 {
-    if (![self anime]) {
+    Anime* currentAnime = [self anime];
+    
+    if (!currentAnime) {
         NSLog(@"no anime selected");
         return;
     }
     
-    self.currentAnime = [self anime];
     [self progressStart];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSArray* torrentsArray = [shared.ruby searchTorrentsForAnime2:self.currentAnime];
+        NSArray* torrentsArray = [shared.ruby searchTorrentsForAnime2:currentAnime];
         dispatch_sync(dispatch_get_main_queue(), ^{
             self.torrents = torrentsArray;
             [self progressStop];
         });
     });
     
-    [self.shared.root updateImageFor:self.currentAnime
+    [self.shared.root updateImageFor:currentAnime
                             inShared:self.shared];
 }
 

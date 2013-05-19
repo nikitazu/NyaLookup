@@ -7,6 +7,10 @@
 //
 
 #import "MSCAnimeEditController.h"
+#import "MSCFiltersController.h"
+#import "MSCAppDelegate.h"
+#import "MSCShared.h"
+#import "Watch.h"
 
 @implementation MSCAnimeEditController
 
@@ -68,22 +72,79 @@
 // change status
 - (IBAction)setPending:(id)sender {
     NSLog(@"setting anime as pending");
+    
+    Anime* anime = [[self main] anime];
+    if (anime == nil) {
+        NSLog(@"anime is not selected");
+        return;
+    }
+    
+    [anime setPending];
+    if ([self.shared saveContex]) {
+        NSLog(@"anime %@ moved to pending, watch data cleared", anime.title);
+        [[[self main] filtersController] pending:nil];
+    }
 }
 
 - (IBAction)watch:(id)sender {
     NSLog(@"watching anime");
+    Anime* anime = [[self main] anime];
+    if (anime == nil) {
+        NSLog(@"anime is not selected");
+        return;
+    }
+    
+    [anime watch: [self.shared insertEntity:@"Watch"]];
+    if ([self.shared saveContex]) {
+        NSLog(@"watching anime %@", anime.title);
+        [[[self main] filtersController] watching:nil];
+        
+    }
 }
 
 - (IBAction)complete:(id)sender {
     NSLog(@"completed watching anime");
+    Anime* anime = [[self main] anime];
+    if (anime == nil) {
+        NSLog(@"anime is not selected");
+        return;
+    }
+    
+    if ([anime complete] && [self.shared saveContex]) {
+        NSLog(@"anime %@ was completed", anime.title);
+        [[[self main] filtersController] complteted:nil];
+        
+    }
 }
 
 - (IBAction)hold:(id)sender {
     NSLog(@"putting anime on hold");
+    Anime* anime = [[self main] anime];
+    if (anime == nil) {
+        NSLog(@"anime is not selected");
+        return;
+    }
+    
+    if ([anime hold] && [self.shared saveContex]) {
+        NSLog(@"anime %@ was put on hold", anime.title);
+        [[[self main] filtersController] onHold:nil];
+        
+    }
 }
 
 - (IBAction)drop:(id)sender {
     NSLog(@"dropping anime");
+    Anime* anime = [[self main] anime];
+    if (anime == nil) {
+        NSLog(@"anime is not selected");
+        return;
+    }
+    
+    if ([anime drop] && [self.shared saveContex]) {
+        NSLog(@"anime %@ was dropped", anime.title);
+        [[[self main] filtersController] dropped:nil];
+    }
 }
+
 
 @end

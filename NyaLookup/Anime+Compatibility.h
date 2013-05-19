@@ -29,4 +29,10 @@
 - (bool)incrementSeries;
 - (bool)decrementSeries;
 
+- (void)setPending;
+- (void)watch: (Watch*)newWatch;
+- (BOOL)complete;
+- (BOOL)hold;
+- (BOOL)drop;
+
 @end
