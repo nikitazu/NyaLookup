@@ -28,38 +28,36 @@
 }
 
 - (IBAction)pending:(id)sender {
-    NSLog(@"filter pending");
-    [self updateAnimes:[self.shared.root filterPending]];
+    [self filterAnimes:[self.shared.root filterPending] withFilterName: @"pending"];
     [self selectButton:sender];
 }
 
 - (IBAction)watching:(id)sender {
-    NSLog(@"filter watching");
-    [self updateAnimes:[self.shared.root filterWatching]];
+    [self filterAnimes:[self.shared.root filterWatching] withFilterName: @"watching"];
     [self selectButton:sender];
 }
 
 - (IBAction)complteted:(id)sender {
-    NSLog(@"filter completed");
-    [self updateAnimes:[self.shared.root filterCompleted]];
+    [self filterAnimes:[self.shared.root filterCompleted] withFilterName: @"completed"];
     [self selectButton:sender];
 }
 
 - (IBAction)onHold:(id)sender {
-    NSLog(@"filter onHold");
-    [self updateAnimes:[self.shared.root filterOnHold]];
+    [self filterAnimes:[self.shared.root filterOnHold] withFilterName: @"onHold"];
     [self selectButton:sender];
 }
 
 - (IBAction)dropped:(id)sender {
-    NSLog(@"filter dropped");
-    [self updateAnimes:[self.shared.root filterDropped]];
+    [self filterAnimes:[self.shared.root filterDropped] withFilterName: @"dropped"];
     [self selectButton:sender];
 }
 
-- (void) updateAnimes: (id)animes {
+- (void) filterAnimes: (id)animes withFilterName: (NSString*)filterName {
+    NSLog(@"filter %@", filterName);
     [self.main setAnimes: animes];
-    [self.shared.root updateImagesFor:animes inShared:self.shared];
+    [self.shared.root updateImagesFor:animes
+                             inShared:self.shared
+                       withFilterName:filterName];
 }
 
 - (void)selectButton:(NSButton*)button {

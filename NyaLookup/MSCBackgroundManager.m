@@ -29,9 +29,17 @@
     return self;
 }
 
-- (void) registerTask: (NSString*) name {
+- (MSCBackgroundTask*) registerTask: (NSString*) name {
+    if ([self isTaskRegistered:name]) {
+        NSLog(@"registerTask: %@ skip, task allready registered", name);
+        return nil;
+    }
+    
     NSLog(@"registerTask: %@", name);
     [_tasks setValue:@"ok" forKey:name];
+    MSCBackgroundTask* task = [[MSCBackgroundTask alloc] init];
+    task.taskID = name;
+    return task;
 }
 
 - (void) stopTask: (NSString*) name {

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MSCBackgroundTask.h"
 
 @interface MSCBackgroundManager : NSObject
 {
@@ -16,7 +17,7 @@
 
 + (id)singleton;
 
-- (void) registerTask: (NSString*) name;
+- (MSCBackgroundTask*) registerTask: (NSString*) name;
 - (void) stopTask: (NSString*) name;
 - (BOOL) isTaskRegistered: (NSString*) name;
 

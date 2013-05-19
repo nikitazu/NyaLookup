@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F741D5461748CE51002D574C /* MSCBackgroundTask.m in Sources */ = {isa = PBXBuildFile; fileRef = F741D5451748CE51002D574C /* MSCBackgroundTask.m */; };
 		F7551C6E174604DA00F38DBB /* NSButton+DrawingIcons.m in Sources */ = {isa = PBXBuildFile; fileRef = F7551C6D174604DA00F38DBB /* NSButton+DrawingIcons.m */; };
 		F76F9EE716D5324500548C4D /* NSData+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = F76F9EE616D5324500548C4D /* NSData+JSON.m */; };
 		F76F9EEA16D536CD00548C4D /* NSArray+FP.m in Sources */ = {isa = PBXBuildFile; fileRef = F76F9EE916D536CD00548C4D /* NSArray+FP.m */; };
@@ -62,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F741D5441748CE51002D574C /* MSCBackgroundTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCBackgroundTask.h; sourceTree = "<group>"; };
+		F741D5451748CE51002D574C /* MSCBackgroundTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCBackgroundTask.m; sourceTree = "<group>"; };
 		F7551C6C174604DA00F38DBB /* NSButton+DrawingIcons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSButton+DrawingIcons.h"; sourceTree = "<group>"; };
 		F7551C6D174604DA00F38DBB /* NSButton+DrawingIcons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSButton+DrawingIcons.m"; sourceTree = "<group>"; };
 		F75A55C716E6079700318863 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -266,6 +269,8 @@
 				F7B4A89416D2A20C009F999D /* MSCPreferences.m */,
 				F76F9EE816D536CD00548C4D /* NSArray+FP.h */,
 				F76F9EE916D536CD00548C4D /* NSArray+FP.m */,
+				F741D5441748CE51002D574C /* MSCBackgroundTask.h */,
+				F741D5451748CE51002D574C /* MSCBackgroundTask.m */,
 				F7E96FD517424C07001D2015 /* MSCBackgroundManager.h */,
 				F7E96FD617424C07001D2015 /* MSCBackgroundManager.m */,
 			);
@@ -511,6 +516,7 @@
 				F7E96FE61742C6F3001D2015 /* ImageCache+Checks.m in Sources */,
 				F7AB986B1745E92E005EFC81 /* NSButton+TextColor.m in Sources */,
 				F7551C6E174604DA00F38DBB /* NSButton+DrawingIcons.m in Sources */,
+				F741D5461748CE51002D574C /* MSCBackgroundTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

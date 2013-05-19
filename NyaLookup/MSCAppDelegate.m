@@ -219,7 +219,8 @@
     }
     
     [self.shared.root updateImagesFor:self.animes
-                             inShared:self.shared];
+                             inShared:self.shared
+                       withFilterName:@"watching"];
 }
 
 - (IBAction) searchTorrents:(id)sender

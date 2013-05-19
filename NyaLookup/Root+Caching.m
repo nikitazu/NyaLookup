@@ -27,23 +27,27 @@
 }
 
 
-- (void) updateImagesFor:(NSArray*)animes inShared: (MSCShared*)shared {
-    if (animes == nil || shared == nil) {
+- (void) updateImagesFor:(NSArray*)animes
+                inShared:(MSCShared*)shared
+          withFilterName:(NSString*)filterName {
+    
+    if (animes == nil || shared == nil || animes.count == 0) {
         NSLog(@"updateImagesFor/animes/inShared skip");
         return;
     }
     
     MSCImageCache* cache = [MSCImageCache singleton];
     MSCRuby* ruby = [MSCRuby singleton];
-    NSString* task = @"updateImagesForAnimes";
+    NSString* taskID = [NSString stringWithFormat: @"updateImagesForAnimes:%@", filterName];
+    MSCBackgroundTask* task = [[MSCBackgroundManager singleton] registerTask:taskID];
+    if (task == nil) {
+        return;
+    }
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
-        [[MSCBackgroundManager singleton] registerTask:task];
         for (Anime* anime in animes) {
-            if ([self notRegistered:task]) {
-                break;
-            }
+            if ([task shouldStop]) { break; };
             
             ImageCache* icache = [self findCacheFor:anime];
             
@@ -59,27 +63,26 @@
             }
             
             if (!icache.fileExists) {
-                icache.fileUrl = [cache cacheImage:icache.imageUrl withName:anime.title];
+                icache.fileUrl = [cache cacheImage:icache.imageUrl
+                                          withName:anime.title];
             }
             
+            if ([task shouldStop]) { return; }
+            
             dispatch_sync(dispatch_get_main_queue(), ^{
-                if ([self notRegistered:task]) {
-                    return;
-                }
-                
                 anime.imageUrl = icache.imageUrl;
                 anime.imageFile = icache.fileUrl;
                 
                 NSError* error;
-                if ([shared.context save:&error] == NO) {
+                if (![shared.context save:&error]) {
                     [self logError:error inMethod:@"updateImagesFor/animes/save"];
                 }
             });
             
-            if ([self notRegistered:task]) {
-                break;
-            }
+            if ([task shouldStop]) { break; }
         }
+        
+        [task stop];
     });
 }
 
@@ -121,15 +124,6 @@
                 }
             });
     });
-}
-
-
-- (bool) notRegistered: (NSString*)task {
-    if (![[MSCBackgroundManager singleton] isTaskRegistered:task]) {
-        NSLog(@"breaking task loop: %@", task);
-        return YES;
-    }
-    return NO;
 }
 
 - (void) logError: (NSError*)error inMethod:(NSString*)method {
