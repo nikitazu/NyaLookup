@@ -14,6 +14,27 @@
 
 @implementation MSCAnimeEditController
 
+// add new anime
+- (IBAction)addNew:(id)sender {
+    NSLog(@"adding new anime");
+    Anime* newAnime = [self.shared insertEntity:@"Anime"];
+    
+    newAnime.title = @"";
+    newAnime.score = [NSNumber numberWithInt:0];
+    newAnime.type = @"TV";
+    newAnime.airing = [NSNumber numberWithBool:NO];
+    newAnime.series = [NSNumber numberWithInt:0];
+    newAnime.link = @"http://google.com";
+    newAnime.imageUrl = nil;
+    
+    [self.shared.root addAnimesObject:newAnime];
+    if ([self.shared saveContex]) {
+        NSLog(@"adding new anime completed");
+    }
+    [[self.main filtersController] pending:nil];
+    [self showWindow:nil];
+}
+
 // edit anime
 - (IBAction)showWindow:(id)sender {
     if (![self.main anime]) {
@@ -145,6 +166,5 @@
         [[[self main] filtersController] dropped:nil];
     }
 }
-
 
 @end

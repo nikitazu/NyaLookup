@@ -62,13 +62,14 @@
 
 - (bool)isWatching {
     return self.lastWatch != nil &&
-        self.lastWatch.progress < self.series &&
+        (self.lastWatch.progress < self.series || self.series.intValue == 0) &&
         self.lastWatch.onHold.boolValue == NO &&
         self.lastWatch.dropped.boolValue == NO;
 }
 
 - (bool)isCompleted {
     return self.lastWatch != nil &&
+        self.series.intValue != 0 &&
         self.lastWatch.progress == self.series &&
         self.lastWatch.onHold.boolValue == NO &&
         self.lastWatch.dropped.boolValue == NO;

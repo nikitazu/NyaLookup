@@ -17,6 +17,9 @@
     NSWindowController* windowController;
 }
 
+// add new anime
+- (IBAction)addNew:(id)sender;
+
 // edit anime
 - (IBAction)showWindow:(id)sender;
 - (IBAction)okClick:(id)sender;

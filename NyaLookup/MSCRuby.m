@@ -89,7 +89,7 @@
     NSString* trimmed = [string stringByTrimmingCharactersInSet:
                          [NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
-    //NSLog(@"ruby imageUrl2 returns: %@", trimmed);
+    NSLog(@"ruby imageUrl2 returns: %@", trimmed);
     
     return trimmed;
 }
@@ -99,7 +99,7 @@
     NSTask* task = [[NSTask alloc] init];
     NSPipe* tout = [NSPipe pipe];
     
-    //NSLog(@"run: %@", args);
+    NSLog(@"run: %@", args);
     
     [task setLaunchPath: self.preferences.ruby];
     [task setArguments: args];
