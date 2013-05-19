@@ -67,9 +67,9 @@
                                           withName:anime.title];
             }
             
-            if ([task shouldStop]) { return; }
-            
             dispatch_sync(dispatch_get_main_queue(), ^{
+                if ([task shouldStop]) { return; }
+                
                 anime.imageUrl = icache.imageUrl;
                 anime.imageFile = icache.fileUrl;
                 
