@@ -12,7 +12,8 @@
 
 - (bool) fileExists {
     return self.fileUrl != nil &&
-        [[NSFileManager defaultManager] fileExistsAtPath:self.fileUrl];
+        [[NSFileManager defaultManager] fileExistsAtPath:self.fileUrl
+                                             isDirectory:NO];
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "MSCImageCache.h"
+#import "NSString+Utils.h"
 
 @implementation MSCImageCache
 
@@ -21,6 +22,17 @@
 }
 
 - (NSString*) cacheImage:(NSString*)url withName: (NSString*)name {
+    if ([url isEmpty]) {
+        NSLog(@"caching impossible url is empty");
+        return nil;
+    }
+    
+    if ([name isEmpty]) {
+        NSLog(@"caching impossible name is empty");
+        return nil;
+    }
+    
+    NSLog(@"caching image %@ with name %@", url, name);
     NSString* home = NSHomeDirectory();
     NSString* cacheDir = [NSString pathWithComponents:@[home, @".NyaLookupCache"]];
     

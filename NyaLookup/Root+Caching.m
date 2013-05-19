@@ -67,6 +67,8 @@
                                           withName:anime.title];
             }
             
+            NSLog(@"in cache %@ %@", icache.imageUrl, icache.fileUrl);
+            
             dispatch_sync(dispatch_get_main_queue(), ^{
                 if ([task shouldStop]) { return; }
                 
@@ -110,7 +112,8 @@
             }
             
             if (!icache.fileExists) {
-                icache.fileUrl = [cache cacheImage:icache.imageUrl withName:anime.title];
+                icache.fileUrl = [cache cacheImage:icache.imageUrl
+                                          withName:anime.title];
             }
             
             dispatch_sync(dispatch_get_main_queue(), ^{

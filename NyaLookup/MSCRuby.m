@@ -82,6 +82,10 @@
     
     NSString* animeLink = [self encodeCrazyCharacters: anime.link];
     
+    if (![anime.link hasPrefix:@"http://myanimelist"]) {
+        return anime.imageUrl;
+    }
+    
     NSData* data = [self run:@[self.preferences.nyaimage, animeLink]];
     NSString* string = [[NSString alloc] initWithData:data
                                              encoding:NSUTF8StringEncoding];

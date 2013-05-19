@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F741D5461748CE51002D574C /* MSCBackgroundTask.m in Sources */ = {isa = PBXBuildFile; fileRef = F741D5451748CE51002D574C /* MSCBackgroundTask.m */; };
 		F7551C6E174604DA00F38DBB /* NSButton+DrawingIcons.m in Sources */ = {isa = PBXBuildFile; fileRef = F7551C6D174604DA00F38DBB /* NSButton+DrawingIcons.m */; };
+		F7688B9417492D2A009280A1 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = F7688B9317492D2A009280A1 /* NSString+Utils.m */; };
 		F76F9EE716D5324500548C4D /* NSData+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = F76F9EE616D5324500548C4D /* NSData+JSON.m */; };
 		F76F9EEA16D536CD00548C4D /* NSArray+FP.m in Sources */ = {isa = PBXBuildFile; fileRef = F76F9EE916D536CD00548C4D /* NSArray+FP.m */; };
 		F77DF9FB16E60AA900176598 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F77DF9FD16E60AA900176598 /* Localizable.strings */; };
@@ -70,6 +71,8 @@
 		F75A55C716E6079700318863 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F75A55C816E6079700318863 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = ru; path = ru.lproj/Credits.rtf; sourceTree = "<group>"; };
 		F75A55C916E6079700318863 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F7688B9217492D2A009280A1 /* NSString+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utils.h"; sourceTree = "<group>"; };
+		F7688B9317492D2A009280A1 /* NSString+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
 		F76F9EE516D5324500548C4D /* NSData+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+JSON.h"; sourceTree = "<group>"; };
 		F76F9EE616D5324500548C4D /* NSData+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+JSON.m"; sourceTree = "<group>"; };
 		F76F9EE816D536CD00548C4D /* NSArray+FP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+FP.h"; sourceTree = "<group>"; };
@@ -273,6 +276,8 @@
 				F741D5451748CE51002D574C /* MSCBackgroundTask.m */,
 				F7E96FD517424C07001D2015 /* MSCBackgroundManager.h */,
 				F7E96FD617424C07001D2015 /* MSCBackgroundManager.m */,
+				F7688B9217492D2A009280A1 /* NSString+Utils.h */,
+				F7688B9317492D2A009280A1 /* NSString+Utils.m */,
 			);
 			path = NyaLookup;
 			sourceTree = "<group>";
@@ -517,6 +522,7 @@
 				F7AB986B1745E92E005EFC81 /* NSButton+TextColor.m in Sources */,
 				F7551C6E174604DA00F38DBB /* NSButton+DrawingIcons.m in Sources */,
 				F741D5461748CE51002D574C /* MSCBackgroundTask.m in Sources */,
+				F7688B9417492D2A009280A1 /* NSString+Utils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
